@@ -1,0 +1,26 @@
+partial modifier_keys
+// Pressing Esc leaves Capslock
+xkb_symbols "leave_capslock" {
+    key <ESC> {
+        type = "ALPHABETIC",
+        symbols = [ Escape, Escape ],
+        actions [Group1] = [
+            SetMods(modifiers=none),
+            SetMods(modifiers=Lock,clearLocks)
+        ]
+    };
+};
+
+// Pressing Control_L leaves Capslock too (and works like Escape)
+partial modifier_keys
+xkb_symbols "ctrl_leave_capslock" {
+    key <LCTL> {
+        type = "ALPHABETIC",
+        symbols = [ Escape, Escape ],
+        actions [Group1] = [
+            SetMods(modifiers=none),
+            SetMods(modifiers=Lock,clearLocks)
+        ]
+    };
+};
+

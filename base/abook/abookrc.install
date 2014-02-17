@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p "$HOME/.abook"
+ln -frs abookrc "$HOME/.abook/abookrc"

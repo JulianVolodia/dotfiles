@@ -1,0 +1,88 @@
+# vim: set foldmethod=marker:
+
+# My sender addresses for the From: header
+alternates ^runiq@archlinux.us$ \
+    ^dapatti@g(oogle)?mail.com$ \
+    ^patrice.peterson@itz.uni-halle.de$ \
+    ^patrice.peterson@dronox.de$
+
+# Taken from http://dev.mutt.org/trac/wiki/UseCases/MultiAccounts
+# Default realname for all accounts
+# This might get overridden in account-specific send-hooks
+send-hook . \
+    'set realname = "Patrice Peterson"'
+
+# "folder" has to be specified each time, before all other maildir folders that
+# reference it, because it gets expanded as soon as the hook is executed
+# record is set in a send-hook instead
+
+# runiq@archlinux.us {{{
+# Gmail's SMTP server
+folder-hook =al \
+    'set from = runiq@archlinux.us \
+    spoolfile = "+al/inbox" \
+    trash = "+al/trash" \
+    record = "+al/sent" \
+    postponed = "+al/drafts"'
+
+mbox-hook =al "+al/archive"
+
+send-hook "~f ^runiq@archlinux.us$" \
+    'unset signature'
+send2-hook "~f ^runiq@archlinux.us$" \
+    'set realname = "Runiq" \
+    pgp_sign_as = "0xD6780B45"; \
+    unset copy'
+# }}}
+
+# dapatti@googlemail.com {{{
+folder-hook =gm \
+    'set from = dapatti@gmail.com \
+    spoolfile = "+gm/inbox" \
+    trash = "+gm/trash" \
+    record = "+gm/sent" \
+    postponed = "+gm/drafts"'
+
+mbox-hook =gm "+gm/archive"
+
+send-hook "~f ^dapatti@g(oogle)?mail.com$" \
+    'unset signature'
+send2-hook "~f ^dapatti@g(oogle)?mail.com$" \
+    'set pgp_sign_as = "0xD6780B45"; \
+    unset copy'
+# }}}
+
+# patrice.peterson@itz.uni-halle.de {{{
+folder-hook =itz \
+    'set from = patrice.peterson@itz.uni-halle.de \
+    spoolfile = "+itz/inbox" \
+    trash = "+itz/trash" \
+    record = "+itz/sent" \
+    postponed = "+itz/drafts"'
+
+mbox-hook =itz "+itz/archive"
+
+send-hook "~f ^patrice.peterson@itz.uni-halle.de$" \
+    'set signature = "${HOME}/.mail/itz/signature"'
+send2-hook "~f ^patrice.peterson@itz.uni-halle.de$" \
+    'set copy \
+    pgp_sign_as = "0x3B2EBD7F"'
+# }}}
+
+# patrice.peterson@dronox.de {{{
+folder-hook =dr \
+    'set from = patrice.peterson@dronox.de \
+    spoolfile = "+dr/inbox" \
+    trash = "+dr/trash" \
+    record = "+dr/sent" \
+    postponed = "+dr/drafts"'
+
+mbox-hook =dr "+dr/archive"
+
+send-hook "~f ^patrice.peterson@dronox.de$" \
+    'unset signature'
+send2-hook "~f ^patrice.peterson@dronox.de$" \
+    'set copy \
+    pgp_sign_as = "0xD6780B45"'
+# }}}
+

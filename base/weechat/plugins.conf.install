@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p "$HOME/.weechat"
+ln -frs plugins.conf "$HOME/.weechat/plugins.conf"

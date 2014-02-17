@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p "$HOME/.log"
+ln -frs msmtprc "$HOME/.msmtprc"

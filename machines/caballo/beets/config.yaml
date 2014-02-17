@@ -1,0 +1,100 @@
+# vim: set filetype=yaml foldmethod=marker:
+
+# Basic settings {{{
+directory: ~/snd/tagged
+library: ~/.cache/beets/library.db
+
+# Start with an empty directory and move music into it
+import:
+    move: no
+    write: yes
+    copy: yes
+
+paths:
+    default: $albumartist/%if{$year,($year) }$album%aunique{}/%if{$multidisc,Disc $disc_with_title/}$track $title
+    comp: $albumartist/%if{$year,($year) }$album%aunique{}/%if{$multidisc,Disc $disc_with_title/}$track $artist - $title
+    singleton: $albumartist/Non-album tracks/%if{$year,($year) }$title
+
+# Number discs separately for multi-disc releases
+per_disc_numbering: yes
+# }}}
+# Plugins {{{
+pluginpath:
+    - ~/.local/share/beets/plugins
+
+plugins:
+    - chroma
+    - convert
+    - discogs
+    - embedart
+    - fetchart
+    - fromfilename
+    - fuzzy
+    - info
+    - inline
+    - lastgenre
+    - lyrics
+    - mbsync
+    - mpdstats
+    - mpdupdate
+    - replaygain
+    - scrub
+# }}}
+# Plugin settings {{{
+acoustid: # {{{
+    apikey: QQCDqMTM
+# }}}
+convert: # {{{
+    # Don't embed album art on converting
+    embed: no
+    format: vorbis
+    # Don't automatically transcode higher-bitrate files during import
+    auto: no
+# }}}
+echonest: # {{{
+    # No automatic uploading upon failed identification of song
+    upload: no
+    # Use vorbis format for conversion
+    convert: yes
+    # For fingerprinting
+    codegen: /usr/bin/echoprint-codegen
+# }}}
+embedart: # {{{
+    # No automatic embedding, thanks
+    auto: no
+# }}}
+fuzzy: # {{{
+    threshold: 0.8
+    prefix: '~'
+# }}}
+item_fields: # {{{
+    multidisc: 1 if disctotal > 1 else 0
+    disc_with_title: |
+        retval = str(disc)
+        retval += (': ' + disctitle) if disctitle else ''
+        return retval
+# }}}
+lastgenre: # {{{
+    source: album
+    count: 3
+# }}}
+lyrics: # {{{
+    # No automatic fetching of lyrics, thanks
+    # auto: no
+    fallback: 'No lyrics found'
+# }}}
+mpd: # {{{
+    host: localhost
+    port: 6600
+# }}}
+mpdstats: # {{{
+    music_directory: ~/snd/tagged
+    0.0: stable only, 1.0: rolling only
+    0.75 a good compromise according to the devs
+    rating_mix: 0.75
+# }}}
+# scrub: # {{{
+    # No automatic scrubbing, thanks
+    # auto: no
+# }}}
+# }}}

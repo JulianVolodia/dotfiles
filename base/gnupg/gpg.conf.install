@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -pm 700 "$HOME/.gnupg"
+ln -frs gpg.conf "$HOME/.gnupg/gpg.conf"

@@ -1,0 +1,2 @@
+#!/bin/sh
+ln -frs profile "$HOME/.profile"

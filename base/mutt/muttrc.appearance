@@ -1,0 +1,120 @@
+# vim: set foldmethod=marker:
+
+# General appearance {{{
+# I don't need no help
+unset help
+# Number of index lines (one of them is the status bar)
+set pager_index_lines = 6
+# Number of lines of context
+set pager_context = 5
+# Scroll with indicator, because it's not 1986 anymore
+set menu_scroll
+# Don't jump to next message when I invoke <next-page> on the end of
+# a message
+set pager_stop
+# Wrap lines at word boundary
+set smart_wrap
+# Insert "--" line before signature
+set sig_dashes
+# Don't beep on errors, dammit
+unset beep
+# Don't beep on new mail
+unset beep_new
+# No ugly plus signs
+unset markers
+# Display of folders:
+set folder_format = "%t %2C %N %D %f"
+set status_chars = " ↹₩A"
+# - Mailbox name is always shown
+# - If the mailbox has an active limit, it is shown like this:
+#   <mailboxname>:[<limit>] <caught_in_limit>/<num_mails_in_mailbox>
+# - If the mailbox doesn't have an active limit but does have messages:
+#   <mailboxname>: <num_mails_in_mailbox>
+# - Additional fields are shown if they are relevant:
+#     - Number of flagged
+#     - Number of tagged
+#     - Number of postponed
+#     - Number of deleted
+#     - Number of unread
+# - Percentage of way through index is always shown
+set status_format = "─ %f%<m?:%<V?[%V] %M/%m ✉& %m ✉>%<u? %u ✨>%<d? %d ❌>%<F? %F ⚑>%<t? %t ⚹>%<p? %p ✒>> %>── %P ─"
+set compose_format = "─%?a? %a 📎 ─?%|─"
+# set pager_format = "-%Z- %C/%m: %-20.20n   %s%*  -- (%P)"
+set pager_format = "─ %C │%Z│ %-20.20n ─ %s %*─ %P ─"
+# }}}
+
+# Threads {{{
+# Make thread display narrower
+set narrow_tree
+# }}}
+
+# Sidebar options {{{
+# The delimiter string
+set sidebar_delim = "│"
+# Show sidebar by default
+unset sidebar_visible
+# Sidebar width
+set sidebar_width = 20
+# }}}
+
+# Index view {{{
+# Why the fuck do I have to set this manually?
+set locale = "${LANG}"
+set date_format = "%x %X"
+set index_format = "%5C │%Z│ %<[1d]?%-10[%X]&%<[2w]?%-10[%A]&%<[1y]?%-10[%e. %b]&%-10[%e. %b %y]>>> %-20.20F %?M?+& ? %s"
+
+unset uncollapse_jump
+# }}}
+
+# Headers {{{
+# Ignore all headers...
+ignore *
+# ...but show these...
+unignore from: to: cc: date: subject:
+# ...in this order
+hdr_order from: to: cc: date: subject:
+# }}}
+
+# Colors {{{
+color normal default default
+color attachment magenta default
+color indicator brightmagenta default
+color status brightgreen default
+# Blank line padding
+color tilde default default
+# Line wraps
+color markers default default
+color tree default default
+color index cyan default ~N
+color index red default ~D
+color index yellow default ~T
+color index green default ~F
+color signature black default
+# Headers
+color hdrdefault green default
+color header brightgreen default ^From:
+color header brightgreen default ^To:
+color header brightgreen default ^Subject:
+# Rainbow quoting, baby!
+color quoted cyan default
+color quoted1 green default
+color quoted2 yellow default
+color quoted3 red default
+color quoted4 magenta default
+color quoted5 blue default
+# GPG stuff
+color body green default "^gpg: Good signature from"
+color body brightred default "^gpg: Bad signature from"
+color body brightred default "^gpg: BAD signature from"
+color body brightred default "^gpg: Note: This key has expired!"
+color body brightyellow default	"^gpg: WARNING: This key is not certified with a trusted signature!"
+color body brightyellow default	"^gpg:          There is no indication that the signature belongs to the owner."
+color body brightyellow default	"^gpg: can't handle these multiple signatures"
+color body brightyellow default	"^gpg: signature verification suppressed"
+color body brightyellow default	"^gpg: invalid node with packet of type"
+# identifies email addresses
+color body green default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+# identifies URLs
+color body cyan default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+# }}}
+

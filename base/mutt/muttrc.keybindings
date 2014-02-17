@@ -1,0 +1,49 @@
+# vim: set foldmethod=marker:
+
+# Keybindings {{{
+bind index,pager N search-opposite
+bind index,pager . sidebar-next
+bind index,pager , sidebar-prev
+bind index,pager - sidebar-open
+bind index,pager B bounce-message
+macro index,pager y \
+    "<enter-command>toggle sidebar_visible<enter>" \
+    "Toggle sidebar visibility"
+
+bind index,compose gg first-entry
+# Shadows the get-attachment function
+bind index,compose G last-entry
+bind index,compose j next-entry
+bind index,compose k previous-entry
+bind index <tab> sync-mailbox
+bind index <space> collapse-thread
+# For "recall Postponed"
+bind index p recall-message
+
+bind pager j next-line
+bind pager k previous-line
+bind pager gg top
+bind pager G bottom
+bind pager R group-reply
+bind pager b previous-page
+
+bind compose p postpone-message
+# }}}
+# Macros {{{
+# Use lbdbq for queries
+set query_command = "lbdbq '%s'"
+
+macro generic,index,pager A \
+    "<shell-escape>abook<return>" \
+    "Start abook"
+
+macro index,pager a \
+    "<pipe-message>abook --add-email<return>" \
+    "Add sender to address book"
+
+macro index,pager \cu "<enter-command> set my_pdsave=\$pipe_decode<enter>\
+    <enter-command> unset pipe_decode<enter>\
+    <pipe-message>extract_url<enter>\
+    <enter-command> set pipe_decode=\$my_pdsave<enter>" \
+    "Get URLs"
+# }}}

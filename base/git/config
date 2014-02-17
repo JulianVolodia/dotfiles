@@ -1,0 +1,15 @@
+[merge]
+tool = splice
+
+[mergetool "splice"]
+cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+trustExitCode = true
+
+[core]
+pager = $PAGER
+
+[color]
+ui = true
+
+[push]
+default = simple

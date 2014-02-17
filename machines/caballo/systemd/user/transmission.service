@@ -1,0 +1,10 @@
+[Unit]
+Description=Transmission Daemon
+Wants=network.target
+
+[Service]
+ExecStart=/usr/bin/transmission-daemon -f
+Restart=on-abort
+
+[Install]
+WantedBy=common.target

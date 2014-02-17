@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p "$HOME/.weechat" "$HOME/.log/weechat"
+ln -frs logger.conf "$HOME/.weechat/logger.conf"

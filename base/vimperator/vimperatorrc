@@ -1,0 +1,110 @@
+" vim: set filetype=vim foldmethod=marker:
+
+" Settings {{{
+" Runtimepath
+set runtimepath="$XDG_CONFIG_HOME/vimperator"
+" Set default search engine
+set defsearch="ddg"
+set newtab=all
+" Mapleader for a few keybindings
+let mapleader=","
+
+" Appearance {{{
+" Molokai colorscheme, stolen from
+" github.com/vehk/dotfiles/blob/master/vimperator/colors/molokai.vimp
+colorscheme molokai
+" Show these in status line
+set status="input,history,location,bookmark,position"
+" Don't show scrollbars, we have the position marker for that
+set scrollbars=false
+" Only show tab line
+set gui="none,tabs"
+" }}}
+" Completion {{{
+" Completion menu can be activated on <tab> on command mode
+set autocomplete=false
+" Complete bookmarks and local files by default
+set complete="bf"
+" First complete to longest common substring, then fully complete next match
+set wildmode="list:longest,full"
+" }}}
+" Hints {{{
+" Match on labels only
+set hintinputs="label"
+set hintchars="abcdefghijklmnopqrstuvwxyz"
+" }}}
+" }}}
+" Keybindings {{{
+" Movement {{{
+" Move between tabs
+noremap <silent> H <c-p>
+noremap <silent> L <c-n>
+
+" Move forwards/backwards in history
+noremap <silent> J <c-i>
+noremap <silent> K <c-o>
+
+" Move between frames more easily
+nnoremap ö [
+vnoremap ö [
+nnoremap ä ]
+vnoremap ä ]
+" These have to be specified explicitly
+nnoremap öö [[
+nnoremap ää ]]
+
+" Easier :tabmove; wraps around
+nnoremap <silent> <c-h> :tabmove! -1<cr>
+nnoremap <silent> <c-l> :tabmove! +1<cr>
+
+" No need to move from homerow in command-line and insert mode
+cnoremap <silent> <c-h> <left>
+cnoremap <silent> <c-j> <down>
+cnoremap <silent> <c-k> <up>
+cnoremap <silent> <c-l> <right>
+inoremap <silent> <c-h> <left>
+inoremap <silent> <c-j> <down>
+inoremap <silent> <c-k> <up>
+inoremap <silent> <c-l> <right>
+
+" }}}
+" Tabgroup management {{{
+" Toggle tabgroups screen
+noremap <silent> <leader>tt <c-s-e>
+" List all tabgroups
+noremap <silent> <leader>tl :tabgroups<cr>
+" Create and switch to tabgroup
+noremap <leader>ta :tabgroups add<space>
+" Pull tab from tabgroup and switch to it
+noremap <leader>ty :tabgroups pulltab!<space>
+" Pull tab from tabgroup
+noremap <leader>tY :tabgroups pulltab<space>
+" Move current tab to new tabgroup and create it if necessary
+noremap <leader>tp :tabgroups pushtab!<space>
+" Remove a tabgroup
+noremap <leader>td :tabgroups remove<space>
+" Remove current tabgroup
+noremap <silent> <leader>tD :tabgroups remove<cr>
+" Switch to next tabgroup
+noremap <silent> <leader>ts :tabgroups 1switch<cr>
+noremap <silent> ]t :tabgroups 1switch<cr>
+" Switch to a tabgroup
+noremap <leader>tS :tabgroups switch<space>
+
+" }}}
+" Easier to reach
+noremap ü :
+" I'm used to the CtrlP Vim plugin, so…
+noremap <leader>b :buffer #
+" Toggle app tab for current tab
+noremap <leader>a :set invapptab<cr>
+" Toggle navbar display
+noremap <leader>N :set toolbars=invnavigation<cr>
+" Toggle tabbar display
+noremap <leader>T :set toolbars=invtabs<cr>
+" Additional reload bindings
+noremap <silent> <c-r> :reloadall<cr>
+noremap <silent> <c-s-r> :reloadall!<cr>
+" Open bookmarks
+noremap <silent> <f2> :bmarks<cr>
+" }}}

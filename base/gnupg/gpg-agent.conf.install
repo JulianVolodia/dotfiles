@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -pm 700 "$HOME/.gnupg"
+ln -frs gpg-agent.conf "$HOME/.gnupg/gpg-agent.conf"

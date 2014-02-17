@@ -1,0 +1,206 @@
+# vim: set foldmethod=marker:
+Sync All
+Create Both
+Expunge Both
+SyncState *
+
+# dr {{{
+# Account {{{
+IMAPAccount dr
+Host imap.strato.de
+User patrice.peterson@dronox.de
+PassCmd "python3 -c 'import keyring; print(keyring.get_password(\"mail://strato.de\", \"password\"))'"
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+# Doesn't support TLS 1.1 or v1.2
+
+IMAPStore dr-remote
+Account dr
+
+MaildirStore dr-local
+# The trailing slash is important
+Path ~/.mail/dr/
+Inbox ~/.mail/dr/inbox
+# }}}
+
+# Group {{{
+Channel dr-default
+Master :dr-remote:
+Slave :dr-local:
+Pattern * !sent !drafts !trash !spam !"Sent Items" !Drafts !Trash !Spam
+
+Channel dr-sent
+Master :dr-remote:"Sent Items"
+Slave :dr-local:"sent"
+
+Channel dr-drafts
+Master :dr-remote:"Drafts"
+Slave :dr-local:"drafts"
+
+Channel dr-trash
+Master :dr-remote:"Trash"
+Slave :dr-local:"trash"
+
+Channel dr-spam
+Master :dr-remote:"Spam"
+Slave :dr-local:"spam"
+
+group dr dr-default dr-sent dr-drafts dr-trash dr-spam
+# }}}
+# }}}
+
+# itz {{{
+# Account {{{
+IMAPAccount itz
+Host mail.uni-halle.de
+User ajaam
+PassCmd "python3 -c 'import keyring; print(keyring.get_password(\"mail://uni-halle.de\", \"password\"))'"
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+# Doesn't support TLS 1.1 or v1.2
+
+IMAPStore itz-remote
+Account itz
+
+MaildirStore itz-local
+Path ~/.mail/itz/
+Inbox ~/.mail/itz/inbox
+# }}}
+
+# Group {{{
+Channel itz-default
+Master :itz-remote:
+Slave :itz-local:
+Pattern * !archive !drafts !sent !spam !trash !Archive !Entw&APw-rfe !Gesendet !Junk !Papierkorb
+
+Channel itz-archive
+Master :itz-remote:"Archive"
+Slave :itz-local:"archive"
+
+Channel itz-drafts
+Master :itz-remote:"Entw&APw-rfe"
+Slave :itz-local:"drafts"
+
+Channel itz-sent
+Master :itz-remote:"Gesendet"
+Slave :itz-local:"sent"
+
+Channel itz-spam
+Master :itz-remote:"Junk"
+Slave :itz-local:"spam"
+
+Channel itz-trash
+Master :itz-remote:"Papierkorb"
+Slave :itz-local:"trash"
+
+group itz itz-default itz-archive itz-drafts itz-sent itz-spam itz-trash
+# }}}
+# }}}
+
+# gm {{{
+# Account {{{
+IMAPAccount gm
+Host imap.gmail.com
+User dapatti@gmail.com
+PassCmd "python3 -c 'import keyring; print(keyring.get_password(\"mail://gmail.com\", \"password\"))'"
+UseIMAPS yes
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+UseTLSv1 no
+UseTLSv1.1 no
+UseTLSv1.2 yes
+
+
+IMAPStore gm-remote
+Account gm
+
+MaildirStore gm-local
+Path ~/.mail/gm/
+Inbox ~/.mail/gm/inbox
+# }}}
+
+# Group {{{
+Channel gm-default
+Master :gm-remote:
+Slave :gm-local:
+Pattern * !sent !drafts !starred !trash !spam !archive !"[Google Mail]/Gesendet" !"[Google Mail]/Entw&APw-rfe" !"[Google Mail]/Markiert" !"[Google Mail]/Papierkorb" !"[Google Mail]/Spam" !"[Google Mail]/Alle Nachrichten"
+
+Channel gm-sent
+Master :gm-remote:"[Google Mail]/Gesendet"
+Slave :gm-local:sent
+
+Channel gm-drafts
+Master :gm-remote:"[Google Mail]/Entw&APw-rfe"
+Slave :gm-local:drafts
+
+Channel gm-starred
+Master :gm-remote:"[Google Mail]/Markiert"
+Slave :gm-local:starred
+
+Channel gm-trash
+Master :gm-remote:"[Google Mail]/Papierkorb"
+Slave :gm-local:trash
+
+Channel gm-spam
+Master :gm-remote:"[Google Mail]/Spam"
+Slave :gm-local:spam
+
+Channel gm-archive
+Master :gm-remote:"[Google Mail]/Alle Nachrichten"
+Slave :gm-local:archive
+
+Group gm gm-default gm-sent gm-drafts gm-starred gm-trash gm-spam gm-archive
+# }}}
+# }}}
+
+# al {{{
+# Account {{{
+IMAPAccount al
+Host imap.gmail.com
+User runiq@archlinux.us
+PassCmd "python3 -c 'import keyring; print(keyring.get_password(\"mail://archlinux.us\", \"password\"))'"
+UseIMAPS yes
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+UseTLSv1 no
+UseTLSv1.1 no
+UseTLSv1.2 yes
+
+
+IMAPStore al-remote
+Account al
+
+MaildirStore al-local
+Path ~/.mail/al/
+Inbox ~/.mail/al/inbox
+# }}}
+
+# Group {{{
+Channel al-default
+Master :al-remote:
+Slave :al-local:
+Pattern * !sent !drafts !starred !trash !spam !archive !"[Gmail]/Gesendet" !"[Gmail]/Entw&APw-rfe" !"[Gmail]/Markiert" !"[Gmail]/Papierkorb" !"[Gmail]/Spam" !"[Gmail]/Alle Nachrichten"
+
+Channel al-sent
+Master :al-remote:"[Gmail]/Gesendet"
+Slave :al-local:sent
+
+Channel al-drafts
+Master :al-remote:"[Gmail]/Entw&APw-rfe"
+Slave :al-local:drafts
+
+Channel al-starred
+Master :al-remote:"[Gmail]/Markiert"
+Slave :al-local:starred
+
+Channel al-trash
+Master :al-remote:"[Gmail]/Papierkorb"
+Slave :al-local:trash
+
+Channel al-spam
+Master :al-remote:"[Gmail]/Spam"
+Slave :al-local:spam
+
+Channel al-archive
+Master :al-remote:"[Gmail]/Alle Nachrichten"
+Slave :al-local:archive
+
+Group al al-default al-sent al-drafts al-starred al-trash al-spam al-archive
+# }}}
+# }}}

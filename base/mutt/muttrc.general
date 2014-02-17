@@ -1,0 +1,127 @@
+# vim: set foldmethod=marker:
+
+
+# SMTP options {{{
+# Include headers in editor window
+set edit_headers
+# Use this for sending mail
+set sendmail = "msmtpq"
+# Always put sendmail in the background without waiting
+set sendmail_wait = -1
+# If envelope_from_address is set, use it as the sender address
+set use_envelope_from
+# }}}
+
+# General options {{{
+# Don't add @<domain> when not specifying it
+unset use_domain
+
+# No, I do not want to automatically continue my drafts, thank you very much
+unset recall
+
+# Don't move read messages from spoolfile to archive
+unset move
+# Don't move flagged messages to archive
+set keep_flagged
+# Expunge deleted mails on closing/syncing a mailbox
+set delete = ask-yes
+
+# Automatically quote forwarded messages
+unset forward_quote
+
+# Sort messages by threads
+set sort = threads
+# Show oldest message first in threads
+set sort_aux = date-received
+# Only create threads from "In-Reply-To" and "References" fields
+set strict_threads
+# No delay when switching mailboxes
+set sleep_time = 0
+
+# Don't ask for confirmation when quitting
+set quit
+
+# Strip headers and eval mimes when piping
+set pipe_decode
+
+# Strip headers and eval mimes before searching
+set thorough_search
+
+# Mark new unread messages as old when leaving a mailbox
+# without reading them
+set mark_old
+
+# Use original receiver address for replies even when replying from a
+# different account
+set reverse_name
+# Let Mutt construct the From: header when sending messages
+set use_from
+
+# Include parent message(s) when replying
+set include
+
+# Ask for CC header before editing
+set askcc
+
+# Ask for BCC header before editing
+set askbcc
+
+# Save attachments too when creating records of sent messages
+set fcc_attach
+
+# Remove my own address from list of recipients when replying to a
+# message
+unset metoo
+
+# When replying to message sent by myself, actually address the
+# message to the recipients of that message
+unset reply_self
+
+# Skip to "compose" when replying and skip "subject" when forwarding
+set fast_reply
+
+# Quote header
+set attribution = "On %d, %n wrote:"
+
+# Forward header
+set forward_format = "Fwd: %s"
+
+# Indent string
+# Ignored when text_flowed is set
+set indent_str = "> "
+
+# Use format_flowed plaintext messages
+set text_flowed
+
+# No tilde at EOF
+unset tilde
+
+# Don't wait after calling subprocess
+unset wait_key
+
+# Don't ask for confirmation when appending messages to existing
+# mailbox
+unset confirmappend
+# }}}
+
+# System options {{{
+set spoolfile = "+itz/inbox"
+# Keep headers in cache file
+set header_cache = ${XDG_CACHE_HOME}/mutt/headers
+
+# Save tempfiles here
+set tmpdir = ${XDG_CACHE_HOME}/mutt/tmp
+
+# Use maildir as mailboxes format
+set mbox_type = "maildir"
+
+# Editor for writing mails
+# Allow format=flowed with formatoptions+=w
+set editor = "vim +':set textwidth=72' +':set wrap' +':set formatoptions+=w'"
+
+# Encoding
+set charset = "UTF8"
+
+# Command for printing
+set print_command = "lp"
+# }}}

@@ -1,0 +1,43 @@
+# Sort by date, newest last
+article-sort-order date-asc
+
+# Set article list format
+articlelist-format "%4i %f %D %6L  %?T?|%-17T|  ?%t"
+
+# Command to add bookmark
+# Later for Firefox sync server
+bookmark-cmd ""
+
+# Browser for opening stuff
+browser firefox
+
+#cache-file "$XDG_CACHE_HOME/newsbeuter/cache.db"
+cache-file "~/.cache/newsbeuter/cache.db"
+
+datetime-format %b %d
+
+# Use this to render HTML in the reader
+# Default: internal
+html-renderer w3m
+
+# Format for notifications
+# Allowed to use format strings
+notify-format "Newsbeuter: %n ungelesene Artikel in %f Feeds"
+notify-program notify-send
+
+# Download articles on startup
+prepopulate-query-feeds yes
+
+reload-threads 2
+
+# Folder for downloaded articles
+save-path "~/dls/doc/articles"
+
+# No help, thankyouverymuch
+show-keymap-hint no
+# Also, title on bottom
+swap-title-and-hints yes
+
+# Where newsbeuter looks for feed URLs
+# Newsbeuter doesn't support environment variables in its config file, but this is the default place anyway
+# urls-source "$XDG_CONFIG_HOME/newsbeuter/urls"

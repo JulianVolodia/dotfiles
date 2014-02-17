@@ -1,0 +1,11 @@
+#!/bin/sh
+
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket"
+
+# Need this in order to use GTK style for Qt
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+# XBK Settings
+XKBDIR="${XDG_CONFIG_HOME:-$HOME/.local/share}/xkb"
+XKBKEYMAPFILE="$XKBDIR/keymaps/default.xkb"
+xkbcomp -I"$XKBDIR" "$XKBKEYMAPFILE" "$DISPLAY"

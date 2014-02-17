@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p "$HOME/.weechat"
+ln -frs relay.conf "$HOME/.weechat/relay.conf"

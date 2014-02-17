@@ -1,0 +1,10 @@
+set folder="$HOME/.mail"
+
+source ${XDG_CONFIG_HOME}/mutt/muttrc.accounts
+source ${XDG_CONFIG_HOME}/mutt/muttrc.mailboxes
+source ${XDG_CONFIG_HOME}/mutt/muttrc.general
+source ${XDG_CONFIG_HOME}/mutt/muttrc.mime
+source ${XDG_CONFIG_HOME}/mutt/muttrc.keybindings
+source ${XDG_CONFIG_HOME}/mutt/muttrc.appearance
+source ${XDG_CONFIG_HOME}/mutt/muttrc.crypto
+source ${XDG_CONFIG_HOME}/mutt/muttrc.lists

@@ -1,0 +1,2 @@
+#!/bin/sh
+ln -frs extract_urlview "$HOME/.extract_urlview"

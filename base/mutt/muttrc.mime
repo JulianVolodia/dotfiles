@@ -1,0 +1,13 @@
+# MIME options
+
+# Display all possible filetypes in the pager
+set implicit_autoview
+
+# Determines which MIME types can be auto-viewed
+auto_view application/msword text/html
+
+# Priority of text types
+alternative_order text/plain text/enriched text/html
+
+# Path to mailcap file
+set mailcap_path = "${XDG_CONFIG_HOME}/mailcap"

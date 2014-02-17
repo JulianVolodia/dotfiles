@@ -1,0 +1,9 @@
+[Unit]
+Description=PyLoad
+Wants=network.target
+
+[Service]
+ExecStart=/usr/bin/pyLoadCore
+
+[Install]
+WantedBy=common.target

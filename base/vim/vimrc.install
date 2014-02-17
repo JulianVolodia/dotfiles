@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/vim/{bundle,swap,undo}"
+mkdir -p "$XDG_CACHE_HOME:-$HOME/.cache}/vim/unite"

@@ -1,0 +1,118 @@
+# Templates
+snippet lualatexpre "LuaLaTeX preamble" !b
+\documentclass{${1:class}}
+
+\usepackage{fontspec}
+
+\defaultfontfeatures{Ligatures=TeX}
+
+\author{${2:author}}
+\title{${3:title}}
+\date{${4:date}}
+
+\begin{document}
+	${0:${VISUAL}}
+\end{document}
+endsnippet
+
+# Environments
+snippet "b(egin)?" "begin{} / end{}" !br
+\begin{${1:env}}
+	${0:${VISUAL}}
+\end{$1}
+endsnippet
+
+snippet "fig(ure)?" "Figure" !br
+\begin{figure}[${1:htbp}]
+	\centering
+	\includegraphics{${0:${VISUAL}}}
+	\caption{${2:caption}}
+	\label{${3:label}}
+\end{figure}
+endsnippet
+
+snippet table "Table" !b
+\begin{table}[${1:htbp}]
+	\centering
+	${0:${VISUAL}}
+	\caption{${2:cap}}
+	\label{tab:${3:label}}
+\end{table}
+endsnippet
+
+snippet tabu "Tabu" !b
+\begin{tabu}${1:to,spread}{${2:preamble}}
+	${0:${VISUAL}}
+\end{tabu}
+endsnippet
+
+snippet "longt(abu)?" "Longtabu" !br
+\begin{longtabu}${1:to,spread}{${2:preamble}}
+	${0:${VISUAL}}
+\end{longtabu}
+endsnippet
+
+snippet "topr(ule)?" "Toprule" br
+\toprule
+endsnippet
+
+snippet "midr(ule)?" "Midrule" br
+\midrule
+endsnippet
+
+snippet "bottomr(ule)?" "Bottomrule" br
+\bottomrule
+endsnippet
+
+# Headings
+
+snippet part "Part" !b
+\part{${1:part name}}
+\label{prt:${2:${1/(\w+)|\W+/(?1:\L$0\E:_)/g}}}
+
+snippet cha "Chapter" !b
+\chapter{${1:chapter name}}
+\label{cha:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
+
+${0}
+endsnippet
+
+snippet sec "Section" !b
+\section{${1:section name}}
+\label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
+
+${0}
+endsnippet
+
+snippet sub "Subsection" !b
+\subsection{${1:subsection name}}
+\label{sub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
+
+${0}
+endsnippet
+
+snippet ssub "Subsubsection" !b
+\subsubsection{${1:subsubsection name}}
+\label{ssub:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
+
+${0}
+endsnippet
+
+snippet par "Paragraph!" !b
+\paragraph{${1:paragraph name}}
+\label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
+
+${0}
+endsnippet
+
+snippet spar "Subparagraph" !b
+\subparagraph{${1:subparagraph name}}
+\label{par:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/g}}}
+
+${0}
+endsnippet
+
+# Other
+snippet i "\item" !b
+\item $0
+endsnippet

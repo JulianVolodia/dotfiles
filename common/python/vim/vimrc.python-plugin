@@ -1,0 +1,2 @@
+            NeoBundle 'ivanov/vim-ipython'
+            NeoBundle 'tmhedberg/SimpylFold'

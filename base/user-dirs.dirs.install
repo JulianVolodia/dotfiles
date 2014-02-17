@@ -1,0 +1,2 @@
+#!/bin/sh
+mkdir -p "$HOME/{dls,doc,snd,img,vid,shr}"

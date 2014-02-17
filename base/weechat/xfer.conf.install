@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p "$HOME/dls" "$HOME/.weechat"
+ln -frs xfer.conf "$HOME/.weechat/xfer.conf"

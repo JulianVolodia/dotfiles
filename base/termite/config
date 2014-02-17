@@ -1,0 +1,75 @@
+# vim: set foldmethod=marker filetype=dosini:
+
+[options]
+resize_grip = trueu
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+visible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+font = Monospace 11
+scrollback_lines = 1000
+search_wrap = true
+#icon_name = terminal
+# "system", "on" or "off"
+cursor_blink = system
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# $BROWSER is used by default
+#browser = firefox
+
+# word characters used for word selection
+# (default if unset: all graphic non-punctuation/space characters)
+#word_chars = -A-Za-z0-9,./?%&#:_=+@~
+# set size hints for the window
+size_hints = false
+
+[colors]
+foreground = #707070
+foreground_bold = #707070
+foreground_dim = #aaaaaa
+background = #ffffff
+cursor = #32cd32
+
+# if unset, will reverse foreground and background
+highlight = #32cd32
+
+# colors from color0 to color254 can be set
+# Black + dark gray
+color0 = #000000
+color8 = #444444
+# Red + light red
+color1 = #b22222
+color9 = #e25822
+# Green + light green
+color2 = #adff2f
+color10 = #adff2f
+# Yellow + light yellow
+color3 = #da9100
+color11 = #ffcc33
+# Blue + light blue
+color4 = #007ba7
+color12 = #add8e6
+# magenta + light magenta
+color5 = #de3163
+color13 = #e52b50
+# Cyan + light cyan
+color6 = #87ceeb
+color14 = #f0ffff
+# Gray + white
+color7 = #aaaaaa
+color15 = #ffffff
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0

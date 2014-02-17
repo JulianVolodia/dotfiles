@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/weechat/scripts" "$HOME/.weechat"
+ln -frs script.conf "$HOME/.weechat/script.conf"

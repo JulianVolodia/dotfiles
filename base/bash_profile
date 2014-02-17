@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Source general login shell environment
+source "$HOME/.profile"
+# Source this only if the login shell is interactive
+[[ $- == *i* ]] && source "$HOME/.bashrc"

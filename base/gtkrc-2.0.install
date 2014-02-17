@@ -1,0 +1,2 @@
+#!/bin/sh
+ln -frs gtkrc-2.0 "$HOME/.gtkrc-2.0"

@@ -1,0 +1,9 @@
+# Ignore case for completion
+set completion-ignore-case on
+# Ellipsizes already completed part
+set completion-prefix-display-length 2
+# Show completions on first tab press
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+# Treat hyphen and underscore the same
+set completion-map-case on

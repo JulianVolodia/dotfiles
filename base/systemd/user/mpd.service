@@ -1,0 +1,10 @@
+[Unit]
+Description=Music Player Daemon
+Wants=sound.target
+
+[Service]
+ExecStart=/usr/bin/mpd --no-daemon
+Restart=on-abort
+
+[Install]
+WantedBy=common.target

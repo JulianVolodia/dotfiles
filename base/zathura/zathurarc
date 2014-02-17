@@ -1,0 +1,38 @@
+# Zathura configuration file
+# See man `man zathurarc'
+
+# Open document in fit-width mode by default
+set adjust-open "width"
+
+# One page per row by default
+set pages-per-row 1
+
+# Appearance
+set statusbar-padding 17
+set completion-bg "#121212"
+set completion-fg "#5f5f5f"
+set completion-group-bg "#5f5f5f"
+set completion-group-fg "#67d9f0"
+set completion-highlight-bg "#5f5f5f"
+set completion-highlight-fg "#fa2573"
+set default-bg "#121212"
+set default-fg "#d0d0d0"
+set inputbar-bg "#121212"
+set inputbar-fg "#d0d0d0"
+set notification-error-bg "#121212"
+set notification-error-fg "#fa2573"
+set notification-warning-bg "#121212"
+set notification-warning-fg "#fc951e"
+set tabbar-bg "#121212"
+set tabbar-fg "#d0d0d0"
+set tabbar-focus-bg "#a6e32d"
+set tabbar-focus-fg "#5f5f5f"
+set statusbar-bg "#121212"
+set statusbar-fg "#d0d0d0"
+set highlight-color "#fc951e"
+set highlight-active-color "#fa2573"
+set highlight-transparency 0.7
+set recolor-darkcolor "#121212"
+set recolor-lightcolor "#d0d0d0"
+
+set font "monospace normal 12"

@@ -1,0 +1,12 @@
+# What methods to use
+METHODS="m_inmail m_abook"
+
+# Sort output by real name
+SORT_OUTPUT="name"
+
+# Remove dupes
+KEEP_DUPES="no"
+
+# m_abook {{{
+ABOOK_FILES="$HOME/.abook/addressbook"
+# }}}
