@@ -1,2 +1,7 @@
 #!/bin/sh
-mkdir -p "$HOME/{dls,doc,snd,img,vid,shr}"
+mkdir -p "$HOME/dls" \
+    "$HOME/doc" \
+    "$HOME/snd" \
+    "$HOME/img" \
+    "$HOME/vid" \
+    "$HOME/shr"
