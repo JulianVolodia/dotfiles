@@ -554,8 +554,11 @@
     " Appearance {{{
         " Breaks lines in sane places
         set linebreak
+        " Show end of line characters
+        set list
+        set listchars=eol:↲,tab:⇄·,trail:␣,extends:⇢,precedes:⇠
         " Add this in front of line if line is too long for terminal
-        set showbreak=+
+        set showbreak=↪
 
         " At all times show at least this many lines over/under cursor
         set scrolloff=3
