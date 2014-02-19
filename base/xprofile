@@ -9,3 +9,9 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 XKBDIR="${XDG_CONFIG_HOME:-$HOME/.local/share}/xkb"
 XKBKEYMAPFILE="$XKBDIR/keymaps/default.xkb"
 xkbcomp -I"$XKBDIR" "$XKBKEYMAPFILE" "$DISPLAY"
+
+# Holy god yes xcape
+# Has left Control key act as Escape if it's not used as a modifier Now,
+# remember: Capslock is my control key, so this basically supercharges my left
+# pinkie
+xcape -e 'Control_L=Escape'
