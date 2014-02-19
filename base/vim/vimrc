@@ -57,6 +57,7 @@
             NeoBundle 'edsono/vim-matchit'
             NeoBundle 'tpope/vim-obsession'
             NeoBundle 'tpope/vim-repeat'
+            NeoBundle 'tpopt/vim-sensible'
             NeoBundle 'vim-scripts/ShowTrailingWhitespace'
             NeoBundle 'mhinz/vim-signify'
             NeoBundle 'sjl/splice.vim.git'
@@ -68,7 +69,6 @@
             NeoBundle 'SirVer/ultisnips'
             NeoBundle 'tpope/vim-unimpaired'
             NeoBundle 'Shougo/unite.vim'
-            NeoBundle 'tsukkee/unite-help'
             " Requires libclang 3.2 or higher, CMake, and Python headers
             NeoBundle 'Valloric/YouCompleteMe', {
             \   'build': {
@@ -429,9 +429,6 @@
                 noremap <silent> <leader>e :Unite -no-split -toggle -buffer-name=files -start-insert file_rec/async:!<cr>
                 " Open yank history
                 noremap <silent> <leader>y :Unite -no-split -toggle -buffer-name=yanks -resume history/yank<cr>
-                " Use unite for help files
-                " I fucking love this plugin
-                noremap <silent> <leader>h :Unite -no-split -toggle -buffer-name=help -resume -start-insert help<cr>
                 " Grep through current buffer
                 noremap <leader>g :Unite -no-split -toggle -buffer-name=grep grep:%::<cr>
                 " Grep through all open buffers
@@ -479,20 +476,12 @@
 
 " }}}
 " General {{{
-    syntax enable
     set background=light
     colorscheme summerfruit256
     " I want to use LaTeX as my main TeX flavor, thank you very much
     " Also, it's kind of a pain in the ass having to set this in .vimrc, though
     " that's probably just my ignorance speaking
     let g:tex_flavor = "latex"
-    " (Almost) disable the delay after keycodes
-    " Attention: Disabling the delay completely by setting noesckeys would disable
-    " the delay altogether, making the cursor and function keys nonfunctional in
-    " insert mode
-    " Attention: I use these dotfiles over SSH and a VPN, so setting this to a
-    " too-low value might cause problems. If it does, expect this value to change.
-    set ttimeoutlen=50
 
     " Files {{{
         " Don't create backup files
@@ -508,14 +497,8 @@
 
     " }}}
     " Indentation & linebreaks {{{
-        " 1 tab = 8 spaces
-        " Don’t fuck with this
-        set tabstop=8
         " Number of spaces to use for each step of (auto)indent
         set shiftwidth=4
-        " Tab at start of line inserts shiftwidth, tab anywhere else inserts
-        " tabstop/softtabstop
-        set smarttab
         " Replace tabs with spaces
         " To put actual tab, use <c-v><tab>
         set expandtab
@@ -526,8 +509,6 @@
 
     " }}}
     " Search {{{
-        " Show search hits during input
-        set incsearch
         " highlight search hits
         set hlsearch
         " Case-insensitive search unless there are capital letters in search expression
@@ -560,16 +541,10 @@
         " Add this in front of line if line is too long for terminal
         set showbreak=↪
 
-        " At all times show at least this many lines over/under cursor
-        set scrolloff=3
         " Not necessary because of powerline plugin
         set noshowmode
-        " Show current command in status line
-        set showcmd
         " Show tabline only if there is >1 tab
         set showtabline=1
-        " Always show status line
-        set laststatus=2
 
     " }}}
     " Mouse {{{
@@ -582,7 +557,6 @@
         " Show preview window
         " Complete to longest common substring
         set completeopt=menuone,preview,longest
-        set wildmenu
         set wildmode=longest:full,full
 
     " }}}
