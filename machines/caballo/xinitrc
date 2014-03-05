@@ -1,0 +1,3 @@
+sxhkd &
+compton &
+exec bspwm

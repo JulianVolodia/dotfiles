@@ -1,6 +1,5 @@
 # Location of task data
 # Note that environment vars are not expanded
-#data.location=$XDG_DATA_HOME/task
 
 nag=Es gibt Wichtigeres zu tun.
 

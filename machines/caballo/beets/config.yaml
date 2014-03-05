@@ -1,4 +1,4 @@
-# vim: set filetype=yaml foldmethod=marker:
+# vim: filetype=yaml foldmethod=marker:
 
 # Basic settings {{{
 directory: ~/snd/tagged

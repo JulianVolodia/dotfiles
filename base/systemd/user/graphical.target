@@ -1,4 +1,0 @@
-[Unit]
-Description=Services to be started only in presence of an X server
-# Requires=xorg.target
-Conflicts=console.target

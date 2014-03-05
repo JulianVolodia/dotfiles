@@ -7,4 +7,4 @@ ExecStart=/usr/bin/mpd --no-daemon
 Restart=on-abort
 
 [Install]
-WantedBy=common.target
+WantedBy=default.target

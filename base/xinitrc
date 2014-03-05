@@ -13,5 +13,3 @@ usermodmap="$HOME/.Xmodmap"
 # Set X-specific environment
 [ -f "$HOME/.xprofile" ] && . "$HOME/.xprofile"
 
-# Start WM/DE
-exec awesome

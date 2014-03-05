@@ -1,15 +1,13 @@
 #!/bin/sh
 
-[ -z $XDG_RUNTIME_DIR ] && export XDG_RUNTIME_DIR="/run/user/$(id -u)"
-export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket"
-# Start GNOME Keyring
-eval $(/usr/bin/gnome-keyring-daemon --components=pkcs11,secrets,ssh,gpg --start)
-export GNOME_KEYRING_CONTROL GPG_AGENT_INFO SSH_AUTH_SOCK
+#[ -z $XDG_RUNTIME_DIR ] && export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+#export DBUS_SESSION_BUS_ADDRESS="unix:path=$XDG_RUNTIME_DIR/dbus/user_bus_socket"
+## Start GNOME Keyring
+#eval $(/usr/bin/gnome-keyring-daemon --components=pkcs11,secrets,ssh,gpg --start)
+#export GNOME_KEYRING_CONTROL GPG_AGENT_INFO SSH_AUTH_SOCK
 
 export PATH="$HOME/.local/bin:$PATH"
-export PAGER=less
-export EDITOR=vim
-export BROWSER=firefox
+export PAGER=less EDITOR=vim BROWSER=firefox
 # Smart case searching as in Vim
 export LESS="-Ri"
 
