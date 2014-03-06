@@ -13,3 +13,6 @@ usermodmap="$HOME/.Xmodmap"
 # Set X-specific environment
 [ -f "$HOME/.xprofile" ] && . "$HOME/.xprofile"
 
+sxhkd &
+compton &
+exec bspwm
