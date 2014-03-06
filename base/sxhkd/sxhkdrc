@@ -2,71 +2,93 @@
 # bspwm hotkeys
 #
 
-super + alt + Escape
+# Exit bspwm
+super + shift + q
 	bspc quit
 
-super + w
+# Close window
+super + shift + x
 	bspc window -c
 
+# Next layout
 super + t
 	bspc desktop -l next
 
+# Adjust split ratios
 super + b
 	bspc desktop -B
 
+# Toggle floating and fullscreen
 super + {s,f}
 	bspc window -t {floating,fullscreen}
 
+# Focus previous window/desktop
 super + {grave,Tab}
 	bspc {window,desktop} -f last
 
+# Swap with previous window
 super + apostrophe
 	bspc window -s last
 
+# Select older/newer window
 super + {o,i}
 	bspc control --record-history off; \
 	bspc window {older,newer} -f; \
 	bspc control --record-history on
 
+# Switch with last manually split window
 super + y
 	bspc window -w last.manual
 
+# Select biggest window
 super + m
 	bspc window -s biggest
 
+# Select/swap with window in that direction
 super + {_,shift + }{h,j,k,l}
 	bspc window -{f,s} {left,down,up,right}
 
+# Select next/previous window
 super + {_,shift + }c
 	bspc window -f {next,prev}
 
+# Move through windows without changing focus position
 super + {comma,period}
 	bspc desktop -C {backward,forward}
 
+# Focus previous/next desktop
 super + bracket{left,right}
 	bspc desktop -f {prev,next}
 
+# Preselect window in that direction
 super + ctrl + {h,j,k,l}
 	bspc window -p {left,down,up,right}
 
+# Cancel preselection for current window/all windows on current desktop
 super + ctrl + {_,shift + }space
 	bspc {window -p cancel,desktop -c}
 
+# Increase current window size in that direction
 super + alt + {h,j,k,l}
 	bspc window -e {left -10,down +10,up -10,right +10}
 
+# Decrease window size in that direction
 super + alt + shift + {h,j,k,l}
 	bspc window -e {right -10,up +10,down -10,left +10}
 
+# Change split ratio for current window
 super + ctrl + {1-9}
 	bspc window -r 0.{1-9}
 
+# Focus desktop 1-0/move window to desktop 1-0
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,window -d} ^{1-9,10}
 
+# Focus window
 ~button1
 	bspc pointer -g focus
 
+# Move/resize window
 super + button{1-3}
 	bspc pointer -g {move,resize_side,resize_corner}
 
@@ -87,5 +109,5 @@ super + space
 	dmenu_run
 
 # make sxhkd reload its configuration files:
-super + Escape
+super + r
 	pkill -USR1 -x sxhkd
