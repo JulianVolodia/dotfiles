@@ -36,10 +36,6 @@ super + {o,i}
 	bspc window {older,newer} -f; \
 	bspc control --record-history on
 
-# Switch with last manually split window
-super + y
-	bspc window -w last.manual
-
 # Select biggest window
 super + m
 	bspc window -s biggest
@@ -102,10 +98,10 @@ super + @button{1-3}
 # wm independent hotkeys
 #
 
-super + Return
+super + y
 	termite
 
-super + space
+super + x
 	dmenu_run
 
 # make sxhkd reload its configuration files:
