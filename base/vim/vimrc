@@ -62,6 +62,7 @@
             NeoBundle 'mhinz/vim-signify'
             NeoBundle 'sjl/splice.vim.git'
             NeoBundle 'tpope/vim-surround'
+            NeoBundle 'baskerville/vim-sxhkdrc'
             NeoBundle 'scrooloose/syntastic'
             NeoBundle 'godlygeek/tabular'
             NeoBundle 'majutsushi/tagbar'
