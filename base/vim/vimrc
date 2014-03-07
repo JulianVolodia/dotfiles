@@ -57,7 +57,7 @@
             NeoBundle 'edsono/vim-matchit'
             NeoBundle 'tpope/vim-obsession'
             NeoBundle 'tpope/vim-repeat'
-            NeoBundle 'tpopt/vim-sensible'
+            NeoBundle 'tpope/vim-sensible'
             NeoBundle 'vim-scripts/ShowTrailingWhitespace'
             NeoBundle 'mhinz/vim-signify'
             NeoBundle 'sjl/splice.vim.git'
@@ -73,7 +73,7 @@
             " Requires libclang 3.2 or higher, CMake, and Python headers
             NeoBundle 'Valloric/YouCompleteMe', {
             \   'build': {
-            \       'unix': 'git submodule update --init --recursive; and ./install.sh --clang-completer --system-libclang'
+            \       'unix': './install.sh --clang-completer --system-libclang'
             \       }
             \ }
             !!@@latex-plugin
