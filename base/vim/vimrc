@@ -72,7 +72,7 @@
             " Requires libclang 3.2 or higher, CMake, and Python headers
             NeoBundle 'Valloric/YouCompleteMe', {
             \   'build': {
-            \       'unix': 'cmake -G "Unix Makefiles" -DUSE_SYSTEM_LIBCLANG=ON cpp; and make ycm_support_libs'
+            \       'unix': 'git submodule update --init --recursive; and ./install.sh --clang-completer --system-libclang'
             \       }
             \ }
             !!@@latex-plugin
