@@ -18,3 +18,6 @@ bspc config auto_alternate true
 bspc config auto_cancel true
 # Focus follows pointer
 bspc config focus_follows_pointer true
+
+# Fuck you, Java
+wmname LG3D

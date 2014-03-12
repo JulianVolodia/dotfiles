@@ -11,8 +11,8 @@ super + shift + x
 	bspc window -c
 
 # Next layout
-super + t
-	bspc desktop -l next
+super + {comma,period}t
+	bspc desktop -l {prev,next}
 
 # Balance current desktop
 super + b
@@ -22,17 +22,17 @@ super + b
 super + {s,d,f}
 	bspc window -t {floating,pseudo_tiled,fullscreen}
 
-# Focus previously focused window
-super + Tab
-	bspc window -f last
-
 # Swap window with biggest window on current desktop
-super + m
+super + Return
 	bspc window -s biggest
 
 # Focus/move window left/down/up/right
-super + {_,shift + }{h,j,k,l}
-	bspc window -{f,s} {left,down,up,right}
+super + {h,j,k,l}
+	bspc window -f {left,down,up,right}
+
+# Swap/transplant window left/down/up/right
+super + shift + {h,j,k,l}
+	bspc window -w {left,down,up,right} || bspc window -s {left,down,up,right}
 
 # Focus next/previous window
 super + {_,shift + }Tab
