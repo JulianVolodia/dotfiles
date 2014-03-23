@@ -1,4 +1,4 @@
 #!/bin/sh
 chmod 600 msmtprc
-mkdir -p "$HOME/.log"
+mkdir -p "$HOME/.log" "${XDG_CACHE_HOME:-$HOME/.cache}/msmtp/queue"
 ln -frs msmtprc "$HOME/.msmtprc"
