@@ -7,9 +7,9 @@ for monitor in $(bspc query -M); do
 done
 unset i
 
-bspc config border_width 4
-bspc config window_gap 12
-bspc config split_ratio 0.52
+bspc config border_width 6
+bspc config window_gap 8
+bspc config split_ratio 0.62
 # No borders/gaps in monocle mode
 bspc config borderless_monocle true
 bspc config gapless_monocle true
@@ -19,5 +19,5 @@ bspc config auto_cancel true
 # Focus follows pointer
 bspc config focus_follows_pointer true
 
-# Fuck you, Java
-wmname LG3D
+# Set wallpaper
+feh --bg-fill ${XDG_CONFIG_HOME:-$HOME/.config}/wallpaper
