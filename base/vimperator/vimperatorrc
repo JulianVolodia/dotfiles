@@ -10,13 +10,9 @@ set newtab=all
 let mapleader=","
 
 " Appearance {{{
-" Molokai colorscheme, stolen from
-" github.com/vehk/dotfiles/blob/master/vimperator/colors/molokai.vimp
-colorscheme molokai
+colorscheme iris
 " Show these in status line
-set status="input,history,location,bookmark,position"
-" Don't show scrollbars, we have the position marker for that
-set scrollbars=false
+set status="input,history,location,bookmark"
 " Only show tab line
 set gui="none,tabs"
 " }}}
