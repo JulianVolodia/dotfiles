@@ -78,7 +78,7 @@ super + y
 	termite
 
 super + x
-	dmenu_run
+	dmenu_run -fn 'Monospace 11'
 
 super + r
 	termite -e ranger
