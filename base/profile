@@ -31,3 +31,8 @@ export GVIMINIT='let $MYGVIMRC="$XDG_CONFIG_HOME/vim/gvimrc" | source $MYGVIMRC'
 export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"
 export TASKRC="$XDG_CONFIG_HOME/task/taskrc"
 export TEXMFHOME="$XDG_DATA_HOME/texmf"
+# Make Java applications look less ugly:
+# - Use system font settings
+# - Use native GTK look and feel
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+
