@@ -37,17 +37,20 @@ plugins:
     - mbsync
     - mpdstats
     - mpdupdate
+    - random
     - replaygain
     - scrub
+    - web
+    - zero
 # }}}
 # Plugin settings {{{
 acoustid: # {{{
     apikey: QQCDqMTM
 # }}}
 convert: # {{{
-    # Don't embed album art on converting
+    # Don't embed album art upon converting
     embed: no
-    format: vorbis
+    format: opus
     # Don't automatically transcode higher-bitrate files during import
     auto: no
 # }}}
@@ -55,16 +58,24 @@ echonest: # {{{
     # No automatic uploading upon failed identification of song
     upload: no
     # Use vorbis format for conversion
-    convert: yes
-    # For fingerprinting
+    convert: no
+    # For fingerprinting (faster than converting & uploading)
     codegen: /usr/bin/echoprint-codegen
 # }}}
 embedart: # {{{
     # No automatic embedding, thanks
     auto: no
 # }}}
+fetchart: # {{{
+    # Don't fall back on any image if no canonical image is found
+    # Canonical image names contain "cover", "front", "art", "album", or
+    # "folder"
+    cautious: true
+# }}}
 fuzzy: # {{{
+    # Query needs to match this fraction to hit
     threshold: 0.8
+    # Prefix to indicate a fuzzy query
     prefix: '~'
 # }}}
 item_fields: # {{{
@@ -88,13 +99,27 @@ mpd: # {{{
     port: 6600
 # }}}
 mpdstats: # {{{
+    # Only have to specify this if the MPD music directory is different
+    # from the Beets music directory
     music_directory: ~/snd/tagged
-    0.0: stable only, 1.0: rolling only
-    0.75 a good compromise according to the devs
+    # 0.0: stable only, 1.0: rolling only
+    # 0.75 a good compromise according to the devs
     rating_mix: 0.75
+# }}}
+replaygain: # {{{
+    # Calculate album gain as well
+    albumgain: yes
 # }}}
 # scrub: # {{{
     # No automatic scrubbing, thanks
     # auto: no
+# }}}
+web: # {{{
+    host: 127.0.0.1
+    port: 8837
+# }}}
+zero: # {{{
+    # Zero these fields unconditionally
+    fields: month day comments
 # }}}
 # }}}
