@@ -1,7 +1,7 @@
 # vim: set foldmethod=marker filetype=dosini:
 
 [options]
-resize_grip = trueu
+resize_grip = true
 scroll_on_output = false
 scroll_on_keystroke = true
 audible_bell = false
@@ -66,7 +66,7 @@ color7 = #aaaaaa
 color15 = #ffffff
 
 [hints]
-#font = Monospace 12
+font = Monospace 8
 #foreground = #dcdccc
 #background = #3f3f3f
 #padding = 2
