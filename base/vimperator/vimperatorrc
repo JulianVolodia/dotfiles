@@ -88,6 +88,12 @@ noremap <silent> ]t :tabgroups 1switch<cr>
 noremap <leader>tS :tabgroups switch<space>
 
 " }}}
+" Zooming {{{
+noremap + zi
+noremap - zo
+noremap <c-+> zI
+noremap <c--> zI
+" }}}
 " Easier to reach
 noremap ü :
 " I'm used to the CtrlP Vim plugin, so…
