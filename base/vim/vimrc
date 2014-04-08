@@ -613,6 +613,10 @@
         nmap ä ]
         vmap ä ]
         " OMG I love bracket commands
+        nmap öö [[
+        nmap ää ]]
+        vmap öö [[
+        vmap ää ]]
 
         " Easier movement between virtual lines
         noremap <silent> j gj
