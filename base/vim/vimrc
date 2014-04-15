@@ -78,6 +78,7 @@
             \ }
             !!@@latex-plugin
             !!@@python-plugin
+            !!@@as-plugin
             filetype plugin indent on
         " }}}
         " Configuration {{{
