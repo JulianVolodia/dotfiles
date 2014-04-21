@@ -51,7 +51,7 @@
 			NeoBundle 'vim-scripts/argtextobj.vim'
 			NeoBundle 'tpope/vim-commentary'
 			NeoBundle 'vim-scripts/DeleteTrailingWhitespace'
-			NeoBundle 'dag/vim-fish'
+			NeoBundle 'ajaam/vim-fish', 'shiftwidth-function'
 			NeoBundle 'tpope/vim-fugitive'
 			NeoBundle 'sjl/gundo.vim.git'
 			NeoBundle 'ludovicchabant/vim-lawrencium'
