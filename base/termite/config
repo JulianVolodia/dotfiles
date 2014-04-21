@@ -47,20 +47,20 @@ color8 = #444444
 color1 = #b22222
 color9 = #e25822
 # Green + light green
-color2 = #adff2f
-color10 = #adff2f
+color2 = #addf2f
+color10 = #addf2f
 # Yellow + light yellow
 color3 = #da9100
 color11 = #ffcc33
 # Blue + light blue
-color4 = #007ba7
-color12 = #add8e6
+color4 = #50b0f0
+color12 = #50b0f0
 # magenta + light magenta
 color5 = #de3163
 color13 = #e52b50
 # Cyan + light cyan
-color6 = #87ceeb
-color14 = #f0ffff
+color6 = #47ceeb
+color14 = #47ceeb
 # Gray + white
 color7 = #aaaaaa
 color15 = #ffffff
