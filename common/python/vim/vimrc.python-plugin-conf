@@ -1,0 +1,6 @@
+" Virtualenv {{{
+	" Location for virtualenvs
+	let g:virtualenv_directory = expand("$VIRTUALFISH_HOME")
+	" Autoactivate virtualenvs
+	let g:virtualenv_auto_activate = 1
+" }}}

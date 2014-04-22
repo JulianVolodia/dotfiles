@@ -1,2 +1,3 @@
-NeoBundle 'ivanov/vim-ipython'
 NeoBundle 'tmhedberg/SimpylFold'
+NeoBundle 'jmcantrell/vim-virtualenv'
+NeoBundle '5long/pytest-vim-compiler'
