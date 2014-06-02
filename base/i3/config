@@ -1,0 +1,35 @@
+set $mod Mod4
+set $terminal termite
+
+font pango:Consola Mono 11
+
+new_window pixel 6
+new_float pixel 6
+force_display_urgency_hint 500 ms
+
+floating_modifier $mod
+bindsym $mod+Shift+r restart
+bindsym $mod+y exec $terminal
+bindsym $mod+x exec j4-dmenu-desktop
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Space mode_toggle
+bindsym $mod+comma focus parent
+bindsym $mod+period focus child
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+
+bar {
+	status_command i3blocks
+	mode hide
+	position top
+	tray_output primary
+}

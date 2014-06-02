@@ -14,6 +14,5 @@ usermodmap="$HOME/.Xmodmap"
 [ -f "$HOME/.xprofile" ] && . "$HOME/.xprofile"
 
 start-pulseaudio-x11 &
-sxhkd &
-compton &
-exec bspwm
+compton --backend glx &
+exec i3

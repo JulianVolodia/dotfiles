@@ -5,7 +5,7 @@ eval $(/usr/bin/gnome-keyring-daemon --components=pkcs11,secrets,ssh,gpg --start
 export GNOME_KEYRING_CONTROL GPG_AGENT_INFO SSH_AUTH_SOCK
 
 export PATH="$HOME/.local/bin:$PATH"
-export PAGER=less EDITOR=vim BROWSER=firefox
+export PAGER=less EDITOR=vim BROWSER=firefox TERMINAL=termite
 # Smart case searching as in Vim
 export LESS="-Ri"
 
