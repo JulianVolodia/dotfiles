@@ -69,6 +69,10 @@ mode "↔" {
 }
 bindsym $mod+r mode "↔"
 
+bindsym XF86AudioMute exec pulseaudio-ctl mute
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
+
 bar {
 	status_command i3blocks -d "${XDG_DATA_HOME:-$HOME/.local/share}/i3blocks/bin"
 	mode hide
