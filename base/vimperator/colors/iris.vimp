@@ -5,4 +5,4 @@ hi! StatusLine none;
 sty! chrome://browser/content/browser.xul #TabsToolbar toolbarbutton[class^="scrollbutton"] {display: none !important;}
 sty! chrome://browser/content/browser.xul #TabsToolbar toolbarbutton[class^="tabs-alltabs"] {display: none !important;}
 sty! chrome://browser/content/browser.xul #TabsToolbar toolbarbutton[class^="tabs-newtab-button"] {display: none !important;}
-" " vim: set filetype=vim:
+" vim: set filetype=vim:
