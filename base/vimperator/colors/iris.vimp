@@ -2,29 +2,7 @@ hi! ContentSeparator border-top: 1px solid ThreeDShadow;
 hi! Normal none;
 hi! StatusLine none;
 
-sty! chrome://browser/content/browser.xul #navigator-toolbox {border-bottom: none !important;}
-sty! chrome://browser/content/browser.xul statuspanel {display:none !important;}
-sty! chrome://browser/content/browser.xul #TabsToolbar { height: 28px !important; padding-top: 1px !important; padding-left: 1px !important; background-image: none !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tab {min-height: 23px !important; margin-top: 2px !important; margin-right: 1px !important; padding: 0 2px 2px 3px !important; background-image: none !important; -moz-appearance: tab !important; color: ButtonText !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tab[pinned] + .tabbrowser-tab:not([pinned]), .tabbrowser-tab:not([pinned]):first-child {margin-left: 0 !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tab[pinned] {padding: 0 1px !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tab .tab-icon-image {margin-top: 0 !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tab[pinned] .tab-icon-image {margin-top: -1px !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tabs[positionpinnedtabs="true"] .tabbrowser-tab[pinned] .tab-icon-image {margin-top: 3px !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tab .tab-text {margin-top: 0 !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tab .tab-close-button {margin-bottom: -1px !important;}
-
-sty! chrome://browser/content/browser.xul .tabbrowser-tab[selected=true] {margin-top: 0 !important; min-height: 24px !important; padding: 0 3px 4px 5px !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tab[selected=true][pinned] {min-height: 22px !important; padding-right: 3px !important; padding-left: 3px !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tab[selected=true] .tab-icon-image {margin-top: 1px !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tab[selected=true][pinned] .tab-icon-image {margin-top: 1px !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tabs[positionpinnedtabs="true"] .tabbrowser-tab[selected=true][pinned] .tab-icon-image {margin-top: 4px !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tab[selected=true] .tab-text {margin-top: 1px !important;}
-sty! chrome://browser/content/browser.xul .tabbrowser-tab[selected=true] .tab-close-button {margin-bottom: -2px !important;}
-sty! chrome://browser/content/browser.xul #appmenu-toolbar-button {list-style-image: url("chrome://branding/content/icon16.png");}
-sty! chrome://browser/content/browser.xul #appmenu-toolbar-button > .toolbarbutton-text, #appmenu-toolbar-button > .toolbarbutton-menu-dropmarker {display: none !important;}
 sty! chrome://browser/content/browser.xul #TabsToolbar toolbarbutton[class^="scrollbutton"] {display: none !important;}
 sty! chrome://browser/content/browser.xul #TabsToolbar toolbarbutton[class^="tabs-alltabs"] {display: none !important;}
 sty! chrome://browser/content/browser.xul #TabsToolbar toolbarbutton[class^="tabs-newtab-button"] {display: none !important;}
-sty! chrome://browser/content/browser.xul #TabsToolbar:not(:-moz-lwtheme)::before {box-shadow: none !important;}
-" vim: set filetype=vim:
+" " vim: set filetype=vim:
