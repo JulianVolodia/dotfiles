@@ -81,6 +81,7 @@
 			!!@@latex-plugin
 			!!@@python-plugin
 			!!@@as-plugin
+			!!@@prose-plugin
 			" Load last so extensions are properly supported
 			NeoBundle 'bling/vim-airline'
 			filetype plugin indent on
@@ -468,7 +469,7 @@
 
 			" }}}
 			!!@@python-plugin-conf
-
+			!!@@prose-plugin-conf
 		" }}}
 
 	" }}}
