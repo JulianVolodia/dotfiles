@@ -1,0 +1,5 @@
+#!/bin/sh
+
+mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/vdirsyncer/status"
+mkdir -p "$HOME/.contacts"
+mkdir -p "$HOME/.calendars"
