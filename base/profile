@@ -1,8 +1,7 @@
 #!/bin/sh
 
 ## Start GNOME Keyring
-eval $(/usr/bin/gnome-keyring-daemon --components=pkcs11,secrets,ssh,gpg --start)
-export GNOME_KEYRING_CONTROL GPG_AGENT_INFO SSH_AUTH_SOCK
+export $(/usr/bin/gnome-keyring-daemon --start)
 
 export PATH="$HOME/.local/bin:$PATH"
 export PAGER=less EDITOR=vim BROWSER=firefox TERMINAL=termite
@@ -35,4 +34,4 @@ export TEXMFHOME="$XDG_DATA_HOME/texmf"
 # - Use system font settings
 # - Use native GTK look and feel
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
-
+export VDIRSYNCER_CONFIG="$XDG_CONFIG_HOME/vdirsyncer/config"
