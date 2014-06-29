@@ -77,10 +77,10 @@
 					\ 'unix': './install.sh --clang-completer --system-libclang'
 					\ }
 				\ }
+			NeoBundle 'junegunn/goyo.vim'
 			!!@@latex-plugin
 			!!@@python-plugin
 			!!@@as-plugin
-			!!@@prose-plugin
 			" Load last so extensions are properly supported
 			NeoBundle 'bling/vim-airline'
 			filetype plugin indent on
@@ -199,6 +199,29 @@
 					" Open commit buffer (or status buffer if there's nothing staged)
 					noremap <silent> <buffer> <leader>vC :Gcommit<cr>
 				endfunction
+			" }}}
+			" Goyo.vim {{{
+				" When using :q in Goyo mode, route it through to Vim
+				" (and actually close the buffer)
+				function! Goyo_before() " {{{
+					let b:quitting = 0
+					let b:quitting_bang = 0
+					autocmd QuitPre <buffer> let b:quitting = 1
+					cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+				endfunction " }}}
+
+				function! Goyo_after() " {{{
+					" Quit Vim if this is the only remaining buffer
+					if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+						if b:quitting_bang
+							qa!
+						else
+							qa
+						endif
+					endif
+				endfunction " }}}
+				let g:goyo_callbacks = [function('Goyo_before'), function('Goyo_after')]
+
 			" }}}
 			" Gundo {{{
 				" Toggles the Gundo windows
@@ -468,7 +491,6 @@
 
 			" }}}
 			!!@@python-plugin-conf
-			!!@@prose-plugin-conf
 		" }}}
 
 	" }}}
