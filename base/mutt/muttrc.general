@@ -116,8 +116,7 @@ set tmpdir = ${XDG_CACHE_HOME}/mutt/tmp
 set mbox_type = "maildir"
 
 # Editor for writing mails
-# Allow format=flowed with formatoptions+=w
-set editor = "vim +':set textwidth=72' +':set wrap' +':set formatoptions+=w'"
+set editor = "vim -c Goyo"
 
 # Encoding
 set charset = "UTF8"
