@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:Consola Mono 11
+font pango:monospace 11
 
 new_window pixel 6
 new_float pixel 6
