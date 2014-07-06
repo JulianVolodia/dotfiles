@@ -474,6 +474,7 @@
 				\ 'cpp': 1,
 				\ 'python': 1,
 				\ 'tex': 1,
+				\ 'ledger': 1,
 				\ }
 			" Use '{' to trigger semantic completion for LaTeX, using
 			" LaTeX-Box's omnicomplete function
