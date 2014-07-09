@@ -28,6 +28,7 @@ bind pager R group-reply
 bind pager b previous-page
 
 bind compose p postpone-message
+bind compose P pgp-menu
 # }}}
 # Macros {{{
 # Use lbdbq for queries
@@ -46,4 +47,7 @@ macro index,pager \cu "<enter-command> set my_pdsave=\$pipe_decode<enter>\
     <pipe-message>extract_url<enter>\
     <enter-command> set pipe_decode=\$my_pdsave<enter>" \
     "Get URLs"
+
+# My mutt is German, so yeah
+macro compose Y  Puy "Send mail without GPG"
 # }}}
