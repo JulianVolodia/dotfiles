@@ -4,7 +4,7 @@
 export $(/usr/bin/gnome-keyring-daemon --start)
 
 export PATH="$HOME/.local/bin:$PATH"
-export PAGER=less EDITOR=vim BROWSER=firefox TERMINAL=termite
+export PAGER=less EDITOR=vim BROWSER=firefox
 # Smart case searching as in Vim
 export LESS="-Ri"
 

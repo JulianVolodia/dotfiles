@@ -1,0 +1,33 @@
+#!/bin/sh
+
+bspc config border_width 4
+bspc config window_gap 8
+bspc config split_ratio 0.62
+# No borders/gaps in monocle mode
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+# Make presel toggleable
+bspc config auto_alternate true
+bspc config auto_cancel true
+# Focus follows pointer
+bspc config focus_follows_pointer true
+i=1
+for monitor in $(bspc query -M); do
+	bspc monitor $monitor -n "$i" -d 1 2 3 4 5 6
+	let i++
+done
+unset i
+
+
+# Set wallpaper
+feh --bg-fill ${XDG_CONFIG_HOME:-$HOME/.config}/wallpaper &
+scripts_dir="${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/scripts"
+# Run panel
+"$scripts_dir/panel" &
+# Adopt potential orphans from last time around
+bspc control --adopt-orphans
+if [ -e "$BSPWM_TREE" ] ; then
+	bspc restore -T "$BSPWM_TREE" -H "$BSPWM_HISTORY" -S "$BSPWM_STACK"
+	rm "$BSPWM_TREE" "$BSPWM_HISTORY" "$BSPWM_STACK"
+fi
+

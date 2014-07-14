@@ -13,6 +13,9 @@ usermodmap="$HOME/.Xmodmap"
 # Set X-specific environment
 [ -f "$HOME/.xprofile" ] && . "$HOME/.xprofile"
 
+!!@@
+
 start-pulseaudio-x11 &
-compton --backend glx &
-exec i3
+sxhkd &
+compton &
+exec ${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/scripts/wm

@@ -10,6 +10,15 @@ XKBDIR="${XDG_CONFIG_HOME:-$HOME/.local/share}/xkb"
 XKBKEYMAPFILE="$XKBDIR/keymaps/default.xkb"
 xkbcomp -I"$XKBDIR" "$XKBKEYMAPFILE" "$DISPLAY"
 
+export TERMINAL=termite
+
+# For bspwm loop
+export BSPWM_TREE="${XDG_CACHE_HOME:-$HOME/.cache}/bspwm/bspwm.tree"
+export BSPWM_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/bspwm/bspwm.history"
+export BSPWM_STACK="${XDG_CACHE_HOME:-$HOME/.cache}/bspwm/bspwm.stack"
+export PANEL_FIFO="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/bspwm/panel-fifo"
+export PANEL_HEIGHT=24
+
 # Holy god yes xcape
 # Has left Control key act as Escape if it's not used as a modifier Now,
 # remember: Capslock is my control key, so this basically supercharges my left

@@ -1,0 +1,93 @@
+# Reload/quit bspwm and panel
+super + ctrl + {_,shift + }q
+	{bspc query -T > "$BSPWM_TREE"; \
+		bspc query -H > "$BSPWM_HISTORY"; \
+		pkill -x panel; \
+		pkill -USR1 -x sxhkd; \
+		bspc quit,\
+	 bspc quit 1}
+
+# Close window
+super + shift + x
+	bspc window -c
+
+# Next layout
+super + {comma,period}
+	bspc desktop -l {prev,next}
+
+# Balance current desktop
+super + b
+	bspc desktop -B
+
+# Toggle floating/pseudotile/fullscreen
+super + {s,d,f}
+	bspc window -t {floating,pseudo_tiled,fullscreen}
+
+# Swap window with biggest window on current desktop
+super + Return
+	bspc window -s biggest
+
+# Focus/move window left/down/up/right
+super + {_,shift + }{h,j,k,l}
+	bspc window {-f,-s} {left,down,up,right}
+
+# Focus next/previous window
+super + {_,shift + }Tab
+	bspc window -f {next,prev}
+
+# Presel left/down/up/right
+super + ctrl + {h,j,k,l}
+	bspc window -p {left,down,up,right}
+
+# Increase window size to the left/down/up/right
+super + alt + {h,j,k,l}
+	bspc window -e {left -5,down +40,up -40,right +40}
+
+# Decrease window size to the left/down/up/right
+super + alt + shift + {h,j,k,l}
+	bspc window -e {right -40,up +40,down -40,left +40}
+
+# Set split ratio
+super + ctrl + {1-9}
+	bspc window -r 0.{1-9}
+
+# Focus/move to desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,window -d} \^{1-9,10}
+
+# Move/resize window
+super + button{1-3}
+	bspc pointer -g {move,resize_side,resize_corner}
+
+# Required for above
+super + !button{1-3}
+	bspc pointer -t %i %i
+
+# Required for above
+super + @button{1-3}
+	bspc pointer -u
+
+#
+# wm independent hotkeys
+#
+
+super + y
+	$TERMINAL
+
+super + x
+	j4-dmenu-desktop
+
+super + c
+	$TERMINAL -e ranger
+
+# Mute source
+shift + XF86AudioMute
+	pulseaudio-ctl mute-input
+
+# Mute sink
+XF86AudioMute
+	pulseaudio-ctl mute
+
+# Volume
+XF86Audio{Lower,Raise}Volume
+	pulseaudio-ctl {down,up}
