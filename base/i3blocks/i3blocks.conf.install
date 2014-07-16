@@ -1,4 +1,0 @@
-#!/bin/sh
-ln -frs i3blocks.conf "$HOME/.i3blocks.conf"
-mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/i3blocks"
-ln -frs bin "${XDG_DATA_HOME:-$HOME/.local/share}/i3blocks/bin"
