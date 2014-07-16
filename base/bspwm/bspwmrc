@@ -11,7 +11,7 @@ bspc config auto_alternate true
 bspc config auto_cancel true
 # Focus follows pointer
 bspc config focus_follows_pointer true
-i=1
+i=0
 for monitor in $(bspc query -M); do
 	bspc monitor $monitor -n "$i" -d 1 2 3 4 5 6
 	let i++
@@ -30,4 +30,3 @@ if [ -e "$BSPWM_TREE" ] ; then
 	bspc restore -T "$BSPWM_TREE" -H "$BSPWM_HISTORY" -S "$BSPWM_STACK"
 	rm "$BSPWM_TREE" "$BSPWM_HISTORY" "$BSPWM_STACK"
 fi
-

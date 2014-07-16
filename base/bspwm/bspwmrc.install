@@ -1,2 +1,3 @@
 #!/bin/sh
 chmod +x bspwmrc
+mkdir -p "${XDG_CACHE_HOME:-$HOME/.cache}/bspwm"

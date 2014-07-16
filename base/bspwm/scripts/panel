@@ -15,10 +15,10 @@ bspc config top_padding $PANEL_HEIGHT
 
 bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
-date +'S%a %H:%M' > "$PANEL_FIFO" &
+clock -sf 'S%a %H:%M' > "$PANEL_FIFO" &
 
 source "${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/panel-colors"
 scripts_dir="${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/scripts"
 
-cat "$PANEL_FIFO" | "$scripts_dir/panel_bar" | bar-aint-recursive -g x$PANEL_HEIGHT -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
+"$scripts_dir/panel_bar" < "$PANEL_FIFO" | bar-aint-recursive -g x$PANEL_HEIGHT -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
 wait

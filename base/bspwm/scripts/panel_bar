@@ -3,6 +3,8 @@
 source "${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/panel-colors"
 
 while read -r line ; do
+	output=""
+	focused_output=""
 	case $line in
 		S*)
 			# clock output
@@ -21,39 +23,48 @@ while read -r line ; do
 				item=$1
 				name=${item#?}
 				case $item in
+					M*)
+						output="$name"
+						focused_output="$name"
+						wm_infos="$wm_infos%{S$output}"
+						;;
+					m*)
+						output="$name"
+						wm_infos="$wm_infos%{S$output}"
+						;;
 					O*)
 						# focused occupied desktop
-						wm_infos="$wm_infos%{F$COLOR_FOCUSED_OCCUPIED_FG}%{B$COLOR_FOCUSED_OCCUPIED_BG}%{U$COLOR_FOREGROUND}%{+o} ${name} %{-o}"
+						wm_infos="$wm_infos%{F$COLOR_FOCUSED_OCCUPIED_FG}%{B$COLOR_FOCUSED_OCCUPIED_BG}%{U$COLOR_FOREGROUND}%{+o} %{A:bspc desktop -f $name:}${name}%{A} %{-o}"
 						;;
 					F*)
 						# focused free desktop
-						wm_infos="$wm_infos%{F$COLOR_FOCUSED_FREE_FG}%{B$COLOR_FOCUSED_FREE_BG}%{U$COLOR_FOREGROUND}%{+o} ${name} %{-o}"
+						wm_infos="$wm_infos%{F$COLOR_FOCUSED_FREE_FG}%{B$COLOR_FOCUSED_FREE_BG}%{U$COLOR_FOREGROUND}%{+o} %{A:bspc desktop -f $name:}${name}%{A} %{-o}"
 						;;
 					U*)
 						# focused urgent desktop
-						wm_infos="$wm_infos%{F$COLOR_FOCUSED_URGENT_FG}%{B$COLOR_FOCUSED_URGENT_BG}%{U$COLOR_FOREGROUND}%{+o} ${name} %{-o}"
+						wm_infos="$wm_infos%{F$COLOR_FOCUSED_URGENT_FG}%{B$COLOR_FOCUSED_URGENT_BG}%{U$COLOR_FOREGROUND}%{+o} %{A:bspc desktop -f $name:}${name}%{A} %{-o}"
 						;;
 					o*)
 						# occupied desktop
-						wm_infos="$wm_infos%{F$COLOR_OCCUPIED_FG}%{B$COLOR_OCCUPIED_BG} ${name} "
+						wm_infos="$wm_infos%{F$COLOR_OCCUPIED_FG}%{B$COLOR_OCCUPIED_BG} %{A:bspc desktop -f $name:}${name}%{A} "
 						;;
-					f*)
-						# free desktop
-						wm_infos="$wm_infos%{F$COLOR_FREE_FG}%{B$COLOR_FREE_BG} ${name} "
-						;;
+					# f*)
+					# 	# free desktop
+					# 	wm_infos="$wm_infos%{F$COLOR_FREE_FG}%{B$COLOR_FREE_BG} %{A:bspc desktop -f $name:}${name}%{A} "
+					# 	;;
 					u*)
 						# urgent desktop
-						wm_infos="$wm_infos%{F$COLOR_URGENT_FG}%{B$COLOR_URGENT_BG} ${name} "
+						wm_infos="$wm_infos%{F$COLOR_URGENT_FG}%{B$COLOR_URGENT_BG} %{A:bspc desktop -f $name:}${name}%{A} "
 						;;
 					L*)
 						# layout
 						layout=$(printf "%s" "${name}" | sed 's/\(.\).*/\U\1/')
-						wm_infos="$wm_infos%{F$COLOR_LAYOUT_FG}%{B$COLOR_LAYOUT_BG} $layout "
+						wm_infos="$wm_infos%{F$COLOR_LAYOUT_FG}%{B$COLOR_LAYOUT_BG} %{A:bspc desktop -l next:}$layout%{A} "
 						;;
 				esac
 				shift
 			done
 			;;
 	esac
-	printf "%%{l} %s%%{c}%s%%{r}%s \n" "$wm_infos" "$title" "$sys_infos"
+	printf "%%{l}%s%%{c}%s%%{r}%s\n" "$wm_infos" "$title" "$sys_infos"
 done

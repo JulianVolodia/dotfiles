@@ -2,6 +2,7 @@
 super + ctrl + {_,shift + }q
 	{bspc query -T > "$BSPWM_TREE"; \
 		bspc query -H > "$BSPWM_HISTORY"; \
+		bspc query -S > "$BSPWM_STACK"; \
 		pkill -x panel; \
 		pkill -USR1 -x sxhkd; \
 		bspc quit,\
@@ -41,7 +42,7 @@ super + ctrl + {h,j,k,l}
 
 # Increase window size to the left/down/up/right
 super + alt + {h,j,k,l}
-	bspc window -e {left -5,down +40,up -40,right +40}
+	bspc window -e {left -40,down +40,up -40,right +40}
 
 # Decrease window size to the left/down/up/right
 super + alt + shift + {h,j,k,l}
@@ -53,7 +54,7 @@ super + ctrl + {1-9}
 
 # Focus/move to desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,window -d} \^{1-9,10}
+	bspc {desktop -f,window -d} focused:\^{1-9,10}
 
 # Move/resize window
 super + button{1-3}
