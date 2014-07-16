@@ -11,6 +11,8 @@ bspc config auto_alternate true
 bspc config auto_cancel true
 # Focus follows pointer
 bspc config focus_follows_pointer true
+# Pointer follows monitor
+bspc config pointer_follows_monitor true
 i=0
 for monitor in $(bspc query -M); do
 	bspc monitor $monitor -n "$i" -d 1 2 3 4 5 6
