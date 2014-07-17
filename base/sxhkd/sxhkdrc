@@ -95,10 +95,6 @@ super + x
 super + c
 	$TERMINAL -e ranger
 
-# Mute source
-shift + XF86AudioMute
-	pulseaudio-ctl mute-input
-
 # Mute sink
 XF86AudioMute
 	ponymix toggle
@@ -106,3 +102,7 @@ XF86AudioMute
 # Volume
 XF86Audio{Lower,Raise}Volume
 	ponymix {decrease,increase}
+
+# Prev/next/Play
+Xf86Audio{Prev,Play,Next}
+	mpc {prev,toggle,next}
