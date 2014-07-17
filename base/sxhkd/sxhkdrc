@@ -28,13 +28,15 @@ super + {s,d,f}
 super + Return
 	bspc window -s biggest
 
-# Focus window left/down/up/right
+# Focus window left/down/up/right (moves focus across outputs)
 super + {h,j,k,l}
-	bspc window -f {left,down,up,right}
+	dir={left,down,up,right}; \
+	bspc window -f $dir || bspc monitor -f $dir
 
-# Move window left/down/up/right
+# Move window left/down/up/right (moves window to empty outputs)
 super + shift + {h,j,k,l}
-	bspc window -s {left,down,up,right} -f
+	dir={left,down,up,right}; \
+	bspc window -s $dir -f || bspc window -m $dir -f
 
 # Focus next/previous window
 super + {_,shift + }Tab
