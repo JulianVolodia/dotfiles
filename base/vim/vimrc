@@ -645,6 +645,12 @@
 		vmap öö [[
 		vmap ää ]]
 
+		" MOAR BRACKITS DAMMET
+		nnoremap Ö (
+		vnoremap Ä )
+		nnoremap <c-ö> {
+		nnoremap <c-ä> }
+
 		" Easier movement between virtual lines
 		noremap <silent> j gj
 		noremap <silent> k gk
