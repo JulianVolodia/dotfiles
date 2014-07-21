@@ -24,9 +24,9 @@ super + b
 super + {s,d,f}
 	bspc window -t {floating,pseudo_tiled,fullscreen}
 
-# Swap window with biggest window on current desktop
+# Transplant focused window onto last preselection
 super + Return
-	bspc window -s biggest
+	bspc window -w last.manual
 
 # Focus window left/down/up/right (moves focus across outputs)
 super + {h,j,k,l}
