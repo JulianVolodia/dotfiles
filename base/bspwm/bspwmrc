@@ -21,7 +21,6 @@ unset i
 
 
 # Set wallpaper
-feh --bg-fill ${XDG_CONFIG_HOME:-$HOME/.config}/wallpaper &
 scripts_dir="${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/scripts"
 # Run panel
 "$scripts_dir/panel" &

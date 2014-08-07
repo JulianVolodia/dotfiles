@@ -1,5 +1,17 @@
 #!/bin/sh
 
+# For bspwm loop
+export BSPWM_TREE="${XDG_CACHE_HOME:-$HOME/.cache}/bspwm/bspwm.tree"
+export BSPWM_HISTORY="${XDG_CACHE_HOME:-$HOME/.cache}/bspwm/bspwm.history"
+export BSPWM_STACK="${XDG_CACHE_HOME:-$HOME/.cache}/bspwm/bspwm.stack"
+export BSPWM_SOCKET="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/bspwm/bspwm.socket"
+export PANEL_FIFO="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/bspwm/panel-fifo"
+export PANEL_HEIGHT=24
+
+mkdir -p "$(dirname "$BSPWM_SOCKET")"
+[[ -e "$BSPWM_SOCKET" ]] && rm "$BSPWM_SOCKET"
+sxhkd &
+
 while true; do
 	bspwm || break
 done

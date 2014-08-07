@@ -15,7 +15,7 @@ usermodmap="$HOME/.Xmodmap"
 
 !!@@
 
+feh --bg-fill ${XDG_CONFIG_HOME:-$HOME/.config}/wallpaper &
 start-pulseaudio-x11 &
-sxhkd &
 compton &
 exec ${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/scripts/wm
