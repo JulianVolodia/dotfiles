@@ -104,5 +104,5 @@ XF86Audio{Lower,Raise}Volume
 	ponymix {decrease,increase}
 
 # Prev/next/Play
-Xf86Audio{Prev,Play,Next}
+XF86Audio{Prev,Play,Next}
 	mpc {prev,toggle,next}
