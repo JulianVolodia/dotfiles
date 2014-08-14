@@ -101,7 +101,7 @@ XF86AudioMute
 
 # Volume
 XF86Audio{Lower,Raise}Volume
-	ponymix {decrease,increase}
+	ponymix {decrease,increase} 5
 
 # Prev/next/Play
 XF86Audio{Prev,Play,Next}
