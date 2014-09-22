@@ -29,7 +29,7 @@ function prompt_pwd --description "Print the current working directory, shortene
 			if not set -q curdir_color
 				set curdir_color "$__fish_prompt_repo"
 			end
-			set resdir "$curdir_color$curdir_shortened$__fish_prompt_normal±$__fish_prompt_repo"(git rev-parse --abbrev-ref HEAD)"$trailing_delim$resdir"
+			set resdir "$curdir_color$curdir_shortened$__fish_prompt_normal±$__fish_prompt_repo"(git rev-parse --abbrev-ref HEAD ^ /dev/null)"$trailing_delim$resdir"
 		# No repos/virtualenvs
 		else
 			set resdir "$__fish_prompt_cwd$curdir_shortened$trailing_delim$resdir"
