@@ -473,4 +473,6 @@ c.InlineBackend.figure_format = 'svg'
 # c.NotebookManager.save_script = False
 
 # The directory to use for notebooks.
-c.NotebookManager.notebook_dir = '/home/runiq'
+from os import getenv
+from os.path import join
+c.NotebookManager.notebook_dir = join(getenv('HOME'), 'prj')
