@@ -24,6 +24,7 @@ else
 fi
 
 # Environment variables for programs
+export ASPROOT="$HOME/pkg"
 export HGRCPATH="$XDG_CONFIG_HOME/mercurial/hgrc"
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export GVIMINIT='let $MYGVIMRC="$XDG_CONFIG_HOME/vim/gvimrc" | source $MYGVIMRC'
