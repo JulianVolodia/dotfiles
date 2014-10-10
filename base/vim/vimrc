@@ -37,7 +37,7 @@
 		" Neobundle initialization {{{
 			" Neobundle wants this to be off
 			filetype off
-			call neobundle#rc(expand("$XDG_DATA_HOME/vim/bundle"))
+			call neobundle#begin(expand("$XDG_DATA_HOME/vim/bundle"))
 			" Let NeoBundle manage NeoBundle
 			NeoBundleFetch 'Shougo/neobundle.vim'
 			" Bundles
@@ -82,6 +82,8 @@
 			!!@@trabajo-plugin
 			" Load last so extensions are properly supported
 			NeoBundle 'bling/vim-airline'
+
+			call neobundle#end()
 			filetype plugin indent on
 		" }}}
 		" Configuration {{{
