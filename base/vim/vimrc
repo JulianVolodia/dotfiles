@@ -1,6 +1,10 @@
 " vim: set foldmethod=marker:
 
 " Early stuff {{{
+	" Account for Python plugins in Neovim
+	if has('nvim')
+		runtime! plugin/python_setup.vim
+	endif
 	" These have to be put here in order to work, otherwise the plugin keybindings
 	" don't pick up the leader change
 	let mapleader = "\<space>"
