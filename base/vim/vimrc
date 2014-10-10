@@ -71,12 +71,6 @@
 			NeoBundle 'tpope/vim-unimpaired'
 			NeoBundle 'Shougo/unite.vim'
 			NeoBundle 'tpope/vim-dispatch'
-			" Requires libclang 3.2 or higher, CMake, and Python headers
-			NeoBundle 'Valloric/YouCompleteMe', {
-				\ 'build': {
-					\ 'unix': './install.sh --clang-completer --system-libclang'
-					\ }
-				\ }
 			NeoBundle 'junegunn/goyo.vim'
 			!!@@latex-plugin
 			!!@@python-plugin
@@ -457,39 +451,6 @@
 				noremap <leader>g :Unite -no-split -toggle -buffer-name=grep grep:%::<cr>
 				" Grep through all open buffers
 				noremap <leader>G :Unite -no-split -toggle -buffer-name=grep grep:$buffers::<cr>
-
-			" }}}
-			" YouCompleteMe {{{
-			" Make YCM register itself as Syntastic checker for C, C++, Obj-C
-			" and Obj-C++ filetypes (enables Syntastic integration)
-			let g_ycm_register_as_syntastic_checker = 1
-			" Seed completer with language keywords
-			let g:ycm_seed_identifiers_with_syntax = 1
-			" Show previews on completion
-			let g:ycm_add_preview_window_to_completeopt = 1
-			" Auto-close preview window
-			let g:ycm_autoclose_preview_window_after_completion = 1
-			" Use completion for these filetypes only
-			let g:ycm_filetype_whitelist = {
-				\ 'c': 1,
-				\ 'cpp': 1,
-				\ 'python': 1,
-				\ 'tex': 1,
-				\ 'ledger': 1,
-				\ }
-			" Use '{' to trigger semantic completion for LaTeX, using
-			" LaTeX-Box's omnicomplete function
-			let g:ycm_semantic_triggers = {
-				\ 'tex': ['{'],
-				\ }
-			" Load .ycm_extra_conf.py only from ~/prj and downwards
-			let g:ycm_extra_conf_globlist = ['~/prj/*', '!~/*']
-			" Don't register a mapping for showing detailed diagnostics
-			let g:ycm_key_detailed_diagnostics = ''
-
-			" Use YCM's superior engine to goto definition
-			noremap gd :YcmCompleter GoToDeclaration<cr>
-			noremap gD :YcmCompleter GoToDefinitionElseDeclaration<cr>
 
 			" }}}
 			!!@@python-plugin-conf
