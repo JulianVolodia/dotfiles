@@ -1,4 +1,7 @@
 #!/bin/bash
 
+# Eval dircolors
+eval $(dircolors -b "${XDG_CONFIG_HOME:-$HOME/.config}/dircolors")
+
 # Use fish for interactive shells
 exec /usr/bin/fish
