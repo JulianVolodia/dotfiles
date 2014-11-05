@@ -33,7 +33,7 @@ size_hints = false
 foreground = #707070
 foreground_bold = #707070
 foreground_dim = #aaaaaa
-background = #ffffff
+background = rgba(255, 255, 255, 0.9)
 cursor = #32cd32
 
 # if unset, will reverse foreground and background
