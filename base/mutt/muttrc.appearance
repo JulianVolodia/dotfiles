@@ -80,6 +80,7 @@ color normal default default
 color attachment magenta default
 color indicator brightmagenta default
 color status brightgreen default
+color sidebar brightgreen default
 # Blank line padding
 color tilde default default
 # Line wraps
