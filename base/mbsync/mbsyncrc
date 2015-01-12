@@ -69,7 +69,7 @@ Inbox ~/.mail/itz/inbox
 Channel itz-default
 Master :itz-remote:
 Slave :itz-local:
-Pattern % !archive !drafts !sent !spam !trash !Archive !Entw&APw-rfe !Gesendet !Junk !Papierkorb "!Shared Folders" !Drafts !Sent !Trash !Templates !OTRS !Munin !otrs !munin
+Pattern % !archive !drafts !sent !spam !trash !Archive !Entw&APw-rfe !Gesendet !Junk !Papierkorb "!Shared Folders" !Drafts !Sent !Trash !Templates !OTRS !Munin !otrs !munin !TSM !tsm
 
 Channel itz-archive
 Master :itz-remote:"Archive"
@@ -98,6 +98,10 @@ Slave :itz-local:"munin"
 Channel itz-otrs
 Master :itz-remote:"OTRS"
 Slave :itz-local:"otrs"
+
+Channel itz-tsm
+Master :itz-remote:"TSM"
+Slave :itz-local:"tsm"
 
 group itz itz-default itz-archive itz-drafts itz-sent itz-spam itz-trash itz-munin itz-otrs
 # }}}
