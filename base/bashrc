@@ -3,5 +3,8 @@
 # Eval dircolors
 eval $(dircolors -b "${XDG_CONFIG_HOME:-$HOME/.config}/dircolors")
 
+# Set the right tty for gpg
+export GPG_TTY="$(tty)"
+
 # Use fish for interactive shells
 exec /usr/bin/fish
