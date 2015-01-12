@@ -15,6 +15,7 @@ usermodmap="$HOME/.Xmodmap"
 
 !!@@
 
+fcitx &
 feh --bg-fill ${XDG_CONFIG_HOME:-$HOME/.config}/wallpaper &
 start-pulseaudio-x11 &
 compton &
