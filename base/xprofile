@@ -5,6 +5,9 @@
 # Not set in /etc/profile.d anymore
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+# Set Infinality style
+export USE_STYLE="3"
+
 # Need this in order to use GTK style for Qt
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
