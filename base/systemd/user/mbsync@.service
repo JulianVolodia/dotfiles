@@ -1,0 +1,11 @@
+[Unit]
+Description=Start mbsync for mailbox "%i"
+Documentation=man:mbsync(1)
+Wants=network-online.target
+After=network-online.target
+Wants=gnome-keyring.service
+After=gnome-keyring.service
+
+[Service]
+ExecStart=/usr/bin/mbsync --quiet %i
+Environment=GNOME_KEYRING_CONTROL=%t/keyring

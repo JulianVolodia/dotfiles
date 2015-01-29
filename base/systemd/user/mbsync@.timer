@@ -1,0 +1,13 @@
+[Unit]
+Description=Sync "%i" mailbox regularly
+Wants=network-online.target
+After=network-online.target
+Requires=gnome-keyring.service
+After=gnome-keyring.service
+
+[Timer]
+OnActiveSec=5
+OnUnitActiveSec=5min
+
+[Install]
+WantedBy=default.target
