@@ -1,0 +1,12 @@
+[Unit]
+Description=GNOME Keyring Daemon
+Documentation=man:gnome-keyring-daemon(1)
+
+[Service]
+BusName=org.gnome.keyring
+BusName=org.freedesktop.secrets
+ExecStart=/usr/bin/gnome-keyring-daemon --start --foreground --control-directory=%t/keyring --components=pkcs11,secrets
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=default.target

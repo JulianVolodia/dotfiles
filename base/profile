@@ -1,11 +1,8 @@
 #!/bin/sh
 
-# Start GNOME Keyring
-# Have to start it without GnuPG and SSH support for now, since gpg-agent
-# handles all that and gpg-agent is necessary for now
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
-# The default socket is always used since gnupg 2.1
+# Required for mutt with gpgme
 export GPG_AGENT_INFO="$HOME/.gnupg/S.gpg-agent"
+# The default socket is always used
 export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 
 export PATH="$HOME/.local/bin:$PATH"
