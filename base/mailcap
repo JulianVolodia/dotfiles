@@ -1,5 +1,4 @@
-application/msword; antiword %s; copiousoutput
-application/pdf; zathura %s &
+application/pdf; zathura %s
 image/*; sxiv %s
 image/svg; firefox %s
-text/html; w3m -I %{charset} -cols 78 -dump %s; copiousoutput; nametemplate=%s.html
+text/html; w3m -I %{charset} -T text/html -cols 78 -dump %s; copiousoutput; nametemplate=%s.html
