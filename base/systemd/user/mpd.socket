@@ -2,4 +2,4 @@
 ListenStream=6600
 
 [Install]
-WantedBy=sockets.target
+WantedBy=default.target
