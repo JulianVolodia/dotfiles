@@ -103,7 +103,7 @@ Channel itz-tsm
 Master :itz-remote:"TSM"
 Slave :itz-local:"tsm"
 
-group itz itz-default itz-archive itz-drafts itz-sent itz-spam itz-trash itz-munin itz-otrs
+group itz itz-default itz-archive itz-drafts itz-sent itz-spam itz-trash itz-munin itz-otrs itz-tsm
 # }}}
 # }}}
 
