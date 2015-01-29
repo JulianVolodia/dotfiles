@@ -14,8 +14,18 @@ usermodmap="$HOME/.Xmodmap"
 [ -f "$HOME/.xprofile" ] && . "$HOME/.xprofile"
 
 !!@@
-
 fcitx &
+
+# XBK Settings
+XKBDIR="${XDG_CONFIG_HOME:-$HOME/.config}/xkb"
+XKBKEYMAPFILE="$XKBDIR/keymaps/default.xkb"
+xkbcomp -I"$XKBDIR" "$XKBKEYMAPFILE" "$DISPLAY"
+
+# Holy god yes xcape
+# Has left Control key act as Escape if it's not used as a modifier Now,
+# remember: Capslock is my control key, so this basically supercharges my left
+# pinkie
+xcape -e 'Control_L=Escape'
 feh --bg-fill ${XDG_CONFIG_HOME:-$HOME/.config}/wallpaper &
 start-pulseaudio-x11 &
 compton &
