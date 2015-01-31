@@ -1,5 +1,5 @@
 [Unit]
-Description=Start mbsync for mailbox "%i"
+Description=mbsync for mailbox "%i"
 Documentation=man:mbsync(1)
 Wants=network-online.target
 Requires=gnome-keyring.service
