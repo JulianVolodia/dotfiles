@@ -47,32 +47,23 @@
 					\ 'unix': 'make -f make_unix.mak',
 					\ },
 				\ }
-			NeoBundle 'ervandew/ag'
 			NeoBundle 'vim-scripts/argtextobj.vim'
 			NeoBundle 'tpope/vim-commentary'
 			NeoBundle 'vim-scripts/DeleteTrailingWhitespace'
 			NeoBundle 'ajaam/vim-fish', 'shiftwidth-function'
 			NeoBundle 'tpope/vim-fugitive'
 			NeoBundle 'sjl/gundo.vim.git'
-			NeoBundle 'ludovicchabant/vim-lawrencium'
-			NeoBundle 'ledger/vim-ledger'
 			NeoBundle 'tpope/vim-obsession'
 			NeoBundle 'tpope/vim-repeat'
 			NeoBundle 'tpope/vim-sensible'
 			NeoBundle 'tpope/vim-speeddating'
 			NeoBundle 'vim-scripts/ShowTrailingWhitespace'
-			NeoBundle 'mhinz/vim-signify'
 			NeoBundle 'sjl/splice.vim.git'
 			NeoBundle 'tpope/vim-surround'
-			NeoBundle 'scrooloose/syntastic'
-			NeoBundle 'godlygeek/tabular'
-			NeoBundle 'majutsushi/tagbar'
-			NeoBundle 'LStinson/TagmaTasks'
 			NeoBundle 'SirVer/ultisnips'
 			NeoBundle 'tpope/vim-unimpaired'
 			NeoBundle 'Shougo/unite.vim'
 			NeoBundle 'tpope/vim-dispatch'
-			NeoBundle 'junegunn/goyo.vim'
 			!!@@latex-plugin
 			!!@@python-plugin
 			!!@@as-plugin
@@ -90,16 +81,10 @@
 			" - functions that toggle other stuff are normally either <leader><key> if I
 			"   use them sparingly, or use their own keys if I use them often (e.g.
 			"   commentary and üü)
-			" Ag {{{
-				noremap <leader>a :Ag<space>
-
-			" }}}
 			" Airline {{{
 				" Use this theme
 				let g:airline_theme = 'sol'
 				" Separators between categories
-				let g:airline_left_sep = '▶'
-				let g:airline_right_sep = '◀'
 				let g:airline_linecolumn_prefix = '¶'
 				let g:airline_branch_prefix = '⎇ '
 				let g:airline_readonly_symbol = '₩'
@@ -198,29 +183,6 @@
 					noremap <silent> <buffer> <leader>vC :Gcommit<cr>
 				endfunction
 			" }}}
-			" Goyo.vim {{{
-				" When using :q in Goyo mode, route it through to Vim
-				" (and actually close the buffer)
-				function! Goyo_before() " {{{
-					let b:quitting = 0
-					let b:quitting_bang = 0
-					autocmd QuitPre <buffer> let b:quitting = 1
-					cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-				endfunction " }}}
-
-				function! Goyo_after() " {{{
-					" Quit Vim if this is the only remaining buffer
-					if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-						if b:quitting_bang
-							qa!
-						else
-							qa
-						endif
-					endif
-				endfunction " }}}
-				let g:goyo_callbacks = [function('Goyo_before'), function('Goyo_after')]
-
-			" }}}
 			" Gundo {{{
 				" Toggles the Gundo windows
 				noremap <leader>u :GundoToggle<cr>
@@ -235,51 +197,6 @@
 				" automatically close Gundo windows on reverting
 				let g:gundo_close_on_revert = 1
 
-			" }}}
-			" Lawrencium {{{
-				" I like my own mappings better
-				let g:lawrencium_define_mappings = 0
-				" As for fugitive: mappings are done in a function because they are used as
-				" autocommands
-				function! s:setup_lawrencium_mappings()
-					" :Hgedit
-					noremap <buffer> <leader>ve :Hgedit<space>
-					" :Hgcd
-					noremap <buffer> <leader>vcd :Hgcd<space>
-					" :Hglcd
-					noremap <buffer> <leader>vcl :Hglcd<space>
-					" Open annotation window
-					noremap <silent> <buffer> <leader>va :Hgannotate<cr>
-					" Open status window
-					noremap <silent> <buffer> <leader>vs :Hgstatus<cr>
-					" Open log window for current file
-					noremap <silent> <buffer> <leader>vl :Hglogthis<cr>
-					" Open log window for entire repository
-					noremap <silent> <buffer> <leader>vL :Hglog<cr>
-					" Open diff window
-					noremap <silent> <buffer> <leader>vd :Hgdiff<cr>
-					" Open vertical diff window
-					noremap <silent> <buffer> <leader>vvd :Hgvdiff<cr>
-					" Open diffsum window
-					noremap <silent> <buffer> <leader>vD :Hgdiffsumsplit<cr>
-					" Open vertical diffsum window
-					noremap <silent> <buffer> <leader>vvD :Hgvdiffsumsplit<cr>
-					" Open commit buffer
-					noremap <silent> <buffer> <leader>vC :Hgcommit<cr>
-					" Open vertical commit buffer
-					noremap <silent> <buffer> <leader>vvC :Hgvcommit<cr>
-					" Revert current file to previous revision
-					noremap <silent> <buffer> <leader>vr :Hgrevert<cr>
-					" Revert current file to previous revision (no backup)
-					noremap <silent> <buffer> <leader>vR :Hgrevert!<cr>
-				endfunction
-			" }}}
-			" ListToggle {{{
-				" Line height
-				let g:lt_height = 10
-				" Toggle quickfix list
-				let g:lt_quickfix_list_toggle_map = '<leader>cc'
-				let g:lt_location_list_toggle_map = '<leader>ll'
 			" }}}
 			" Obsession {{{
 				" Sets up keybinding, invoked in autocmd below
@@ -309,17 +226,6 @@
 				noremap <silent> co<space> :<c-u>call ShowTrailingWhitespace#Toggle(0)<bar>echo (ShowTrailingWhitespace#IsSet() ? 'Showing trailing whitespace' : 'Not showing trailing whitespace')<cr>
 
 			" }}}
-			" Signify {{{
-			" Use only for these VCSs, in the order specified
-			let g:signify_vcs_list = ['hg', 'git']
-			" Don't run Signify by default
-			let g:signify_disable_by_default = 1
-			" Don't overwrite signs used by other plugins (e.g. Syntastic)
-			let g:signify_sign_overwrite = 0
-			" Toggle Signify symbols
-			" (the mapping is similar to those defined in unimpaired)
-			noremap <silent> coC :SignifyToggle<cr>
-			" }}}
 			" Splice {{{
 				" Use this as the splice prefix
 				let g:splice_prefix = "<leader>s"
@@ -331,80 +237,8 @@
 
 			" }}}
 			" Surround {{{
-			" I don't use the substitute command in visual/select mode anyways
-			xmap s <Plug>VSurround
-			" }}}
-			" Syntastic {{{
-				" Don't run Syntastic on opening files
-				let g:syntastic_check_on_open = 0
-				" Don't run it either on :wq and related
-				let g:syntastic_check_on_wq = 0
-				" Print error message for current line to command window
-				let g:syntastic_echo_current_error = 1
-				" Use the :sign interface to show errors
-				let g:syntastic_enable_signs = 1
-				" Use these symbols for errors, warnings, and style errors/warnings
-				let g:syntastic_error_symbol = '✗'
-				let g:syntastic_warning_symbol = '⚠'
-				let g:syntastic_style_error_symbol = '✑'
-				let g:syntastic_style_warning_symbol = '✎'
-				" Don't use balloons
-				let g:syntastic_enable_balloons = 0
-				" Use syntax highlighting
-				let g:syntastic_enable_highlighting = 1
-				" Don't automatically jump to the first error when first opening a file
-				let g:syntastic_auto_jump = 0
-				" Always use location list for errors
-				let g:syntastic_always_populate_loc_list = 1
-				" Automatically close location list when no more errors are found
-				let g:syntastic_auto_loc_list = 2
-				" Error list height = command window height
-				let g:syntastic_loc_list_height = 5
-				" Don't automatically check
-				let g:syntastic_mode_map = { 'mode': 'passive' }
-				" Check manually
-				noremap <leader>SS :SyntasticCheck<cr>
-				" Toggle between active and passive
-				noremap <silent> coS :SyntasticToggleMode<cr>
-
-			" }}}
-			" Tabularize {{{
-				" Input new tabular expression
-				noremap <leader>T :Tabularize<space>
-				" Repeat last :Tabularize command
-				noremap <leader>t :Tabularize<cr>
-			" }}}
-			" Tagbar {{{
-				" Open tagbar window on the left
-				let tagbar_left = 1
-				" Make tagbar window as wide as the gundo plugin windows
-				let tagbar_width = 50
-				" Automatically jump to tagbar window as soon as it's opened
-				let tagbar_autofocus = 1
-				" Automatically close tagbar window when choosing a tag
-				let tagbar_autoclose = 1
-				" If current tag is inside a closed fold, open that fold just enough to show
-				" the tag
-				let tagbar_autoshowtag = 1
-				" Toggle Tagbar window
-				nnoremap <silent> <f3> :TagbarToggle<cr>
-
-			" }}}
-			" TagmaTasks {{{
-				" Since tasks are generated in the quickfix/location list windows, their
-				" bindings can be used
-				" Don't create marks
-				let g:TagmaTasksMarks = 0
-				" I could either use a regex or list of tokens to look for – I'll go with the
-				" regex
-				let g:TagmaTasksRegexp = '\<\(FIXME\|TODO\|TASK\)\>\|\\todo{\|\\missingfigure{'
-				" Again, I like using my own keybindings
-				let g:TagmaTasksPrefix = ''
-				" I'll also use the location list keybindings for moving between errors
-				" instead of those defined in this plugin
-				let g:TagmaTasksJumpKeys = 0
-				" Toggle task window
-				map <silent> <f4> <Plug>TagmaTaskToggle
+				" I don't use the substitute command in visual/select mode anyways
+				xmap s <Plug>VSurround
 			" }}}
 			" UltiSnips {{{
 				" Snippet directory for private snippets
@@ -422,7 +256,6 @@
 			" }}}
 			" Unite {{{
 				" Requires the following to be installed:
-				" - github.com/zhaocai/linepower.vim
 				" - github.com/Shougo/vimproc.vim
 
 				" Info:
@@ -672,7 +505,7 @@
 	" }}}
 
 	" Easier :nohl
-	nnoremap <silent> <leader><cr> :nohlsearch<cr>
+	noremap <silent> <cr> :nohlsearch<cr>
 	" Make Y behave like D and C
 	noremap <silent> Y y$
 	" Switch ; and , behavior so that , searches forwards and ; backwards
