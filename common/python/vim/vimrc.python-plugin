@@ -1,2 +1,2 @@
-NeoBundle 'tmhedberg/SimpylFold'
-NeoBundle '5long/pytest-vim-compiler'
+Plug 'tmhedberg/SimpylFold'
+Plug '5long/pytest-vim-compiler'

@@ -1,18 +1,17 @@
 " vim: set foldmethod=marker:
 
 " Early stuff {{{
-	" Account for Python plugins in Neovim
 	" These have to be put here in order to work, otherwise the plugin keybindings
 	" don't pick up the leader change
 	let mapleader = "\<space>"
 	let maplocalleader = "-"
 	" A word on runtimepath settings. {{{
-		" NeoBundle adds the rtps of its bundles to the beginning of an existing
+		" Plug adds the rtps of its bundles to the beginning of an existing
 		" runtimepath, and its bundle/after rtps at the end of the existing
 		" runtimepath. Since Vim gives higher priority to files that are earlier
 		" in the runtimepath, this leads to bundle settings having higher
 		" precedence than user settings, which just shouldn't happen. In order
-		" to alleviate that problem, I wait until after NeoBundle has
+		" to alleviate that problem, I wait until after Plug has
 		" initialized all its bundles before I set the remaining part of the
 		" runtimepath. It should look like this:
 		"
@@ -29,51 +28,39 @@
 		" both in the regular plugin/ftplugin directories as well as in the after/
 		" directories. I believe this is the way it should be. }}}
 	" Early runtimepath dickery!
-	set runtimepath=$XDG_DATA_HOME/vim/bundle/neobundle.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
+	set runtimepath=$XDG_DATA_HOME/vim/vim-plug,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 	" Plugins {{{
-		" Neobundle initialization {{{
-			" Neobundle wants this to be off
-			filetype off
-			call neobundle#begin(expand("$XDG_DATA_HOME/vim/bundle"))
-			" Let NeoBundle manage NeoBundle
-			NeoBundleFetch 'Shougo/neobundle.vim'
+		" Plug initialization {{{
+			call plug#begin(expand("$XDG_DATA_HOME/vim/bundle"))
 			" Bundles
 			" Vimproc has a native component
-			NeoBundle 'Shougo/vimproc', {
-				\ 'build': {
-					\ 'windows': 'make -f make_mingw32.mak',
-					\ 'cygwin': 'make -f make_cygwin.mak',
-					\ 'mac': 'make -f make_mac.mak',
-					\ 'unix': 'make -f make_unix.mak',
-					\ },
-				\ }
-			NeoBundle 'vim-scripts/argtextobj.vim'
-			NeoBundle 'tpope/vim-commentary'
-			NeoBundle 'vim-scripts/DeleteTrailingWhitespace'
-			NeoBundle 'jeetsukumaran/vim-filebeagle'
-			NeoBundle 'ajaam/vim-fish', 'shiftwidth-function'
-			NeoBundle 'tpope/vim-fugitive'
-			NeoBundle 'airblade/vim-gitgutter'
-			NeoBundle 'sjl/gundo.vim.git'
-			NeoBundle 'tpope/vim-obsession'
-			NeoBundle 'tpope/vim-repeat'
-			NeoBundle 'tpope/vim-sensible'
-			NeoBundle 'tpope/vim-speeddating'
-			NeoBundle 'vim-scripts/ShowTrailingWhitespace'
-			NeoBundle 'sjl/splice.vim.git'
-			NeoBundle 'tpope/vim-surround'
-			NeoBundle 'SirVer/ultisnips'
-			NeoBundle 'tpope/vim-unimpaired'
-			NeoBundle 'Shougo/unite.vim'
-			NeoBundle 'tpope/vim-dispatch'
+			Plug 'Shougo/vimproc', { 'do': 'make' }
+			Plug 'vim-scripts/argtextobj.vim'
+			Plug 'tpope/vim-commentary'
+			Plug 'vim-scripts/DeleteTrailingWhitespace'
+			Plug 'jeetsukumaran/vim-filebeagle'
+			Plug 'tpope/vim-fugitive'
+			Plug 'airblade/vim-gitgutter'
+			Plug 'sjl/gundo.vim'
+			Plug 'tpope/vim-obsession'
+			Plug 'tpope/vim-repeat'
+			Plug 'tpope/vim-sensible'
+			Plug 'tpope/vim-speeddating'
+			Plug 'vim-scripts/ShowTrailingWhitespace'
+			Plug 'sjl/splice.vim'
+			Plug 'tpope/vim-surround'
+			Plug 'SirVer/ultisnips'
+			Plug 'tpope/vim-unimpaired'
+			Plug 'Shougo/unite.vim'
+			Plug 'tpope/vim-dispatch'
 			!!@@latex-plugin
 			!!@@python-plugin
 			!!@@as-plugin
 			!!@@trabajo-plugin
 			" Load last so extensions are properly supported
-			NeoBundle 'bling/vim-airline'
+			Plug 'bling/vim-airline'
 
-			call neobundle#end()
+			call plug#end()
 			filetype plugin indent on
 		" }}}
 		" Configuration {{{

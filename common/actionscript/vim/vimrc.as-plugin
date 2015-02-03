@@ -1,1 +1,1 @@
-NeoBundle 'vim-scripts/Flex-Development-Support'
+Plug 'vim-scripts/Flex-Development-Support'

@@ -1,2 +1,2 @@
-NeoBundle 'saltstack/salt-vim'
-NeoBundle 'lepture/vim-jinja'
+Plug 'saltstack/salt-vim'
+Plug 'lepture/vim-jinja'
