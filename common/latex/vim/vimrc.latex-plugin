@@ -1,1 +1,1 @@
-Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'LaTeX-Box-Team/LaTeX-Box', { 'for': ['tex', 'latex'] }

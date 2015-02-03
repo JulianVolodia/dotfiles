@@ -1,2 +1,2 @@
-Plug 'tmhedberg/SimpylFold'
-Plug '5long/pytest-vim-compiler'
+Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
+Plug '5long/pytest-vim-compiler', { 'for': 'python' }

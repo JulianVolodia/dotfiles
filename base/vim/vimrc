@@ -36,13 +36,28 @@
 			" Vimproc has a native component
 			Plug 'Shougo/vimproc', { 'do': 'make' }
 			Plug 'vim-scripts/argtextobj.vim'
-			Plug 'tpope/vim-commentary'
-			Plug 'vim-scripts/DeleteTrailingWhitespace'
-			Plug 'jeetsukumaran/vim-filebeagle'
+			Plug 'tpope/vim-commentary', { 'on': [
+					\ '<Plug>Commentary', '<Plug>CommentaryLine',
+					\ '<Plug>ChangeCommentary', '<Plug>CommentaryUndo'
+					\ ] }
+			Plug 'vim-scripts/DeleteTrailingWhitespace', { 'on': 'DeleteTrailingWhitespace' }
+			Plug 'jeetsukumaran/vim-filebeagle', { 'on': [
+				\ 'FileBeagle', 'FileBeagleBufferDir'
+				\ ] }
 			Plug 'tpope/vim-fugitive'
-			Plug 'airblade/vim-gitgutter'
-			Plug 'sjl/gundo.vim'
-			Plug 'tpope/vim-obsession'
+			Plug 'airblade/vim-gitgutter', { 'on': [
+					\ 'GitGutterEnable', 'GitGutterDisable', 'GitGutterToggle',
+					\ 'GutGutterSignsEnable', 'GitGutterSignsDisable', 'GitGutterSignsToggle',
+					\ 'GitGutterLineHighlightsEnable', 'GitGutterLineHighLightsDisable',
+					\ 'GitGutterLineHighlightsToggle',
+					\ '<Plug>GitGutterNextHunk', '<Plug>GitGutterPreviousHunk',
+					\ '<Plug>GitGutterStageHunk', '<Plug>GitGutterRevertHunk',
+					\ '<Plug>GitGutterPreviewHunk'
+				\ ] }
+			Plug 'sjl/gundo.vim', { 'on': [
+					\ 'GundoToggle', 'GundoShow', 'GundoHide', 'GundoRenderGraph'
+				\ ] }
+			Plug 'tpope/vim-obsession', { 'on': 'Obsession' }
 			Plug 'tpope/vim-repeat'
 			Plug 'tpope/vim-sensible'
 			Plug 'tpope/vim-speeddating'
@@ -52,7 +67,9 @@
 			Plug 'SirVer/ultisnips'
 			Plug 'tpope/vim-unimpaired'
 			Plug 'Shougo/unite.vim'
-			Plug 'tpope/vim-dispatch'
+			Plug 'tpope/vim-dispatch', { 'on': [
+					\ 'Dispatch', 'FocusDispatch', 'Make', 'Spawn', 'Start', 'Copen'
+				\ ] }
 			!!@@latex-plugin
 			!!@@python-plugin
 			!!@@as-plugin
