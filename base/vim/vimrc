@@ -245,11 +245,10 @@
 			" }}}
 			" UltiSnips {{{
 				" Snippet directory for private snippets
-				let g:UltiSnipsSnippetsDir = expand("$XDG_CONFIG_HOME/vim/snippets")
-				" Snippet search path
-				" The default snippets are in <bundledir>/ultisnips/UltiSnips directory
-				let g:UltiSnipsSnippetDirectories = ["snippets", "UltiSnips"]
-				" " Use this to expand a trigger (i.e. insert a snippet)
+				let g:UltiSnipsSnippetsDir = expand("$XDG_CONFIG_HOME/vim/snips")
+				" All snippets directories, in case I use predefined snippets
+				let g:UltiSnipsSnippetDirectories = ["snips", "UltiSnips"]
+				" Use this to expand a trigger (i.e. insert a snippet)
 				let g:UltiSnipsExpandTrigger = "<c-j>"
 				" Use this to jump forward to next trigger
 				let g:UltiSnipsJumpForwardTrigger = "<c-j>"
