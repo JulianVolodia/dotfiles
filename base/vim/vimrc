@@ -36,10 +36,7 @@
 			" Vimproc has a native component
 			Plug 'Shougo/vimproc', { 'do': 'make' }
 			Plug 'vim-scripts/argtextobj.vim'
-			Plug 'tpope/vim-commentary', { 'on': [
-					\ '<Plug>Commentary', '<Plug>CommentaryLine',
-					\ '<Plug>ChangeCommentary', '<Plug>CommentaryUndo'
-					\ ] }
+			Plug 'tpope/vim-commentary'
 			Plug 'vim-scripts/DeleteTrailingWhitespace', { 'on': 'DeleteTrailingWhitespace' }
 			Plug 'jeetsukumaran/vim-filebeagle', { 'on': [
 				\ 'FileBeagle', 'FileBeagleBufferDir'
