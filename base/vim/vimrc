@@ -67,6 +67,10 @@
 			Plug 'tpope/vim-dispatch', { 'on': [
 					\ 'Dispatch', 'FocusDispatch', 'Make', 'Spawn', 'Start', 'Copen'
 				\ ] }
+			Plug 'Valloric/YouCompleteMe', { 'on': [], 'do':
+					\ 'cmake -G \"Unix Makefiles\" -DUSE_SYSTEM_LIBCLANG=ON -DUSE_SYSTEM_BOOST=ON \"third_party/ycmd/cpp\"\; ' .
+					\ 'make ycm_support_libs'
+				\ }
 			!!@@latex-plugin
 			!!@@python-plugin
 			!!@@as-plugin
@@ -289,6 +293,18 @@
 				noremap <leader>g :Unite -no-split -toggle -buffer-name=grep grep:%::<cr>
 				" Grep through all open buffers
 				noremap <leader>G :Unite -no-split -toggle -buffer-name=grep grep:$buffers::<cr>
+
+			" }}}
+			" YouCompleteMe {{{
+				" Don't open the location list on :YcmDiags
+				let g:ycm_open_loclist_on_ycm_diags = 0
+				" Fewer logging messages
+				let g:ycm_server_log_level = 'warning'
+				" Close preview window after completion
+				let g:ycm_autoclose_preview_window_after_completion = 1
+				" Interpret relative paths as relative to the current buffer
+				" (instead of relative to the current working directory)
+				let g:ycm_filepath_completion_use_working_dir = 1
 
 			" }}}
 			!!@@python-plugin-conf
@@ -516,6 +532,12 @@
 
 " }}}
 " Autocommands {{{
+	" Load YouCompleteMe on entering insert mode
+	augroup load_youcompleteme
+		autocmd!
+		autocmd InsertEnter * call plug#load('YouCompleteMe')
+			\| call youcompleteme#Enable()
+	augroup END
 	" Check for Git/Mercurial and set up keybindings accordingly
 	augroup vcscheck
 		autocmd!
