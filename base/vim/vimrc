@@ -188,6 +188,33 @@
 				" Open commit buffer (or status buffer if there's nothing staged)
 				noremap <silent> <buffer> <leader>vC :Gcommit<cr>
 			" }}}
+			" Git Gutter {{{
+				" I'd like to do my own mappings, thanks
+				let g:gitgutter_map_keys = 0
+				" On, off, toggle
+				nnoremap <silent> [ogg :GitGutterEnable<cr>
+				nnoremap <silent> ]ogg :GitGutterDisable<cr>
+				nnoremap <silent> cogg :GitGutterToggle<cr>
+				" On, off, toggle (line highlights)
+				nnoremap <silent> [ogs :GitGutterSignsEnable<cr>
+				nnoremap <silent> ]ogs :GitGutterSignsDisable<cr>
+				nnoremap <silent> cogs :GitGutterSignsToggle<cr>
+				" On, off, toggle (line highlights)
+				nnoremap <silent> [ogl :GitGutterLineHighlightsEnable<cr>
+				nnoremap <silent> ]ogl :GitGutterLineHighlightsDisable<cr>
+				nnoremap <silent> cogl :GitGutterLineHighlightsToggle<cr>
+				" Move between hunks
+				nmap <silent> [h <Plug>GitGutterPrevHunk
+				nmap <silent> ]h <Plug>GitGutterNextHunk
+				" Stage a hunk
+				nmap <silent> <leader>hs <Plug>GitGutterStageHunk
+				" Revert a hunk
+				nmap <silent> <leader>hr <Plug>GitGutterRevertHunk
+				" Update signs for current buffer
+				nnoremap <silent> <leader>gu :GitGutter<cr>
+				" Update signs for current buffer
+				nnoremap <silent> <leader>gu :GitGutterAll<cr>
+			" }}}
 			" Gundo {{{
 				" Toggles the Gundo windows
 				noremap <leader>u :GundoToggle<cr>
