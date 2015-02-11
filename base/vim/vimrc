@@ -54,6 +54,7 @@
 			Plug 'sjl/gundo.vim', { 'on': [
 					\ 'GundoToggle', 'GundoShow', 'GundoHide', 'GundoRenderGraph'
 				\ ] }
+			Plug 'michaeljsmith/vim-indent-object'
 			Plug 'tpope/vim-obsession', { 'on': 'Obsession' }
 			Plug 'tpope/vim-repeat'
 			Plug 'tpope/vim-sensible'
