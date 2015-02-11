@@ -124,71 +124,69 @@
 
 			" }}}
 			" Fugitive {{{
-				" Mappings are done in a function because they are used as autocommands
-				function! s:setup_fugitive_mappings()
-					" Edit fugitive-revision (with repo basedir as working directory)
-					noremap <buffer> <leader>ve<space> :Gedit<space>
-					" Edit fugitive-revision in split
-					noremap <buffer> <leader>ves :Gsplit<space>
-					" Edit fugitive-revision in vertical split
-					noremap <buffer> <leader>vev :Gvsplit<space>
-					" Edit fugitive-revision in new tab
-					noremap <buffer> <leader>vet :Gtabedit<space>
-					" Edit fugitive-revision in preview window
-					noremap <buffer> <leader>vet :Gpedit<space>
-					" Read output of git command in current buffer
-					noremap <buffer> <leader>vE :Gread!<space>
-					" Read output of git command in new split
-					noremap <buffer> <leader>veS :Gsplit!<space>
-					" Read output of git command in vertical split
-					noremap <buffer> <leader>veV :Gvsplit!<space>
-					" Read output of git command in new tab
-					noremap <buffer> <leader>veT :Gtabedit!<space>
-					" Read output of git command in preview window
-					noremap <buffer> <leader>veP :Gpedit!<space>
-					" :cd relative to repository
-					noremap <buffer> <leader>vcd :Gcd<space>
-					" :lcd relative to repository
-					noremap <buffer> <leader>vcl :Glcd<space>
-					" Move file and rename buffer accordingly
-					noremap <buffer> <leader>vm :Gmove<space>
-					" Move file and rename buffer accordingly (overwrite if necessary)
-					noremap <buffer> <leader>vM :Gmove!<space>
-					" Do :w and stage results
-					noremap <silent> <buffer> <leader>vw :Gwrite<cr>
-					" Do :w, stage results, do :q
-					noremap <silent> <buffer> <leader>vwq :Gwq<cr>
-					" Do :w and stage results
-					noremap <silent> <buffer> <leader>vW :Gwrite!<cr>
-					" Do :w, stage results, do :q
-					noremap <silent> <buffer> <leader>vwQ :Gwq!<cr>
-					" Remove current file and delete buffer
-					noremap <buffer> <leader>vrm :Gremove<cr>
-					" Remove current file and delete buffer forcefully
-					noremap <buffer> <leader>vrM :Gremove!<cr>
-					" Open annotation window ("git blame", but who's counting)
-					noremap <silent> <buffer> <leader>va :Gblame<cr>
-					" Browse on GitHub, if possible
-					noremap <silent> <buffer> <leader>vb :Gbrowse<cr>
-					" Put GitHub URL in clipboard
-					noremap <silent> <buffer> <leader>vB :Gbrowse!<cr>
-					" Open status window
-					noremap <silent> <buffer> <leader>vs :Gstatus<cr>
-					" Show list of revisions for current file in location list
-					noremap <silent> <buffer> <leader>vl :Gllog<cr>
-					" Show list of commits for current file in location list
-					noremap <silent> <buffer> <leader>vL :Gllog --<cr>
-					" Open diff window
-					noremap <silent> <buffer> <leader>vd :Gsdiff<cr>
-					" Open vertical diff window
-					noremap <silent> <buffer> <leader>vvd :Gvdiff<cr>
-					" :Glgrep
-					noremap <buffer> <leader>vg :Glgrep<space>
-					" :Ggrep
-					noremap <buffer> <leader>vG :Ggrep<space>
-					" Open commit buffer (or status buffer if there's nothing staged)
-					noremap <silent> <buffer> <leader>vC :Gcommit<cr>
-				endfunction
+				" Mnemonic: v = "VCS"
+				" Edit fugitive-revision (with repo basedir as working directory)
+				noremap <buffer> <leader>ve<space> :Gedit<space>
+				" Edit fugitive-revision in split
+				noremap <buffer> <leader>ves :Gsplit<space>
+				" Edit fugitive-revision in vertical split
+				noremap <buffer> <leader>vev :Gvsplit<space>
+				" Edit fugitive-revision in new tab
+				noremap <buffer> <leader>vet :Gtabedit<space>
+				" Edit fugitive-revision in preview window
+				noremap <buffer> <leader>vet :Gpedit<space>
+				" Read output of git command in current buffer
+				noremap <buffer> <leader>vE :Gread!<space>
+				" Read output of git command in new split
+				noremap <buffer> <leader>veS :Gsplit!<space>
+				" Read output of git command in vertical split
+				noremap <buffer> <leader>veV :Gvsplit!<space>
+				" Read output of git command in new tab
+				noremap <buffer> <leader>veT :Gtabedit!<space>
+				" Read output of git command in preview window
+				noremap <buffer> <leader>veP :Gpedit!<space>
+				" :cd relative to repository
+				noremap <buffer> <leader>vcd :Gcd<space>
+				" :lcd relative to repository
+				noremap <buffer> <leader>vcl :Glcd<space>
+				" Move file and rename buffer accordingly
+				noremap <buffer> <leader>vm :Gmove<space>
+				" Move file and rename buffer accordingly (overwrite if necessary)
+				noremap <buffer> <leader>vM :Gmove!<space>
+				" Do :w and stage results
+				noremap <silent> <buffer> <leader>vw :Gwrite<cr>
+				" Do :w, stage results, do :q
+				noremap <silent> <buffer> <leader>vwq :Gwq<cr>
+				" Do :w and stage results
+				noremap <silent> <buffer> <leader>vW :Gwrite!<cr>
+				" Do :w, stage results, do :q
+				noremap <silent> <buffer> <leader>vwQ :Gwq!<cr>
+				" Remove current file and delete buffer
+				noremap <buffer> <leader>vrm :Gremove<cr>
+				" Remove current file and delete buffer forcefully
+				noremap <buffer> <leader>vrM :Gremove!<cr>
+				" Open annotation window ("git blame", but who's counting)
+				noremap <silent> <buffer> <leader>va :Gblame<cr>
+				" Browse on GitHub, if possible
+				noremap <silent> <buffer> <leader>vb :Gbrowse<cr>
+				" Put GitHub URL in clipboard
+				noremap <silent> <buffer> <leader>vB :Gbrowse!<cr>
+				" Open status window
+				noremap <silent> <buffer> <leader>vs :Gstatus<cr>
+				" Show list of revisions for current file in location list
+				noremap <silent> <buffer> <leader>vl :Gllog<cr>
+				" Show list of commits for current file in location list
+				noremap <silent> <buffer> <leader>vL :Gllog --<cr>
+				" Open diff window
+				noremap <silent> <buffer> <leader>vd :Gsdiff<cr>
+				" Open vertical diff window
+				noremap <silent> <buffer> <leader>vvd :Gvdiff<cr>
+				" :Glgrep
+				noremap <buffer> <leader>vg :Glgrep<space>
+				" :Ggrep
+				noremap <buffer> <leader>vG :Ggrep<space>
+				" Open commit buffer (or status buffer if there's nothing staged)
+				noremap <silent> <buffer> <leader>vC :Gcommit<cr>
 			" }}}
 			" Gundo {{{
 				" Toggles the Gundo windows
@@ -530,13 +528,4 @@
 	noremap , ;
 	noremap ; ,
 
-" }}}
-" Autocommands {{{
-	" Check for Git/Mercurial and set up keybindings accordingly
-	augroup vcscheck
-		autocmd!
-		" Is executed after BufNewPost as well
-		autocmd BufEnter * call s:setup_vcs_keybindings()
-		autocmd BufUnload * unlet! b:keybindings_setup
-	augroup END
 " }}}
