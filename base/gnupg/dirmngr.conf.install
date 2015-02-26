@@ -1,0 +1,3 @@
+#!/bin/sh
+mkdir -pm 700 "$HOME/.gnupg"
+ln -frs dirmngr.conf "$HOME/.gnupg/dirmngr.conf^"
