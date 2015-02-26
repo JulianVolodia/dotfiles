@@ -111,7 +111,7 @@ Channel itz-tsm
 Master :itz-remote:"TSM"
 Slave :itz-local:"tsm"
 
-group itz itz-default itz-archive itz-archive-zba itz-drafts itz-sent itz-trash itz-munin itz-otrs itz-tsm
+group itz itz-default itz-archive itz-archive-zba itz-sent itz-trash itz-munin itz-otrs itz-tsm
 # }}}
 # }}}
 
