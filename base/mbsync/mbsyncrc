@@ -8,6 +8,9 @@ SyncState *
 # Account {{{
 IMAPAccount dr
 Host imap.strato.de
+SSLType IMAPS
+SSLVersions TLSv1.2 TLSv1.1
+AuthMechs LOGIN
 User patrice.peterson@dronox.de
 PassCmd "python3 -c 'import keyring; print(keyring.get_password(\"mail://strato.de\", \"password\"))'"
 CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -53,9 +56,9 @@ group dr dr-default dr-sent dr-drafts dr-trash dr-spam
 IMAPAccount itz
 Host mail.uni-halle.de
 User ajaam
+SSLType IMAPS
+SSLVersions TLSv1.2 TLSv1.1 TLSv1
 PassCmd "python3 -c 'import keyring; print(keyring.get_password(\"mail://uni-halle.de\", \"password\"))'"
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-# Doesn't support TLS 1.1 or v1.2
 
 IMAPStore itz-remote
 Account itz
@@ -69,18 +72,23 @@ Inbox ~/.mail/itz/inbox
 Channel itz-default
 Master :itz-remote:
 Slave :itz-local:
-Pattern % !archive !drafts !sent !spam !trash !Archive !Entw&APw-rfe !Gesendet !Junk !Papierkorb "!Shared Folders" !Drafts !Sent !Trash !Templates !OTRS !Munin !otrs !munin !TSM !tsm
+Pattern *
+Pattern % !Cabinet !archive "!Cabinet/*" "!archive/*" !Calendar !Drafts !drafts !Junk !spam "!Sent Items" !sent !Tasklist !Trash !trash !Munin !munin !OTRS !otrs !TSM !tsm
 
 Channel itz-archive
-Master :itz-remote:"Archive"
+Master :itz-remote:"Cabinet"
 Slave :itz-local:"archive"
 
+Channel itz-archive-zba
+Master :itz-remote:"Cabinet/Zeitbuchungsantr&AOQ-ge"
+Slave :itz-local:"archive/zba"
+
 Channel itz-drafts
-Master :itz-remote:"Entw&APw-rfe"
+Master :itz-remote:"Drafts"
 Slave :itz-local:"drafts"
 
 Channel itz-sent
-Master :itz-remote:"Gesendet"
+Master :itz-remote:"Sent Items"
 Slave :itz-local:"sent"
 
 Channel itz-spam
@@ -88,7 +96,7 @@ Master :itz-remote:"Junk"
 Slave :itz-local:"spam"
 
 Channel itz-trash
-Master :itz-remote:"Papierkorb"
+Master :itz-remote:"Trash"
 Slave :itz-local:"trash"
 
 Channel itz-munin
@@ -103,7 +111,7 @@ Channel itz-tsm
 Master :itz-remote:"TSM"
 Slave :itz-local:"tsm"
 
-group itz itz-default itz-archive itz-drafts itz-sent itz-spam itz-trash itz-munin itz-otrs itz-tsm
+group itz itz-default itz-archive itz-archive-zba itz-drafts itz-sent itz-trash itz-munin itz-otrs itz-tsm
 # }}}
 # }}}
 
@@ -111,14 +119,10 @@ group itz itz-default itz-archive itz-drafts itz-sent itz-spam itz-trash itz-mun
 # Account {{{
 IMAPAccount gm
 Host imap.gmail.com
+SSLType IMAPS
+SSLVersions TLSv1.2 TLSv1.1
 User dapatti@gmail.com
 PassCmd "python3 -c 'import keyring; print(keyring.get_password(\"mail://gmail.com\", \"password\"))'"
-UseIMAPS yes
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-UseTLSv1 no
-UseTLSv1.1 no
-UseTLSv1.2 yes
-
 
 IMAPStore gm-remote
 Account gm
@@ -166,14 +170,10 @@ Group gm gm-default gm-sent gm-drafts gm-starred gm-trash gm-spam gm-archive
 # Account {{{
 IMAPAccount al
 Host imap.gmail.com
+SSLType IMAPS
+SSLVersions TLSv1.2 TLSv1.1
 User runiq@archlinux.us
 PassCmd "python3 -c 'import keyring; print(keyring.get_password(\"mail://archlinux.us\", \"password\"))'"
-UseIMAPS yes
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-UseTLSv1 no
-UseTLSv1.1 no
-UseTLSv1.2 yes
-
 
 IMAPStore al-remote
 Account al
