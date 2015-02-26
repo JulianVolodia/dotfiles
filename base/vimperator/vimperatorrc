@@ -10,7 +10,6 @@ set newtab=all
 let mapleader=","
 
 " Appearance {{{
-colorscheme iris
 " Show these in status line
 set status="input,history,location,bookmark"
 " Only show tab line
@@ -106,4 +105,6 @@ noremap <silent> <c-r> :reloadall<cr>
 noremap <silent> <c-s-r> :reloadall!<cr>
 " Open bookmarks
 noremap <silent> <f2> :bmarks<cr>
+" Remove search highlighting
+noremap <silent> <cr> :nohl<cr>
 " }}}

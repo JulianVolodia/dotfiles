@@ -1,8 +1,0 @@
-hi! ContentSeparator border-top: 1px solid ThreeDShadow;
-hi! Normal none;
-hi! StatusLine none;
-
-sty! chrome://browser/content/browser.xul #TabsToolbar toolbarbutton[class^="scrollbutton"] {display: none !important;}
-sty! chrome://browser/content/browser.xul #TabsToolbar toolbarbutton[class^="tabs-alltabs"] {display: none !important;}
-sty! chrome://browser/content/browser.xul #TabsToolbar toolbarbutton[class^="tabs-newtab-button"] {display: none !important;}
-" vim: set filetype=vim:
