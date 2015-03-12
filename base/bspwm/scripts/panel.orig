@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ $(pgrep -cx panel) -gt 1 ] ; then
+printf "%s\n" "The panel is already running." >&2
+exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkdir -p "$(dirname "$PANEL_FIFO")"
+mkfifo "$PANEL_FIFO"
+
+bspc config top_padding $PANEL_HEIGHT
+
+bspc control --subscribe > "$PANEL_FIFO" &
+xtitle -sf 'T%s' > "$PANEL_FIFO" &
+clock -sf 'S%a %H:%M' > "$PANEL_FIFO" &
+
+source "${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/panel-colors"
+scripts_dir="${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/scripts"
+
+"$scripts_dir/panel_bar" < "$PANEL_FIFO" | bar-aint-recursive -f 'Aller Light-11' -g x$PANEL_HEIGHT -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
+wait
