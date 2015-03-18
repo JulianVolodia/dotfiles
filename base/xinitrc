@@ -16,8 +16,7 @@ usermodmap="$HOME/.Xmodmap"
 !!@@
 
 # XBK Settings
-setxkbmap -option compose:menu,caps:ctrl_modifier,shift:both_capslock
-xcape -e 'Caps_Lock=Escape'
+setxkbmap de adnw
 
 fcitx &
 feh --bg-fill ${XDG_CONFIG_HOME:-$HOME/.config}/wallpaper &
