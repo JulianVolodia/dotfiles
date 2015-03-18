@@ -20,5 +20,5 @@ clock -sf 'S%a %H:%M' > "$PANEL_FIFO" &
 source "${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/panel-colors"
 scripts_dir="${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/scripts"
 
-"$scripts_dir/panel_bar" < "$PANEL_FIFO" | bar-aint-recursive -f 'monospace 12' -g x$PANEL_HEIGHT -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
+"$scripts_dir/panel_bar" < "$PANEL_FIFO" | lemonbar -f 'monospace 12' -g x$PANEL_HEIGHT -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
 wait
