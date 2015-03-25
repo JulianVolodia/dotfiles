@@ -73,7 +73,7 @@ Channel itz-default
 Master :itz-remote:
 Slave :itz-local:
 Pattern *
-Pattern % !Cabinet !archive "!Cabinet/*" "!archive/*" !Calendar !Drafts !drafts !Junk !spam "!Sent Items" !sent !Tasklist !Trash !trash !Munin !munin !OTRS !otrs !TSM !tsm
+Pattern % !Cabinet !archive "!Cabinet/*" "!archive/*" !Calendar !Drafts !drafts "!Junk Mail" !spam "!Sent Items" !sent !Tasklist !Trash !trash !Munin !munin !OTRS !otrs !TSM !tsm
 
 Channel itz-archive
 Master :itz-remote:"Cabinet"
@@ -92,7 +92,7 @@ Master :itz-remote:"Sent Items"
 Slave :itz-local:"sent"
 
 Channel itz-spam
-Master :itz-remote:"Junk"
+Master :itz-remote:"Junk Mail"
 Slave :itz-local:"spam"
 
 Channel itz-trash
@@ -111,7 +111,7 @@ Channel itz-tsm
 Master :itz-remote:"TSM"
 Slave :itz-local:"tsm"
 
-group itz itz-default itz-archive itz-archive-zba itz-sent itz-munin itz-otrs itz-tsm
+group itz itz-default itz-archive itz-archive-zba itz-sent itz-spam itz-munin itz-otrs itz-tsm
 # }}}
 # }}}
 
