@@ -12,6 +12,7 @@ alias la "ls -A"
 alias ll "ls -l"
 alias lla "ls -la"
 
+alias n "nvim"
 alias p "pacaur"
 alias t "task"
 alias s "systemctl"
