@@ -13,7 +13,7 @@ super + shift + x
 	bspc window -c
 
 # Next layout
-super + {comma,period}
+super + {BackSpace,Delete}
 	bspc desktop -l {prev,next}
 
 # Balance current desktop
@@ -21,7 +21,7 @@ super + b
 	bspc desktop -B
 
 # Toggle floating/pseudotile/fullscreen
-super + {s,d,f}
+super + {i,e,a}
 	bspc window -t {floating,pseudo_tiled,fullscreen}
 
 # Transplant focused window onto last preselection
@@ -29,12 +29,12 @@ super + Return
 	bspc window -w last.manual
 
 # Focus window left/down/up/right (moves focus across outputs)
-super + {h,j,k,l}
+super + {d,t,r,n}
 	dir={left,down,up,right}; \
 	bspc window -f $dir || bspc monitor -f $dir
 
 # Move window left/down/up/right (moves window to empty outputs)
-super + shift + {h,j,k,l}
+super + shift + {d,t,r,n}
 	dir={left,down,up,right}; \
 	bspc window -s $dir -f || bspc window -m $dir -f
 
@@ -43,15 +43,15 @@ super + {_,shift + }Tab
 	bspc window -f {next,prev}
 
 # Presel left/down/up/right
-super + ctrl + {h,j,k,l}
+super + ctrl + {d,t,r,n}
 	bspc window -p {left,down,up,right}
 
 # Increase window size to the left/down/up/right
-super + alt + {h,j,k,l}
+super + alt + {d,t,r,n}
 	bspc window -e {left -40,down +40,up -40,right +40}
 
 # Decrease window size to the left/down/up/right
-super + alt + shift + {h,j,k,l}
+super + alt + shift + {d,t,r,n}
 	bspc window -e {right -40,up +40,down -40,left +40}
 
 # Set split ratio
@@ -63,11 +63,11 @@ super + {_,shift + }{1-9,0}
 	bspc {desktop -f,window -d} focused:\^{1-9,10}
 
 # Focus to previous/next monitor
-super + {w,e}
+super + {k,u}
 	bspc monitor -f {prev,next}
 
 # Move to previous/next monitor
-super + shift + {w,e}
+super + shift + {k,u}
 	bspc window -m {prev,next} -f
 
 # Move/resize window
@@ -92,7 +92,7 @@ super + y
 super + x
 	j4-dmenu-desktop
 
-super + c
+super + odiaresis
 	$TERMINAL -e ranger
 
 # Mute sink
