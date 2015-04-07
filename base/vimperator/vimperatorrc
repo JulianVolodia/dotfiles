@@ -31,13 +31,34 @@ set hintchars="abcdefghijklmnopqrstuvwxyz"
 " }}}
 " Keybindings {{{
 " Movement {{{
+" hjkl replacement
+noremap <silent> d h
+noremap <silent> t j
+noremap <silent> r k
+noremap <silent> n l
+
+" Replacement for the hjkl replacement
+" k/K "kills" tabs
+noremap <silent> k d
+noremap <silent> K D
+" e/E opens things in new tabs
+" Seriously, I got nothin'
+noremap <silent> e t
+noremap <silent> E T
+" r/R reloads a tab
+noremap <silent> h r
+noremap <silent> H R
+" l/L "looks" for the next match
+noremap <silent> l n
+noremap <silent> L N
+
 " Move between tabs
-noremap <silent> H <c-p>
-noremap <silent> L <c-n>
+noremap <silent> D <c-p>
+noremap <silent> N <c-n>
 
 " Move forwards/backwards in history
-noremap <silent> J <c-i>
-noremap <silent> K <c-o>
+noremap <silent> T <c-i>
+noremap <silent> R <c-o>
 
 " Move between frames more easily
 nnoremap ö [
@@ -53,14 +74,14 @@ nnoremap <silent> <c-h> :tabmove! -1<cr>
 nnoremap <silent> <c-l> :tabmove! +1<cr>
 
 " No need to move from homerow in command-line and insert mode
-cnoremap <silent> <c-h> <left>
-cnoremap <silent> <c-j> <down>
-cnoremap <silent> <c-k> <up>
-cnoremap <silent> <c-l> <right>
-inoremap <silent> <c-h> <left>
-inoremap <silent> <c-j> <down>
-inoremap <silent> <c-k> <up>
-inoremap <silent> <c-l> <right>
+cnoremap <silent> <c-d> <left>
+cnoremap <silent> <c-t> <down>
+cnoremap <silent> <c-r> <up>
+cnoremap <silent> <c-n> <right>
+inoremap <silent> <c-d> <left>
+inoremap <silent> <c-t> <down>
+inoremap <silent> <c-r> <up>
+inoremap <silent> <c-n> <right>
 
 " }}}
 " Tabgroup management {{{
@@ -88,10 +109,8 @@ noremap <leader>tS :tabgroups switch<space>
 
 " }}}
 " Easier full zoom
-noremap <c-+> zI
-noremap <c--> zO
-" Easier to reach
-noremap ü :
+noremap + zI
+noremap \- zO
 " I'm used to the CtrlP Vim plugin, so…
 noremap <leader>b :buffer #
 " Toggle app tab for current tab
