@@ -92,7 +92,7 @@ super + y
 super + x
 	j4-dmenu-desktop
 
-super + odiaresis
+super + odiaeresis
 	$TERMINAL -e ranger
 
 # Mute sink
