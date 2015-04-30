@@ -122,7 +122,9 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .ini                  1
 #   vim
 .vim                  1
+.nvim                  1
 .viminfo              1
+.nviminfo              1
 #   cisco VPN client configuration
 .pcf                  1
 #   adobe photoshop proof settings file

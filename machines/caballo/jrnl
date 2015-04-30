@@ -1,7 +1,7 @@
 {
   "encrypt": false,
   "tagsymbols": "@",
-  "editor": "vim -c Goyo -c startinsert",
+  "editor": "nvim",
   "default_hour": 9,
   "default_minute": 0,
   "timeformat": "%d.%m.%Y %H:%M",

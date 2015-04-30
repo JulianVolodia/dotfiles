@@ -1,0 +1,6 @@
+#!/bin/sh
+ln -frs . "$HOME/.nvim"
+mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/bundle" \
+	"${XDG_CACHE_HOME:-$HOME/.cache}/nvim/swap" \
+	"${XDG_CACHE_HOME:-$HOME/.cache}/nvim/undo" \
+	"${XDG_CACHE_HOME:-$HOME/.cache}/nvim/unite"

@@ -6,7 +6,7 @@ export GPG_AGENT_INFO="$HOME/.gnupg/S.gpg-agent"
 export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 
 export PATH="$HOME/.local/bin:$PATH"
-export PAGER=less EDITOR=vim BROWSER=firefox
+export PAGER=less EDITOR=nvim BROWSER=firefox
 # Smart case searching as in Vim
 export LESS="-Ri"
 
@@ -28,8 +28,6 @@ fi
 # Environment variables for programs
 export ASPROOT="$HOME/pkg"
 export HGRCPATH="$XDG_CONFIG_HOME/mercurial/hgrc"
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
-export GVIMINIT='let $MYGVIMRC="$XDG_CONFIG_HOME/vim/gvimrc" | source $MYGVIMRC'
 export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"
 export TASKRC="$XDG_CONFIG_HOME/task/taskrc"
 export TEXMFHOME="$XDG_DATA_HOME/texmf"

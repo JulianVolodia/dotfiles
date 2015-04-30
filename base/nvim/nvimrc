@@ -28,10 +28,10 @@
 		" both in the regular plugin/ftplugin directories as well as in the after/
 		" directories. I believe this is the way it should be. }}}
 	" Early runtimepath dickery!
-	set runtimepath=$XDG_DATA_HOME/vim/vim-plug,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
+	set runtimepath=$XDG_DATA_HOME/nvim/vim-plug,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 	" Plugins {{{
 		" Plug initialization {{{
-			call plug#begin(expand("$XDG_DATA_HOME/vim/bundle"))
+			call plug#begin(expand("$XDG_DATA_HOME/nvim/bundle"))
 			" Bundles
 			" Vimproc has a native component
 			Plug 'Shougo/vimproc', { 'do': 'make' }
@@ -274,7 +274,7 @@
 			" }}}
 			" UltiSnips {{{
 				" Snippet directory for private snippets
-				let g:UltiSnipsSnippetsDir = expand("$XDG_CONFIG_HOME/vim/snips")
+				let g:UltiSnipsSnippetsDir = expand("$XDG_CONFIG_HOME/nvim/snips")
 				" All snippets directories, in case I use predefined snippets
 				let g:UltiSnipsSnippetDirectories = ["snips", "UltiSnips"]
 				" Use this to expand a trigger (i.e. insert a snippet)
@@ -299,7 +299,7 @@
 				" Track yank history with unite
 				let g:unite_source_history_yank_enable = 1
 				" Use XDG spec compliant data directory
-				let g:unite_data_directory = expand("$XDG_CACHE_HOME/vim/unite")
+				let g:unite_data_directory = expand("$XDG_CACHE_HOME/nvim/unite")
 				" Use fuzzy matcher
 				call unite#filters#matcher_default#use(['matcher_fuzzy'])
 				" Use unite for displaying ag search results
@@ -337,12 +337,10 @@
 
 	" }}}
 	" Late runtimepath dickery!
-	set runtimepath^=$XDG_CONFIG_HOME/vim runtimepath+=$XDG_CONFIG_HOME/vim/after
+	set runtimepath^=$XDG_CONFIG_HOME/nvim runtimepath+=$XDG_CONFIG_HOME/nvim/after
 
 " }}}
 " General {{{
-	set background=light
-	colorscheme summerfruit256
 	" I want to use LaTeX as my main TeX flavor, thank you very much
 	" Also, it's kind of a pain in the ass having to set this in .vimrc, though
 	" that's probably just my ignorance speaking
@@ -352,13 +350,13 @@
 		" Don't create backup files
 		set nobackup
 		" Save viminfo file to keep state information from one vim session to the next
-		set viminfo+="n$XDG_CACHE_HOME/vim/viminfo"
+		set viminfo+="n$XDG_CACHE_HOME/nvim/viminfo"
 		" Common directory for all swap files (first existing directory is used)
-		set directory=$XDG_CACHE_HOME/vim/swap
+		set directory=$XDG_CACHE_HOME/nvim/swap
 		" Persistent undo (see ":help persistent-undo")
 		set undofile
 		" Common directory for persistent undo files
-		set undodir=$XDG_CACHE_HOME/vim/undo
+		set undodir=$XDG_CACHE_HOME/nvim/undo
 
 	" }}}
 	" Indentation & linebreaks {{{
