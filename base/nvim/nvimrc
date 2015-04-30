@@ -34,7 +34,6 @@
 			call plug#begin(expand("$XDG_DATA_HOME/nvim/bundle"))
 			" Bundles
 			" Vimproc has a native component
-			Plug 'Shougo/vimproc', { 'do': 'make' }
 			Plug 'vim-scripts/argtextobj.vim'
 			Plug 'tpope/vim-commentary'
 			Plug 'vim-scripts/DeleteTrailingWhitespace', { 'on': 'DeleteTrailingWhitespace' }
@@ -286,9 +285,6 @@
 
 			" }}}
 			" Unite {{{
-				" Requires the following to be installed:
-				" - github.com/Shougo/vimproc.vim
-
 				" Info:
 				" - -buffer-name and -resume together speed up subsequent openings of that buffer, even if the content changes
 				" - -toggle allows to toggle with the same keybinding
@@ -311,7 +307,7 @@
 				noremap <silent> <leader>b :Unite -no-split -toggle -buffer-name=buffers -start-insert buffer<cr>
 				" Find file recursively
 				" Note: Uses vimproc for asynchronous access
-				noremap <silent> <leader>e :Unite -no-split -toggle -buffer-name=files -start-insert file_rec/async:!<cr>
+				noremap <silent> <leader>e :Unite -no-split -toggle -buffer-name=files -start-insert file_rec/neovim:!<cr>
 				" Open yank history
 				noremap <silent> <leader>y :Unite -no-split -toggle -buffer-name=yanks -resume history/yank<cr>
 				" Grep through current buffer
