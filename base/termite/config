@@ -7,7 +7,7 @@ scroll_on_keystroke = true
 audible_bell = false
 visible_bell = false
 mouse_autohide = false
-allow_bold = true
+allow_bold = false
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
@@ -20,56 +20,36 @@ cursor_blink = system
 # "block", "underline" or "ibeam"
 cursor_shape = block
 
-# $BROWSER is used by default
-#browser = firefox
-
 # word characters used for word selection
 # (default if unset: all graphic non-punctuation/space characters)
 #word_chars = -A-Za-z0-9,./?%&#:_=+@~
 # set size hints for the window
-size_hints = false
+size_hints = true
 
 [colors]
-foreground = #707070
-foreground_bold = #707070
-foreground_dim = #aaaaaa
-background = rgba(255, 255, 255, 0.9)
-cursor = #32cd32
+foreground = #839496
+foreground_bold = #eee8d5
+#foreground_dim = #888888
+background = #002b36
+cursor = #93a1a1
 
 # if unset, will reverse foreground and background
-highlight = #32cd32
+#highlight = #839496
 
 # colors from color0 to color254 can be set
-# Black + dark gray
-color0 = #000000
-color8 = #444444
-# Red + light red
-color1 = #b22222
-color9 = #e25822
-# Green + light green
-color2 = #addf2f
-color10 = #addf2f
-# Yellow + light yellow
-color3 = #da9100
-color11 = #ffcc33
-# Blue + light blue
-color4 = #50b0f0
-color12 = #50b0f0
-# magenta + light magenta
-color5 = #de3163
-color13 = #e52b50
-# Cyan + light cyan
-color6 = #47ceeb
-color14 = #47ceeb
-# Gray + white
-color7 = #aaaaaa
-color15 = #ffffff
-
-[hints]
-font = Monospace 8
-#foreground = #dcdccc
-#background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
+color0 = #073642
+color1 = #dc322f
+color2 = #859900
+color3 = #b58900
+color4 = #268bd2
+color5 = #d33682
+color6 = #2aa198
+color7 = #eee8d5
+color8 = #002b36
+color9 = #cb4b16
+color10 = #586e75
+color11 = #657b83
+color12 = #839496
+color13 = #6c71c4
+color14 = #93a1a1
+color15 = #fdf6e3

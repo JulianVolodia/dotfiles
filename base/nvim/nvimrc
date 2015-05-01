@@ -57,6 +57,7 @@
 			Plug 'tpope/vim-obsession', { 'on': 'Obsession' }
 			Plug 'tpope/vim-repeat'
 			Plug 'tpope/vim-sensible'
+			Plug 'altercation/vim-colors-solarized'
 			Plug 'tpope/vim-speeddating'
 			Plug 'vim-scripts/ShowTrailingWhitespace'
 			Plug 'sjl/splice.vim'
@@ -89,12 +90,16 @@
 			"   commentary and üü)
 			" Airline {{{
 				" Use this theme
-				let g:airline_theme = 'sol'
+				let g:airline_theme = 'solarized'
+				" Custom symbols dictionary
+				if !exists('g:airline_symbols')
+					let g:airline_symbols = {}
+				endif
 				" Separators between categories
-				let g:airline_linecolumn_prefix = '¶'
-				let g:airline_branch_prefix = '⎇ '
-				let g:airline_readonly_symbol = '₩'
-				let g:airline_paste_symbol = 'ρ'
+				let g:airline_symbols.linenr = '¶'
+				let g:airline_symbols.branch = '⎇ '
+				let g:airline_symbols.readonly = '₩'
+				let g:airline_symbols.paste = 'ρ'
 				" Enable modified detection
 				let g:airline_detect_modified = 1
 				" Enable paste detection
@@ -257,6 +262,10 @@
 				noremap <silent> co<space> :<c-u>call ShowTrailingWhitespace#Toggle(0)<bar>echo (ShowTrailingWhitespace#IsSet() ? 'Showing trailing whitespace' : 'Not showing trailing whitespace')<cr>
 
 			" }}}
+			" Solarized {{{
+				set background=dark
+				colorscheme solarized
+		"	" }}}
 			" Splice {{{
 				" Use this as the splice prefix
 				let g:splice_prefix = "<leader>s"
