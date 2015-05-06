@@ -10,6 +10,8 @@ set newtab=all
 let mapleader=","
 
 " Appearance {{{
+" Color scheme
+colorscheme solarized
 " Show these in status line
 set status="input,history,location,bookmark"
 " Only show tab line
