@@ -34,10 +34,10 @@ set hintchars="abcdefghijklmnopqrstuvwxyz"
 " Keybindings {{{
 " Movement {{{
 " hjkl replacement
-noremap <silent> d h
-noremap <silent> t j
-noremap <silent> r k
-noremap <silent> n l
+noremap <silent> d <left>
+noremap <silent> t <down>
+noremap <silent> r <up>
+noremap <silent> n <right>
 
 " Replacement for the hjkl replacement
 " k/K "kills" tabs
