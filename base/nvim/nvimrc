@@ -266,6 +266,16 @@
 				set background=dark
 				colorscheme solarized
 		"	" }}}
+			" SpeedDating {{{
+				" I'd like to use my own mappings, thanks
+				let g:speeddating_no_mappings = 1
+				nmap  <C-A>     <Plug>SpeedDatingUp
+				nmap  <C-X>     <Plug>SpeedDatingDown
+				xmap  <C-A>     <Plug>SpeedDatingUp
+				xmap  <C-X>     <Plug>SpeedDatingDown
+				nmap k<C-A>     <Plug>SpeedDatingNowUTC
+				nmap k<C-X>     <Plug>SpeedDatingNowLocal
+			" }}}
 			" Splice {{{
 				" Use this as the splice prefix
 				let g:splice_prefix = "<leader>s"
@@ -277,6 +287,18 @@
 
 			" }}}
 			" Surround {{{
+				" I'd like to use my own mappings, thanks
+				let g:surround_no_mappings = 1
+				nmap ks <Plug>Dsurround
+				nmap cs <Plug>Csurround
+				nmap cS <Plug>CSurround
+				nmap ys <Plug>Ysurround
+				nmap yS <Plug>YSurround
+				nmap yss <Plug>Yssurround
+				nmap ySs <Plug>YSsurround
+				nmap ySS <Plug>YSsurround
+				xmap S <Plug>VSurround
+				xmap gS  <Plug>VgSurround
 				" I don't use the substitute command in visual/select mode anyways
 				xmap s <Plug>VSurround
 			" }}}
@@ -473,39 +495,53 @@
 " }}}
 " Keybindings {{{
 	" Movement {{{
-		" Makes opening command line easier
-		nnoremap ü :
-		vnoremap ü :
+		" Use dtrn for hjkl {{{
+			noremap <silent> d h
+			noremap <silent> t j
+			noremap <silent> r k
+			noremap <silent> n l
 
-		" This is similar to the US-English keyboard layout and makes typing bracket
-		" commands a LOT easier
-		nmap ö [
-		vmap ö [
-		nmap ä ]
-		vmap ä ]
-		" OMG I love bracket commands
-		nmap öö [[
-		nmap ää ]]
-		vmap öö [[
-		vmap ää ]]
+			" Fix alllll the other mappings…
+			" First: <c-h>, <c-m>, <c-l> are the new H, M, L
+			noremap <silent> <c-h> H
+			noremap <silent> <c-m> M
+			noremap <silent> <c-l> L
 
-		" MOAR BRACKITS DAMMET
-		nnoremap Ö (
-		vnoremap Ä )
-		nnoremap <c-ö> {
-		nnoremap <c-ä> }
+			" d > k (Mnemonic: "k"ut instead of "d"elete)
+			noremap <silent> k d
+			noremap <silent> K D
+			" t > j (Mnemonic: "j"ump towards)
+			" Also, it's right next to f, which performs a similar function
+			noremap <silent> j t
+			noremap <silent> J T
+			" Fuck it, H is line joining now…
+			noremap <silent> H J
+			" …and h is line splitting
+			noremap <silent> h <esc>i<cr><esc>
 
-		" Easier movement between virtual lines
-		noremap <silent> j gj
-		noremap <silent> k gk
-		noremap <silent> gj j
-		noremap <silent> gk k
+			" r > s (Mnemonic: "s"ubstitute)
+			noremap <silent> s r
+			noremap <silent> S R
+			" <c-u> is now redo
+			noremap <silent> <c-u> <c-r>
 
-		" Easier movement between viewports
-		nnoremap <c-j> <c-w>j
-		nnoremap <c-k> <c-w>k
-		nnoremap <c-l> <c-w>l
-		nnoremap <c-h> <c-w>h
+			" n -> l, like in Vimperator: "l"ook
+			noremap <silent> l n
+			noremap <silent> L N
+
+			" Easier movement between virtual lines
+			noremap <silent> t gj
+			noremap <silent> r gk
+			noremap <silent> gt j
+			noremap <silent> gr k
+
+			" Easier movement between viewports
+			nnoremap <c-d> <c-w>h
+			nnoremap <c-t> <c-w>j
+			nnoremap <c-r> <c-w>k
+			nnoremap <c-n> <c-w>l
+
+		" }}}
 
 		" Use <tab> to teleport to matching parens
 		map <tab> %
@@ -554,8 +590,8 @@
 	noremap <silent> <cr> :nohlsearch<cr>
 	" Make Y behave like D and C
 	noremap <silent> Y y$
-	" Switch ; and , behavior so that , searches forwards and ; backwards
-	noremap , ;
-	noremap ; ,
+	" Make , search forwards and <Shift-,> search backwards
+	" noremap , ;
+	noremap ; –
 
 " }}}
