@@ -429,8 +429,7 @@
 	" Appearance {{{
 		" Breaks lines in sane places
 		set linebreak
-		" Show end of line characters
-		set list
+		" End of line characters
 		set listchars=eol:↲,tab:⇄·,trail:␣,extends:⇢,precedes:⇠
 		" Add this in front of line if line is too long for terminal
 		set showbreak=↪
