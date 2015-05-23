@@ -539,11 +539,11 @@
 			nnoremap <c-t> <c-w>j
 			nnoremap <c-r> <c-w>k
 			nnoremap <c-n> <c-w>l
-			" Caution: These only work in Neovim (thanks to libtermkey)
-			noremap <c-s-d> <c-w>H
-			noremap <c-s-t> <c-w>J
-			noremap <c-s-r> <c-w>K
-			noremap <c-s-n> <c-w>L
+
+			noremap <c-w>D <c-w>h
+			noremap <c-w>T <c-w>j
+			noremap <c-w>R <c-w>k
+			noremap <c-w>N <c-w>l
 
 		" }}}
 
