@@ -509,6 +509,9 @@
 			" d > k (Mnemonic: "k"ut instead of "d"elete)
 			noremap <silent> k d
 			noremap <silent> K D
+			" do, dp > Do, DP
+			noremap Do do
+			noremap Dp dp
 			" t > j (Mnemonic: "j"ump towards)
 			" Also, it's right next to f, which performs a similar function
 			noremap <silent> j t
