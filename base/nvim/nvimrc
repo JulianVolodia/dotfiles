@@ -80,12 +80,6 @@
 			filetype plugin indent on
 		" }}}
 		" Configuration {{{
-			" Some preliminary remarks:
-			" - all plugin functions that open some kind of split window have mapped that
-			"   the opening/toggling of said window to a function key
-			" - functions that toggle other stuff are normally either <leader><key> if I
-			"   use them sparingly, or use their own keys if I use them often (e.g.
-			"   commentary and üü)
 			" Airline {{{
 				" Use this theme
 				let g:airline_theme = 'solarized'
@@ -174,7 +168,7 @@
 				nnoremap <silent> [ogg :GitGutterEnable<cr>
 				nnoremap <silent> ]ogg :GitGutterDisable<cr>
 				nnoremap <silent> cogg :GitGutterToggle<cr>
-				" On, off, toggle (line highlights)
+				" On, off, toggle (signs)
 				nnoremap <silent> [ogs :GitGutterSignsEnable<cr>
 				nnoremap <silent> ]ogs :GitGutterSignsDisable<cr>
 				nnoremap <silent> cogs :GitGutterSignsToggle<cr>
@@ -235,8 +229,7 @@
 			" ShowTrailingWhitespace {{{
 				" Show it by default
 				let g:ShowTrailingWhitespace = 0
-				" ZOMGWTFBBQ
-				" I mean, toggle trailing whitespace display for current buffer
+				" Toggle trailing whitespace display for current buffer
 				noremap <silent> co<space> :<c-u>call ShowTrailingWhitespace#Toggle(0)<bar>echo (ShowTrailingWhitespace#IsSet() ? 'Showing trailing whitespace' : 'Not showing trailing whitespace')<cr>
 
 			" }}}
