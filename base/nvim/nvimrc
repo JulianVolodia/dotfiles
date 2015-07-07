@@ -50,10 +50,10 @@
 					\ '<Plug>GitGutterStageHunk', '<Plug>GitGutterRevertHunk',
 					\ '<Plug>GitGutterPreviewHunk'
 				\ ] }
-			Plug 'sjl/gundo.vim', { 'on': [
+			Plug 'michaeljsmith/vim-indent-object'
+			Plug 'simnalamburt/vim-mundo', { 'on': [
 					\ 'GundoToggle', 'GundoShow', 'GundoHide', 'GundoRenderGraph'
 				\ ] }
-			Plug 'michaeljsmith/vim-indent-object'
 			Plug 'tpope/vim-obsession', { 'on': 'Obsession' }
 			Plug 'tpope/vim-repeat'
 			Plug 'tpope/vim-sensible'
@@ -188,7 +188,7 @@
 				" Update signs for all buffers
 				nnoremap <silent> <leader>gU :GitGutterAll<cr>
 			" }}}
-			" Gundo {{{
+			" Mundo {{{
 				" Toggles the Gundo windows
 				noremap <leader>u :GundoToggle<cr>
 				" horizontal width of Gundo graph
