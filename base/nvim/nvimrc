@@ -185,8 +185,8 @@
 				nmap <silent> <leader>hr <Plug>GitGutterRevertHunk
 				" Update signs for current buffer
 				nnoremap <silent> <leader>gu :GitGutter<cr>
-				" Update signs for current buffer
-				nnoremap <silent> <leader>gu :GitGutterAll<cr>
+				" Update signs for all buffers
+				nnoremap <silent> <leader>gU :GitGutterAll<cr>
 			" }}}
 			" Gundo {{{
 				" Toggles the Gundo windows
