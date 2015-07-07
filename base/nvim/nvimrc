@@ -118,11 +118,49 @@
 
 			" }}}
 			" FileBeagle {{{
-				" 
+				" Prefix for opening things in background
+				let g:filebeagle_buffer_background_key_map_prefix = '<leader>'
+				" Normal mappings
+				let g:filebeagle_buffer_normal_key_maps = {
+					\ 'FileBeagleBufferRefresh': '<c-r>',
+					\ 'FileBeagleBufferToggleHiddenAndIgnored': 'coh',
+					\ 'FileBeagleBufferSplitVerticalVisitTarget': '<bar>',
+					\ 'FileBeagleBufferBgSplitVerticalVisitTarget': g:filebeagle_buffer_background_key_map_prefix . '<bar>',
+					\ 'FileBeagleBufferSplitVisitTarget': '-',
+					\ 'FileBeagleBufferBgSplitVisitTarget': g:filebeagle_buffer_background_key_map_prefix . '-',
+					\ 'FileBeagleBufferTabVisitTarget': '<tab>',
+					\ 'FileBeagleBufferBgTabVisitTarget': g:filebeagle_buffer_background_key_map_prefix . '<tab>',
+					\ 'FileBeagleBufferFocusOnParent': 'd',
+					\ 'FileBeagleBufferFocusOnPrevious': 'R',
+					\ 'FileBeagleBufferInsertTargetBelowCursor': 'p.',
+					\ 'FileBeagleBufferBgInsertTargetBelowCursor': g:filebeagle_buffer_background_key_map_prefix . 'p.',
+					\ 'FileBeagleBufferInsertTargetAtBeginning': 'p0',
+					\ 'FileBeagleBufferBgInsertTargetAtBeginning': g:filebeagle_buffer_background_key_map_prefix . 'p0',
+					\ 'FileBeagleBufferInsertTargetAtEnd': 'p$',
+					\ 'FileBeagleBufferBgInsertTargetAtEnd': g:filebeagle_buffer_background_key_map_prefix . 'p$',
+					\ 'FileBeagleBufferChangeVimWorkingDirectory': 'cd',
+					\ 'FileBeagleBufferChangeVimLocalDirectory': 'lcd',
+				\ }
+				let g:filebeagle_buffer_visual_key_maps = {
+					\ 'FileBeagleBufferSplitVerticalVisitTarget': '<bar>',
+					\ 'FileBeagleBufferBgSplitVerticalVisitTarget': g:filebeagle_buffer_background_key_map_prefix . '<bar>',
+					\ 'FileBeagleBufferSplitVisitTarget': '-',
+					\ 'FileBeagleBufferBgSplitVisitTarget': g:filebeagle_buffer_background_key_map_prefix . '-',
+					\ 'FileBeagleBufferTabVisitTarget': '<tab>',
+					\ 'FileBeagleBufferBgTabVisitTarget': g:filebeagle_buffer_background_key_map_prefix . '<tab>',
+					\ 'FileBeagleBufferInsertTargetBelowCursor': 'p.',
+					\ 'FileBeagleBufferBgInsertTargetBelowCursor': g:filebeagle_buffer_background_key_map_prefix . 'p.',
+					\ 'FileBeagleBufferInsertTargetAtBeginning': 'p0',
+					\ 'FileBeagleBufferBgInsertTargetAtBeginning': g:filebeagle_buffer_background_key_map_prefix . 'p0',
+					\ 'FileBeagleBufferInsertTargetAtEnd': 'p$',
+					\ 'FileBeagleBufferBgInsertTargetAtEnd': g:filebeagle_buffer_background_key_map_prefix . 'p$',
+				\ }
 			" }}}
 			" Fugitive {{{
 				" Edit fugitive-revision (with repo basedir as working directory)
 				noremap <leader>ge :Gedit<space>
+				" Edit fugitive-revision in new tab
+				noremap <leader>g<tab> :Gtabedit<space>
 				" Read output of git command in new split
 				noremap <leader>g- :Gsplit!<space>
 				" Read output of git command in vertical split
