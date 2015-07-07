@@ -63,9 +63,7 @@
 			Plug 'tpope/vim-surround'
 			Plug 'SirVer/ultisnips'
 			Plug 'tpope/vim-unimpaired'
-			Plug 'tpope/vim-dispatch', { 'on': [
-					\ 'Dispatch', 'FocusDispatch', 'Make', 'Spawn', 'Start', 'Copen'
-				\ ] }
+			Plug 'tpope/vim-dispatch'
 			Plug 'Valloric/YouCompleteMe', { 'do':
 					\ './install.sh --clang-completer --system-boost --system-libclang'
 				\ }
