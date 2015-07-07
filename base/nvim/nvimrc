@@ -122,7 +122,7 @@
 				" Don't automatically delete on writing a buffer
 				let g:DeleteTrailingWhitespace = 0
 				" Do this to fix trailing whitespace
-				noremap <silent> <leader>d<space> :DeleteTrailingWhitespace<cr>
+				noremap <silent> <leader>k<space> :DeleteTrailingWhitespace<cr>
 
 			" }}}
 			" Fugitive {{{
@@ -230,6 +230,9 @@
 				"let g:gundo_right = 1
 				" automatically close Gundo windows on reverting
 				let g:gundo_close_on_revert = 1
+				" Change mappings for moving around
+				let g:gundo_map_move_older = 't'
+				let g:gundo_map_move_newer = 'r'
 
 			" }}}
 			" Obsession {{{
