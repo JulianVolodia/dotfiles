@@ -191,14 +191,6 @@
 			" Mundo {{{
 				" Toggles the Gundo windows
 				noremap <leader>u :GundoToggle<cr>
-				" horizontal width of Gundo graph
-				let g:gundo_width = 50
-				" Vertical height of preview window
-				"let g:gundo_preview_height = 25
-				" Show preview window below file instead of below graph
-				" let g:gundo_preview_bottom = 0
-				" Show Gundo graph on the right
-				"let g:gundo_right = 1
 				" automatically close Gundo windows on reverting
 				let g:gundo_close_on_revert = 1
 				" Change mappings for moving around
