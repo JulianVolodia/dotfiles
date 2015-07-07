@@ -125,70 +125,47 @@
 				noremap <silent> <leader>k<space> :DeleteTrailingWhitespace<cr>
 
 			" }}}
+			" FileBeagle {{{
+				" 
+			" }}}
 			" Fugitive {{{
-				" Mnemonic: v = "VCS"
 				" Edit fugitive-revision (with repo basedir as working directory)
-				noremap <buffer> <leader>ve<space> :Gedit<space>
-				" Edit fugitive-revision in split
-				noremap <buffer> <leader>ves :Gsplit<space>
-				" Edit fugitive-revision in vertical split
-				noremap <buffer> <leader>vev :Gvsplit<space>
-				" Edit fugitive-revision in new tab
-				noremap <buffer> <leader>vet :Gtabedit<space>
-				" Edit fugitive-revision in preview window
-				noremap <buffer> <leader>vet :Gpedit<space>
-				" Read output of git command in current buffer
-				noremap <buffer> <leader>vE :Gread!<space>
+				noremap <leader>ge :Gedit<space>
 				" Read output of git command in new split
-				noremap <buffer> <leader>veS :Gsplit!<space>
+				noremap <leader>g- :Gsplit!<space>
 				" Read output of git command in vertical split
-				noremap <buffer> <leader>veV :Gvsplit!<space>
-				" Read output of git command in new tab
-				noremap <buffer> <leader>veT :Gtabedit!<space>
+				noremap <leader>g<bar> :Gvsplit!<space>
 				" Read output of git command in preview window
-				noremap <buffer> <leader>veP :Gpedit!<space>
-				" :cd relative to repository
-				noremap <buffer> <leader>vcd :Gcd<space>
-				" :lcd relative to repository
-				noremap <buffer> <leader>vcl :Glcd<space>
+				noremap <leader>gP :Gpedit!<space>
 				" Move file and rename buffer accordingly
-				noremap <buffer> <leader>vm :Gmove<space>
+				noremap <leader>gm :Gmove<space>
 				" Move file and rename buffer accordingly (overwrite if necessary)
-				noremap <buffer> <leader>vM :Gmove!<space>
+				noremap <leader>gM :Gmove!<space>
 				" Do :w and stage results
-				noremap <silent> <buffer> <leader>vw :Gwrite<cr>
-				" Do :w, stage results, do :q
-				noremap <silent> <buffer> <leader>vwq :Gwq<cr>
-				" Do :w and stage results
-				noremap <silent> <buffer> <leader>vW :Gwrite!<cr>
-				" Do :w, stage results, do :q
-				noremap <silent> <buffer> <leader>vwQ :Gwq!<cr>
+				noremap <leader>gw :Gwrite<cr>
+				" Do the equivalend of "git checkout %"
+				noremap <leader>gr :Gread<cr>
 				" Remove current file and delete buffer
-				noremap <buffer> <leader>vrm :Gremove<cr>
+				noremap <leader>gR :Gremove<cr>
 				" Remove current file and delete buffer forcefully
-				noremap <buffer> <leader>vrM :Gremove!<cr>
-				" Open annotation window ("git blame", but who's counting)
-				noremap <silent> <buffer> <leader>va :Gblame<cr>
-				" Browse on GitHub, if possible
-				noremap <silent> <buffer> <leader>vb :Gbrowse<cr>
-				" Put GitHub URL in clipboard
-				noremap <silent> <buffer> <leader>vB :Gbrowse!<cr>
-				" Open status window
-				noremap <silent> <buffer> <leader>vs :Gstatus<cr>
+				noremap <leader>gB :Gblame<cr>
+				" Browse on GitHub or on git's own webserver
+				noremap <leader>gb :Gbrowse<cr>
+				noremap <leader>gs :Gstatus<cr>
 				" Show list of revisions for current file in location list
-				noremap <silent> <buffer> <leader>vl :Gllog<cr>
-				" Show list of commits for current file in location list
-				noremap <silent> <buffer> <leader>vL :Gllog --<cr>
+				noremap <leader>gl :Gllog<cr>
+				" Show list of commits in location list
+				noremap <leader>gL :Gllog --<cr>
 				" Open diff window
-				noremap <silent> <buffer> <leader>vd :Gsdiff<cr>
-				" Open vertical diff window
-				noremap <silent> <buffer> <leader>vvd :Gvdiff<cr>
-				" :Glgrep
-				noremap <buffer> <leader>vg :Glgrep<space>
-				" :Ggrep
-				noremap <buffer> <leader>vG :Ggrep<space>
+				noremap <leader>gd :Gdiff<cr>
+				noremap <leader>gg :Glgrep<space>
+				noremap <leader>gG :Ggrep<space>
 				" Open commit buffer (or status buffer if there's nothing staged)
-				noremap <silent> <buffer> <leader>vC :Gcommit<cr>
+				" -v: Show unified diff in output
+				" -q: Don't show help message
+				noremap <silent> <leader>gc :Gcommit -v -q<cr>
+				noremap <silent> <leader>gps :Gpush<cr>
+				noremap <silent> <leader>gpl :Gpull<cr>
 			" }}}
 			" Git Gutter {{{
 				" I'd like to do my own mappings, thanks
