@@ -7,15 +7,37 @@ alias ... "cd ../.."
 alias .... "cd ../../.."
 alias ..... "cd ../../../.."
 
-alias ls "ls -F -h --color --group-directories-first"
-alias la "ls -A"
-alias ll "ls -l"
-alias lla "ls -la"
+function ls --wraps=/usr/bin/ls
+	/usr/bin/ls -F -h --color --group-directories-first $argv
+end
+function la --wraps=ls
+	ls -A $argv
+end
+function ll --wraps=ls
+	ls -l $argv
+end
+function lla --wraps=ls
+	ls -la $argv
+end
 
-alias n "nvim"
-alias p "pacaur"
-alias t "task"
-alias s "systemctl"
-alias syu "systemctl --user"
-alias j "journalctl"
-alias jyu  "journalctl --user"
+function n --wraps=nvim
+	nvim $argv
+end
+function p --wraps=pacaur
+	pacaur $argv
+end
+function t --wraps=task
+	task $argv
+end
+function s --wraps=systemctl
+	systemctl $argv
+end
+function syu --wraps=systemctl
+	systemctl --user $argv
+end
+function j --wraps journalctl
+	journalctl $argv
+end
+function jyu --wraps=journalctl
+	journalctl --user $argv
+end
