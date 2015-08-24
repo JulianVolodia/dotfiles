@@ -72,8 +72,8 @@ nnoremap öö [[
 nnoremap ää ]]
 
 " Easier :tabmove; wraps around
-nnoremap <silent> <c-h> :tabmove! -1<cr>
-nnoremap <silent> <c-l> :tabmove! +1<cr>
+nnoremap <silent> <c-d> :tabmove! -1<cr>
+nnoremap <silent> <c-n> :tabmove! +1<cr>
 
 " No need to move from homerow in command-line and insert mode
 cnoremap <silent> <c-d> <left>
