@@ -1,2 +1,0 @@
-shell="{SHELL}"
-virtualenvs="{XDG_DATA_HOME}/virtualenvs"
