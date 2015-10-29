@@ -65,7 +65,7 @@
 			Plug 'tpope/vim-unimpaired'
 			Plug 'tpope/vim-dispatch'
 			Plug 'Valloric/YouCompleteMe', { 'do':
-					\ './install.sh --clang-completer --system-boost --system-libclang'
+					\ './install.py --clang-completer --system-boost --system-libclang'
 				\ }
 			!!@@latex-plugin
 			!!@@python-plugin
