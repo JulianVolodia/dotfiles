@@ -23,12 +23,6 @@ end
 function n --wraps=nvim
 	nvim $argv
 end
-function p --wraps=pacaur
-	pacaur $argv
-end
-function t --wraps=task
-	task $argv
-end
 function s --wraps=systemctl
 	systemctl $argv
 end

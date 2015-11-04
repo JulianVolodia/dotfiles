@@ -1,6 +1,2 @@
 #!/bin/sh
-mkdir -p "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/bundle" \
-	"${XDG_CACHE_HOME:-$HOME/.cache}/nvim/swap" \
-	"${XDG_CACHE_HOME:-$HOME/.cache}/nvim/undo" \
-	"${XDG_CACHE_HOME:-$HOME/.cache}/nvim/unite" \
-	"${XDG_CACHE_HOME:-$HOME/.cache}/nvim/backup"
+mkdir -p "$XDG_CONFIG_HOME/nvim/bundle"

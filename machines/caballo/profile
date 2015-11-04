@@ -1,0 +1,11 @@
+# Required for mutt with gpgme
+export GPG_AGENT_INFO="$HOME/.gnupg/S.gpg-agent"
+# The default socket is always used
+export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+
+# Environment variables for programs
+export ASPROOT="$HOME/pkg"
+export HGRCPATH="$XDG_CONFIG_HOME/mercurial/hgrc"
+export TASKRC="$XDG_CONFIG_HOME/task/taskrc"
+export TEXMFHOME="$XDG_DATA_HOME/texmf"
+export VDIRSYNCER_CONFIG="$XDG_CONFIG_HOME/vdirsyncer/config"

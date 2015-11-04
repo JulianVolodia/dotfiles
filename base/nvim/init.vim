@@ -28,10 +28,10 @@
 		" both in the regular plugin/ftplugin directories as well as in the after/
 		" directories. I believe this is the way it should be. }}}
 	" Early runtimepath dickery!
-	set runtimepath=$XDG_DATA_HOME/nvim/vim-plug,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
+	set runtimepath=$XDG_CONFIG_HOME/nvim/bundle/vim-plug,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 	" Plugins {{{
 		" Plug initialization {{{
-			call plug#begin(expand("$XDG_DATA_HOME/nvim/bundle"))
+			call plug#begin(expand("$XDG_CONFIG_HOME/nvim/bundle"))
 			" Bundles
 			" Vimproc has a native component
 			Plug 'vim-scripts/argtextobj.vim'
@@ -65,7 +65,7 @@
 			Plug 'tpope/vim-unimpaired'
 			Plug 'tpope/vim-dispatch'
 			Plug 'Valloric/YouCompleteMe', { 'do':
-					\ './install.py --clang-completer --system-boost --system-libclang'
+					\ './install.py --clang-completer --gocode-completer'
 				\ }
 			!!@@latex-plugin
 			!!@@python-plugin
@@ -333,14 +333,11 @@
 	" Files {{{
 		" Don't create backup files
 		set nobackup
-		" Save viminfo file to keep state information from one vim session to the next
-		set viminfo+="n$XDG_CACHE_HOME/nvim/viminfo"
-		" Common directory for all swap files (first existing directory is used)
-		set directory=$XDG_CACHE_HOME/nvim/swap
+		set nowritebackup
 		" Persistent undo (see ":help persistent-undo")
 		set undofile
 		" Common directory for persistent undo files
-		set undodir=$XDG_CACHE_HOME/nvim/undo
+		set undodir=$XDG_DATA_HOME/nvim/undo
 
 	" }}}
 	" Indentation & linebreaks {{{

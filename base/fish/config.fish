@@ -7,7 +7,5 @@ set fish_greeting
 if status --is-interactive
   # Set up aliases
   source "$XDG_CONFIG_HOME/fish/aliases.fish"
-  # Set up Solarized colors
-  source "$XDG_CONFIG_HOME/fish/solarized.fish"
   !!@@
 end

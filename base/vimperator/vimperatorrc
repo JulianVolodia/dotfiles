@@ -4,14 +4,12 @@
 " Runtimepath
 set runtimepath="$XDG_CONFIG_HOME/vimperator"
 " Set default search engine
-set defsearch="ddg"
 set newtab=all
 " Mapleader for a few keybindings
 let mapleader=","
 
 " Appearance {{{
-" Color scheme
-colorscheme solarized
+!!@@
 " Show these in status line
 set status="input,history,location,bookmark"
 " Only show tab line

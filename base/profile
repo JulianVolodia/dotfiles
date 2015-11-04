@@ -1,10 +1,5 @@
 #!/bin/sh
 
-# Required for mutt with gpgme
-export GPG_AGENT_INFO="$HOME/.gnupg/S.gpg-agent"
-# The default socket is always used
-export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
-
 export PATH="$HOME/.local/bin:$PATH"
 export PAGER=less EDITOR=nvim BROWSER=firefox
 # Smart case searching as in Vim
@@ -25,14 +20,8 @@ else
     export XDG_CONFIG_DIRS="/etc/xdg:$XDG_CONFIG_DIRS"
 fi
 
-# Environment variables for programs
-export ASPROOT="$HOME/pkg"
-export HGRCPATH="$XDG_CONFIG_HOME/mercurial/hgrc"
 export VIMPERATOR_INIT=":source $XDG_CONFIG_HOME/vimperator/vimperatorrc"
-export TASKRC="$XDG_CONFIG_HOME/task/taskrc"
-export TEXMFHOME="$XDG_DATA_HOME/texmf"
 # Make Java applications look less ugly:
 # - Use system font settings
 # - Use native GTK look and feel
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
-export VDIRSYNCER_CONFIG="$XDG_CONFIG_HOME/vdirsyncer/config"
