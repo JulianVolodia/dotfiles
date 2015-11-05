@@ -2,7 +2,7 @@ function fish_prompt --description "Write out the prompt"
 	set -l last_status "$status"
 	# Cache some stuff
 	if not set -q __fish_prompt_hostname
-		set -g __fish_prompt_hostname (hostname)
+		set -g __fish_prompt_hostname (hostnamectl --pretty)
 	end
 	if not set -q __fish_prompt_normal
 		set -g __fish_prompt_normal (set_color normal)
