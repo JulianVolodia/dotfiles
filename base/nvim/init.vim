@@ -355,6 +355,11 @@
 		set noexpandtab
 		" Insert shiftwidth when pressing Tab at the beginning of a line
 		set smarttab
+		" Breaks lines in sane places
+		set linebreak
+		" Indent broken line to previous line to preserve horizontal blocks of
+		" text
+		set breakindent
 	" }}}
 	" Search {{{
 		" highlight search hits
@@ -381,8 +386,6 @@
 
 	" }}}
 	" Appearance {{{
-		" Breaks lines in sane places
-		set linebreak
 		" End of line characters
 		set listchars=eol:↲,tab:⇄·,trail:␣,extends:⇢,precedes:⇠
 		" Add this in front of line if line is too long for terminal
