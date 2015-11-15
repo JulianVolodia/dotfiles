@@ -1,6 +1,5 @@
 #!/bin/sh
 
-export PATH="$HOME/.local/bin:$PATH"
 export PAGER=less EDITOR=nvim BROWSER=firefox
 # Smart case searching as in Vim
 export LESS="-Ri"
