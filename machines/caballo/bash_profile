@@ -1,6 +1,10 @@
 #!/bin/bash
 
+# Start gpg-agent if it isn't already started
+gpgconf --launch gpg-agent
+
 # Source general login shell environment
 source "$HOME/.profile"
+
 # Source this only if the login shell is interactive
 [[ $- == *i* ]] && source "$HOME/.bashrc"
