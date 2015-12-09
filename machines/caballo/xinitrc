@@ -21,7 +21,7 @@ fi
 setxkbmap de adnw
 
 # Update gpg-agent terminal so SSH knows where to put pinentry
-echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2&>1
+echo "UPDATESTARTUPTTY" | gpg-connect-agent > /dev/null 2>&1
 
 fcitx &
 feh --bg-fill ${XDG_CONFIG_HOME:-$HOME/.config}/wallpaper &
