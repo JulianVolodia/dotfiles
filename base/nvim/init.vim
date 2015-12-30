@@ -28,7 +28,7 @@
 		" both in the regular plugin/ftplugin directories as well as in the after/
 		" directories. I believe this is the way it should be. }}}
 	" Early runtimepath dickery!
-	set runtimepath=$XDG_CONFIG_HOME/nvim/bundle/vim-plug,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
+	set runtimepath=$XDG_CONFIG_HOME/nvim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 	" Plugins {{{
 		" Plug initialization {{{
 			call plug#begin(expand("$XDG_CONFIG_HOME/nvim/bundle"))
@@ -65,10 +65,11 @@
 			Plug 'tpope/vim-unimpaired'
 			Plug 'tpope/vim-dispatch'
 			Plug 'Valloric/YouCompleteMe', { 'do':
-					\ './install.py --clang-completer --gocode-completer'
+					\ 'python2 install.py --clang-completer'
 				\ }
 			!!@@latex-plugin
 			!!@@python-plugin
+			!!@@rust-plugin
 			!!@@as-plugin
 			!!@@trabajo-plugin
 			" Load last so extensions are properly supported
@@ -321,7 +322,7 @@
 
 	" }}}
 	" Late runtimepath dickery!
-	set runtimepath^=$XDG_CONFIG_HOME/nvim runtimepath+=$XDG_CONFIG_HOME/nvim/after
+	set runtimepath+=$XDG_CONFIG_HOME/nvim/after
 
 " }}}
 " General {{{
