@@ -30,6 +30,23 @@
 	" Early runtimepath dickery!
 	set runtimepath=$XDG_CONFIG_HOME/nvim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after
 	" Plugins {{{
+		" Build functions {{{
+			" These have to be declared before being referenced in :Plug.
+			" Build YCM with correct completer options {{{
+				function! BuildYCM(info)
+				  " info is a dictionary with 3 fields
+				  " - name:   name of the plugin
+				  " - status: 'installed', 'updated', or 'unchanged'
+				  " - force:  set on PlugInstall! or PlugUpdate!
+				  if a:info.status == 'installed' || a:info.status == 'updated' || a:info.force
+					" Beware: Use a backslash at the beginning of the included line!
+					let installer_string = 'normal! !python2 ./install.py '
+					!!@@rust-ycm-completer
+					execute installer_string
+				  endif
+				endfunction
+			" }}}
+		" }}}
 		" Plug initialization {{{
 			call plug#begin(expand("$XDG_CONFIG_HOME/nvim/bundle"))
 			" Bundles
@@ -66,7 +83,7 @@
 			Plug 'tpope/vim-unimpaired'
 			Plug 'tpope/vim-dispatch'
 			Plug 'Valloric/YouCompleteMe', { 'do':
-					\ 'python2 install.py --clang-completer'
+					\ function('BuildYCM')
 				\ }
 			!!@@latex-plugin
 			!!@@python-plugin
@@ -336,6 +353,9 @@
 				" Interpret relative paths as relative to the current buffer
 				" (instead of relative to the current working directory)
 				let g:ycm_filepath_completion_use_working_dir = 1
+				" Set keybinding for completion
+				nnoremap <leader>gt :YcmCompleter GoTo<cr>
+				!!@@rust-ycm-config
 
 			" }}}
 			!!@@python-plugin-conf
