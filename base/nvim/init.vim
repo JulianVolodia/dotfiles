@@ -73,7 +73,8 @@
 			!!@@as-plugin
 			!!@@trabajo-plugin
 			" Load last so extensions are properly supported
-			Plug 'bling/vim-airline'
+			Plug 'vim-airline/vim-airline'
+			Plug 'vim-airline/vim-airline-themes'
 
 			call plug#end()
 			filetype plugin indent on
