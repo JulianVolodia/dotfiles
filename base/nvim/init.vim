@@ -35,6 +35,7 @@
 			" Bundles
 			" Vimproc has a native component
 			Plug 'vim-scripts/argtextobj.vim'
+			Plug 'bling/vim-bufferline'
 			Plug 'tpope/vim-commentary'
 			Plug 'vim-scripts/DeleteTrailingWhitespace', { 'on': 'DeleteTrailingWhitespace' }
 			Plug 'jeetsukumaran/vim-filebeagle', { 'on': [
@@ -111,6 +112,25 @@
 					\ '' : 'V',
 					\ }
 
+			" }}}
+			" Bufferline {{{
+				" Don't echo to the command bar
+				let g:bufferline_echo = 0
+				" Left separator
+				let g:bufferline_active_buffer_left = '|'
+				" Right separator
+				let g:bufferline_active_buffer_right = '|'
+				" No numbers, thank you
+				let g:bufferline_show_bufnr = 0
+				" Rotate list, keep current buffer at same position
+				let g:bufferline_rotate = 1
+				" Display filename relative to current directory, abbreviate
+				" $HOME
+				let g:bufferline_fname_mod = ':~:.'
+				" Shorten paths in buffer names
+				let g:bufferline_pathshorten = 1
+				" Don't highlight the buffer if it is alone
+				let g:bufferline_solo_highlight = 1
 			" }}}
 			" DeleteTrailingWhitespace {{{
 				" Don't automatically delete on writing a buffer
