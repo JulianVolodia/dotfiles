@@ -552,6 +552,12 @@
 		" Use <tab> to teleport to matching parens
 		map <tab> %
 
+		" Make arrow keys do something useful, resize viewports
+		nnoremap <silent> <left> :vertical resize +2<cr>
+		nnoremap <silent> <right> :vertical resize -2<cr>
+		nnoremap <silent> <up> :vertical resize -2<cr>
+		nnoremap <silent> <down> :vertical resize +2<cr>
+
 	" }}}
 	" Command-line window {{{
 		" Use Q for macros
