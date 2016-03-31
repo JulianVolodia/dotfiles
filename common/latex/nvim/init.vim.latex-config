@@ -1,0 +1,2 @@
+	" I want to use LaTeX as my main TeX flavor, thank you very much
+	let g:tex_flavor = "latex"

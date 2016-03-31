@@ -367,10 +367,7 @@
 
 " }}}
 " General {{{
-	" I want to use LaTeX as my main TeX flavor, thank you very much
-	" Also, it's kind of a pain in the ass having to set this in .vimrc, though
-	" that's probably just my ignorance speaking
-	let g:tex_flavor = "latex"
+	!!@@latex-plugin
 
 	" Files {{{
 		" Don't create backup files
@@ -474,15 +471,13 @@
 		set foldtext=CustomFoldText()
 
 	" }}}
-	" Check if I should set up Lawrencium or Fugitive keybindings {{{
+	" Check if I should set up Fugitive keybindings {{{
 		function! s:setup_vcs_keybindings()
 			if exists('b:keybindings_setup')
 				return
 			endif
 			let b:keybindings_setup = 1
 
-			if exists('b:mercurial_dir')
-				call s:setup_lawrencium_mappings()
 			elseif exists('b:git_dir')
 				call s:setup_fugitive_mappings()
 			endif
@@ -582,9 +577,9 @@
 		" List all errors
 		noremap <silent> <leader>cl :clist<cr>
 		" Go to older quickfix error list
-		noremap <silent> <leader>c- :colder<cr>
+		noremap <silent> <leader>c[ :colder<cr>
 		" Go to newer quickfix error list
-		noremap <silent> <leader>c+ :cnewer<cr>
+		noremap <silent> <leader>c] :cnewer<cr>
 
 		" NOTE: No location list command changes buffers
 		" Re-read error file
@@ -592,9 +587,9 @@
 		" Re-read error file and jump to first error
 		noremap <silent> <leader>lj :lfile<cr>
 		" Go to older error location list
-		noremap <silent> <leader>l- :lolder<cr>
+		noremap <silent> <leader>l[ :lolder<cr>
 		" Go to newer error location list
-		noremap <silent> <leader>l+ :lnewer<cr>
+		noremap <silent> <leader>l] :lnewer<cr>
 
 	" }}}
 
