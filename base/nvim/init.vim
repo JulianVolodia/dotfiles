@@ -40,7 +40,7 @@
 				  " - force:  set on PlugInstall! or PlugUpdate!
 				  if a:info.status == 'installed' || a:info.status == 'updated' || a:info.force
 					" Beware: Use a backslash at the beginning of the included line!
-					let installer_string = 'normal! !python2 ./install.py '
+					let installer_string = '!python2 ./install.py'
 					!!@@rust-ycm-completer
 					execute installer_string
 				  endif
