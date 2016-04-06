@@ -90,6 +90,7 @@
 			!!@@rust-plugin
 			!!@@as-plugin
 			!!@@trabajo-plugin
+			!!@@caballo-plugin
 			" Load last so extensions are properly supported
 			Plug 'vim-airline/vim-airline'
 			Plug 'vim-airline/vim-airline-themes'
