@@ -22,8 +22,8 @@ super + b
 	bspc desktop -B
 
 # Toggle floating/pseudotile/fullscreen
-super + {i,e,a}
-	bspc window -t {floating,pseudo_tiled,fullscreen}
+super + {h,i,e,a}
+	bspc window -t {tiled,floating,pseudo_tiled,fullscreen}
 
 # Transplant focused window onto last preselection
 super + Return
