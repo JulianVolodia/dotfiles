@@ -1,17 +1,23 @@
+# TODO:
+# - Receptacles (https://github.com/neeasade/dotfiles/blob/a219e13e427ef1ab72d59350c43efc00d5075b46/sxhkd/.config/sxhkd/sxhkdrc#L100-L104)
+# - "Activate" windows?
+# - work through this: https://github.com/baskerville/bspwm/wiki/Upcoming-Changes-in-0.9.1
+
+# Doesn't work anymore:
 # Reload/quit bspwm and panel
-super + ctrl + {_,shift + }q
-	{bspc query -T > "$BSPWM_TREE"; \
-		bspc query -H > "$BSPWM_HISTORY"; \
-		bspc query -S > "$BSPWM_STACK"; \
-		pkill -x panel; \
-		pkill -x panel_bar; \
-		pkill -USR1 -x sxhkd; \
-		bspc quit,\
-	 bspc quit 1}
+#super + ctrl + {_,shift + }q
+#	{bspc query -T > "$BSPWM_TREE"; \
+#		bspc query -H > "$BSPWM_HISTORY"; \
+#		bspc query -S > "$BSPWM_STACK"; \
+#		pkill -x panel; \
+#		pkill -x panel_bar; \
+#		pkill -USR1 -x sxhkd; \
+#		bspc quit,\
+#	 bspc quit 1}
 
 # Close window
 super + shift + x
-	bspc window -c
+	bspc node -c
 
 # Next layout
 super + {BackSpace,Delete}
@@ -21,47 +27,47 @@ super + {BackSpace,Delete}
 super + b
 	bspc desktop -B
 
-# Toggle floating/pseudotile/fullscreen
+# Toggle tiled/floating/pseudotile/fullscreen
 super + {h,i,e,a}
-	bspc window -t {tiled,floating,pseudo_tiled,fullscreen}
+	bspc node -t ~{tiled,floating,pseudo_tiled,fullscreen}
 
-# Transplant focused window onto last preselection
+# Transplant focused window into last receptacle or, failing that, into the last preselection
 super + Return
-	bspc window -w last.manual
+	bspc node -n .leaf.!window || bspc node -n last.!automatic
 
 # Focus window left/down/up/right (moves focus across outputs)
 super + {d,t,r,n}
-	dir={left,down,up,right}; \
-	bspc window -f $dir || bspc monitor -f $dir
+	dir={west,south,north,east}; \
+	bspc node -f $dir || bspc monitor -f $dir
 
 # Move window left/down/up/right (moves window to empty outputs)
 super + shift + {d,t,r,n}
-	dir={left,down,up,right}; \
-	bspc window -s $dir -f || bspc window -m $dir -f
+	dir={west,south,north,east}; \
+	bspc node -s $dir -f || bspc node -m $dir -f
 
 # Focus next/previous window
 super + {_,shift + }Tab
-	bspc window -f {next,prev}
+	bspc node -f {next,prev}.local
 
 # Presel left/down/up/right
 super + ctrl + {d,t,r,n}
-	bspc window -p {left,down,up,right}
+	bspc node -p ~{west,south,north,east}
 
 # Increase window size to the left/down/up/right
 super + alt + {d,t,r,n}
-	bspc window -e {left -40,down +40,up -40,right +40}
+	bspc node -e {west -40,south +40,north -40,east +40}
 
 # Decrease window size to the left/down/up/right
 super + alt + shift + {d,t,r,n}
-	bspc window -e {right -40,up +40,down -40,left +40}
+	bspc node -e {east -40,north +40,south -40,west +40}
 
 # Set split ratio
 super + ctrl + {1-9}
-	bspc window -r 0.{1-9}
+	bspc node -r 0.{1-9}
 
 # Focus/move to desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,window -d} focused:\^{1-9,10}
+	bspc {desktop -f,node -d} focused:\^{1-9,10}
 
 # Focus to previous/next monitor
 super + {k,u}
@@ -69,7 +75,7 @@ super + {k,u}
 
 # Move to previous/next monitor
 super + shift + {k,u}
-	bspc window -m {prev,next} -f
+	bspc node -m {prev,next} -f
 
 # Move/resize window
 super + button{1-3}
